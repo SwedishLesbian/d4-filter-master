@@ -1,0 +1,6946 @@
+{
+  "_meta": {
+    "source": "Derived from ThunderEagle/D4LootBench d4-data.json (MIT)."
+  },
+  "uniques": [
+    {
+      "hash": "0x0002D7AB",
+      "name": "Fists of Fate",
+      "internal": "Gloves_Unique_Generic_002",
+      "classes": [],
+      "keys": [
+        "fists-of-fate"
+      ]
+    },
+    {
+      "hash": "0x00031A2D",
+      "name": "Gloves of the Illuminator",
+      "internal": "Gloves_Unique_Sorc_002",
+      "classes": [],
+      "keys": [
+        "gloves-of-the-illuminator"
+      ]
+    },
+    {
+      "hash": "0x00032D88",
+      "name": "Penitent Greaves",
+      "internal": "Boots_Unique_Generic_001",
+      "classes": [],
+      "keys": [
+        "penitent-greaves"
+      ]
+    },
+    {
+      "hash": "0x00035F59",
+      "name": "Doombringer",
+      "internal": "1HSword_Unique_Generic_001",
+      "classes": [],
+      "keys": [
+        "doombringer"
+      ]
+    },
+    {
+      "hash": "0x00036827",
+      "name": "The Grandfather",
+      "internal": "2HSword_Unique_Generic_001",
+      "classes": [],
+      "keys": [
+        "the-grandfather"
+      ]
+    },
+    {
+      "hash": "0x00036837",
+      "name": "The Butcher's Cleaver",
+      "internal": "1HAxe_Unique_Generic_001",
+      "classes": [],
+      "keys": [
+        "the-butchers-cleaver"
+      ]
+    },
+    {
+      "hash": "0x00036B4A",
+      "name": "Windforce",
+      "internal": "2HBow_Unique_Rogue_006",
+      "classes": [],
+      "keys": [
+        "windforce"
+      ]
+    },
+    {
+      "hash": "0x0003B10A",
+      "name": "Andariel's Visage",
+      "internal": "Helm_Unique_Generic_001",
+      "classes": [],
+      "keys": [
+        "andariels-visage"
+      ]
+    },
+    {
+      "hash": "0x0003E301",
+      "name": "Frostburn",
+      "internal": "Gloves_Unique_Generic_003",
+      "classes": [],
+      "keys": [
+        "frostburn"
+      ]
+    },
+    {
+      "hash": "0x00047319",
+      "name": "Fields of Crimson",
+      "internal": "2HSword_Unique_Barb_002",
+      "classes": [],
+      "keys": [
+        "fields-of-crimson"
+      ]
+    },
+    {
+      "hash": "0x00047355",
+      "name": "Flickerstep",
+      "internal": "Boots_Unique_Generic_002",
+      "classes": [],
+      "keys": [
+        "flickerstep"
+      ]
+    },
+    {
+      "hash": "0x000496BF",
+      "name": "Gohr's Devastating Grips",
+      "internal": "Gloves_Unique_Barb_001",
+      "classes": [],
+      "keys": [
+        "gohrs-devastating-grips"
+      ]
+    },
+    {
+      "hash": "0x0005415D",
+      "name": "Hellhammer",
+      "internal": "2HMace_Unique_Barb_001",
+      "classes": [],
+      "keys": [
+        "hellhammer"
+      ]
+    },
+    {
+      "hash": "0x0005698C",
+      "name": "Greatstaff of the Crone",
+      "internal": "2HStaff_Unique_Druid_001",
+      "classes": [],
+      "keys": [
+        "greatstaff-of-the-crone"
+      ]
+    },
+    {
+      "hash": "0x00057189",
+      "name": "Ancients' Oath",
+      "internal": "2HAxe_Unique_Barb_001",
+      "classes": [],
+      "keys": [
+        "ancients-oath"
+      ]
+    },
+    {
+      "hash": "0x000575B4",
+      "name": "Mad Wolf's Glee",
+      "internal": "Chest_Unique_Druid_002",
+      "classes": [],
+      "keys": [
+        "mad-wolfs-glee"
+      ]
+    },
+    {
+      "hash": "0x00057AFD",
+      "name": "Ahavarion, Spear of Lycander",
+      "internal": "2HStaff_Unique_Generic_100",
+      "classes": [],
+      "keys": [
+        "ahavarion-spear-of-lycander"
+      ]
+    },
+    {
+      "hash": "0x00057BB8",
+      "name": "Azurewrath",
+      "internal": "1HSword_Unique_Generic_100",
+      "classes": [],
+      "keys": [
+        "azurewrath"
+      ]
+    },
+    {
+      "hash": "0x00057D3F",
+      "name": "Skyhunter",
+      "internal": "2HBow_Unique_Rogue_001",
+      "classes": [],
+      "keys": [
+        "skyhunter"
+      ]
+    },
+    {
+      "hash": "0x00061184",
+      "name": "Fleshrender",
+      "internal": "1HMace_Unique_Druid_001",
+      "classes": [],
+      "keys": [
+        "fleshrender"
+      ]
+    },
+    {
+      "hash": "0x000660E1",
+      "name": "Raiment of the Infinite",
+      "internal": "Chest_Unique_Sorc_002",
+      "classes": [],
+      "keys": [
+        "raiment-of-the-infinite"
+      ]
+    },
+    {
+      "hash": "0x0006E213",
+      "name": "Condemnation",
+      "internal": "1HDagger_Unique_Rogue_001",
+      "classes": [],
+      "keys": [
+        "condemnation"
+      ]
+    },
+    {
+      "hash": "0x0006F2ED",
+      "name": "Deathmask of Nirmitruq",
+      "internal": "Helm_Unique_Rogue_002",
+      "classes": [],
+      "keys": [
+        "deathmask-of-nirmitruq"
+      ]
+    },
+    {
+      "hash": "0x00072A90",
+      "name": "Asheara's Khanjar",
+      "internal": "1HDagger_Unique_Rogue_002",
+      "classes": [],
+      "keys": [
+        "ashearas-khanjar"
+      ]
+    },
+    {
+      "hash": "0x00072E0B",
+      "name": "Eyes in the Dark",
+      "internal": "Pants_Unique_Rogue_004",
+      "classes": [],
+      "keys": [
+        "eyes-in-the-dark"
+      ]
+    },
+    {
+      "hash": "0x00078D8D",
+      "name": "Cowl of the Nameless",
+      "internal": "Helm_Unique_Rogue_001",
+      "classes": [],
+      "keys": [
+        "cowl-of-the-nameless"
+      ]
+    },
+    {
+      "hash": "0x00079B1C",
+      "name": "Boost Helm",
+      "internal": "Helm_Unique_Generic_Boost_NoPowers",
+      "classes": [],
+      "keys": [
+        "boost-helm"
+      ]
+    },
+    {
+      "hash": "0x00079B75",
+      "name": "Boost Dagger",
+      "internal": "1HDagger_Unique_Generic_Boost_NoPowers1",
+      "classes": [],
+      "keys": [
+        "boost-dagger"
+      ]
+    },
+    {
+      "hash": "0x00079B7D",
+      "name": "Boost Scythe",
+      "internal": "2HScythe_Unique_Generic_Boost_NoPowers",
+      "classes": [],
+      "keys": [
+        "boost-scythe"
+      ]
+    },
+    {
+      "hash": "0x00079B87",
+      "name": "Boost Pants",
+      "internal": "Pants_Unique_Generic_Boost_NoPowers",
+      "classes": [],
+      "keys": [
+        "boost-pants"
+      ]
+    },
+    {
+      "hash": "0x0008C816",
+      "name": "Eaglehorn",
+      "internal": "TEST_unique_rogue_xbow_001",
+      "classes": [],
+      "keys": [
+        "eaglehorn"
+      ]
+    },
+    {
+      "hash": "0x0008D02F",
+      "name": "Halo",
+      "internal": "TEST_unique_generic_ring_004",
+      "classes": [],
+      "keys": [
+        "halo"
+      ]
+    },
+    {
+      "hash": "0x00094E1C",
+      "name": "Harlequin Crest",
+      "internal": "Helm_Unique_Generic_002",
+      "classes": [],
+      "keys": [
+        "harlequin-crest"
+      ]
+    },
+    {
+      "hash": "0x000D54B3",
+      "name": "Insatiable Fury",
+      "internal": "Chest_Unique_Druid_003",
+      "classes": [],
+      "keys": [
+        "insatiable-fury"
+      ]
+    },
+    {
+      "hash": "0x000D6FCE",
+      "name": "Storm's Companion",
+      "internal": "Pants_Unique_Druid_001",
+      "classes": [],
+      "keys": [
+        "storms-companion"
+      ]
+    },
+    {
+      "hash": "0x000F19EE",
+      "name": "Hunter's Zenith",
+      "internal": "Ring_Unique_Druid_003",
+      "classes": [],
+      "keys": [
+        "hunters-zenith"
+      ]
+    },
+    {
+      "hash": "0x000FE443",
+      "name": "Boost Staff",
+      "internal": "2HStaff_Unique_Generic_Boost_NoPowers_8",
+      "classes": [],
+      "keys": [
+        "boost-staff"
+      ]
+    },
+    {
+      "hash": "0x00103904",
+      "name": "Staff of Endless Rage",
+      "internal": "2HStaff_Unique_Sorc_002",
+      "classes": [],
+      "keys": [
+        "staff-of-endless-rage"
+      ]
+    },
+    {
+      "hash": "0x00126753",
+      "name": "Orphan Maker",
+      "internal": "2HCrossbow_Unique_Rogue_100",
+      "classes": [],
+      "keys": [
+        "orphan-maker"
+      ]
+    },
+    {
+      "hash": "0x001278E2",
+      "name": "100,000 Steps",
+      "internal": "Boots_Unique_Barb_100",
+      "classes": [],
+      "keys": [
+        "100-000-steps"
+      ]
+    },
+    {
+      "hash": "0x00127D06",
+      "name": "Blue Rose",
+      "internal": "Ring_Unique_Sorc_100",
+      "classes": [],
+      "keys": [
+        "blue-rose"
+      ]
+    },
+    {
+      "hash": "0x00128948",
+      "name": "Flamescar",
+      "internal": "1HWand_Unique_Sorc_100",
+      "classes": [],
+      "keys": [
+        "flamescar"
+      ]
+    },
+    {
+      "hash": "0x00128A59",
+      "name": "Razorplate",
+      "internal": "Chest_Unique_Generic_100",
+      "classes": [],
+      "keys": [
+        "razorplate"
+      ]
+    },
+    {
+      "hash": "0x00128A9E",
+      "name": "Mother's Embrace",
+      "internal": "Ring_Unique_Generic_100",
+      "classes": [],
+      "keys": [
+        "mothers-embrace"
+      ]
+    },
+    {
+      "hash": "0x00129210",
+      "name": "Blood Moon Breeches",
+      "internal": "Pants_Unique_Necro_100",
+      "classes": [],
+      "keys": [
+        "blood-moon-breeches"
+      ]
+    },
+    {
+      "hash": "0x00129A94",
+      "name": "Death's Pavane",
+      "internal": "Pants_Unique_Rogue_100",
+      "classes": [],
+      "keys": [
+        "deaths-pavane"
+      ]
+    },
+    {
+      "hash": "0x00129E70",
+      "name": "Bloodless Scream",
+      "internal": "2HScythe_Unique_Necro_100",
+      "classes": [],
+      "keys": [
+        "bloodless-scream"
+      ]
+    },
+    {
+      "hash": "0x00129EA2",
+      "name": "Greaves of the Empty Tomb",
+      "internal": "Boots_Unique_Necro_100",
+      "classes": [],
+      "keys": [
+        "greaves-of-the-empty-tomb"
+      ]
+    },
+    {
+      "hash": "0x0012A626",
+      "name": "Overkill",
+      "internal": "2HMace_Unique_Barb_100",
+      "classes": [],
+      "keys": [
+        "overkill"
+      ]
+    },
+    {
+      "hash": "0x0012A7E3",
+      "name": "Ring of Mendeln",
+      "internal": "Ring_Unique_Necro_100",
+      "classes": [],
+      "keys": [
+        "ring-of-mendeln"
+      ]
+    },
+    {
+      "hash": "0x0012AFAB",
+      "name": "Mutilator Plate",
+      "internal": "Chest_Unique_Necro_100",
+      "classes": [],
+      "keys": [
+        "mutilator-plate"
+      ]
+    },
+    {
+      "hash": "0x0012B254",
+      "name": "Esadora's Overflowing Cameo",
+      "internal": "Amulet_Unique_Sorc_100",
+      "classes": [],
+      "keys": [
+        "esadoras-overflowing-cameo"
+      ]
+    },
+    {
+      "hash": "0x0012B360",
+      "name": "Tal Rasha's Iridescent Loop",
+      "internal": "Ring_Unique_Sorc_101",
+      "classes": [],
+      "keys": [
+        "tal-rashas-iridescent-loop"
+      ]
+    },
+    {
+      "hash": "0x0012BA0E",
+      "name": "Howl from Below",
+      "internal": "Gloves_Unique_Necro_100",
+      "classes": [],
+      "keys": [
+        "howl-from-below"
+      ]
+    },
+    {
+      "hash": "0x0012C695",
+      "name": "Deathspeaker's Pendant",
+      "internal": "Amulet_Unique_Necro_100",
+      "classes": [],
+      "keys": [
+        "deathspeakers-pendant"
+      ]
+    },
+    {
+      "hash": "0x0012D6EF",
+      "name": "Deathless Visage",
+      "internal": "Helm_Unique_Necro_100",
+      "classes": [],
+      "keys": [
+        "deathless-visage"
+      ]
+    },
+    {
+      "hash": "0x0013781F",
+      "name": "Melted Heart of Selig",
+      "internal": "Amulet_Unique_Generic_100",
+      "classes": [],
+      "keys": [
+        "melted-heart-of-selig"
+      ]
+    },
+    {
+      "hash": "0x0013E73A",
+      "name": "Rage of Harrogath",
+      "internal": "Chest_Unique_Barb_100",
+      "classes": [],
+      "keys": [
+        "rage-of-harrogath"
+      ]
+    },
+    {
+      "hash": "0x0013E788",
+      "name": "Ramaladni's Magnum Opus",
+      "internal": "1HSword_Unique_Barb_101",
+      "classes": [],
+      "keys": [
+        "ramaladnis-magnum-opus"
+      ]
+    },
+    {
+      "hash": "0x0013E795",
+      "name": "Battle Trance",
+      "internal": "Amulet_Unique_Barb_100",
+      "classes": [],
+      "keys": [
+        "battle-trance"
+      ]
+    },
+    {
+      "hash": "0x0013E7AA",
+      "name": "Tempest Roar",
+      "internal": "Helm_Unique_Druid_100",
+      "classes": [],
+      "keys": [
+        "tempest-roar"
+      ]
+    },
+    {
+      "hash": "0x0013EE66",
+      "name": "Vasily's Prayer",
+      "internal": "Helm_Unique_Druid_101",
+      "classes": [],
+      "keys": [
+        "vasilys-prayer"
+      ]
+    },
+    {
+      "hash": "0x0013EE6B",
+      "name": "Waxing Gibbous",
+      "internal": "1HAxe_Unique_Druid_100",
+      "classes": [],
+      "keys": [
+        "waxing-gibbous"
+      ]
+    },
+    {
+      "hash": "0x0013EE76",
+      "name": "Blood Artisan's Cuirass",
+      "internal": "Chest_Unique_Necro_101",
+      "classes": [],
+      "keys": [
+        "blood-artisans-cuirass"
+      ]
+    },
+    {
+      "hash": "0x0013EE7C",
+      "name": "Black River",
+      "internal": "1HScythe_Unique_Necro_100",
+      "classes": [],
+      "keys": [
+        "black-river"
+      ]
+    },
+    {
+      "hash": "0x0013EE8B",
+      "name": "Grasp of Shadow",
+      "internal": "Gloves_Unique_Rogue_100",
+      "classes": [],
+      "keys": [
+        "grasp-of-shadow"
+      ]
+    },
+    {
+      "hash": "0x0013EE93",
+      "name": "Word of Hakan",
+      "internal": "Amulet_Unique_Rogue_100",
+      "classes": [],
+      "keys": [
+        "word-of-hakan"
+      ]
+    },
+    {
+      "hash": "0x0013EEA2",
+      "name": "Iceheart Brais",
+      "internal": "Pants_Unique_Sorc_100",
+      "classes": [],
+      "keys": [
+        "iceheart-brais"
+      ]
+    },
+    {
+      "hash": "0x0013EEBE",
+      "name": "Esu's Heirloom",
+      "internal": "Boots_Unique_Sorc_100",
+      "classes": [],
+      "keys": [
+        "esus-heirloom"
+      ]
+    },
+    {
+      "hash": "0x0013EEC7",
+      "name": "Staff of Lam Esen",
+      "internal": "2HStaff_Unique_Sorc_100",
+      "classes": [],
+      "keys": [
+        "staff-of-lam-esen"
+      ]
+    },
+    {
+      "hash": "0x0013EED6",
+      "name": "Temerity",
+      "internal": "Pants_Unique_Generic_100",
+      "classes": [],
+      "keys": [
+        "temerity"
+      ]
+    },
+    {
+      "hash": "0x0013EEE2",
+      "name": "Ring of Starless Skies",
+      "internal": "Ring_Unique_Generic_101",
+      "classes": [],
+      "keys": [
+        "ring-of-starless-skies"
+      ]
+    },
+    {
+      "hash": "0x00143797",
+      "name": "(DEBUG) Performance Test Ring - Shrine Artillery",
+      "internal": "performance_test_unique_ring_shrine_artillery",
+      "classes": [],
+      "keys": [
+        "debug-performance-test-ring-shrine-artillery"
+      ]
+    },
+    {
+      "hash": "0x0015E163",
+      "name": "Unsung Ascetic's Wraps",
+      "internal": "Gloves_Unique_Druid_100",
+      "classes": [],
+      "keys": [
+        "unsung-ascetics-wraps"
+      ]
+    },
+    {
+      "hash": "0x0015F72A",
+      "name": "The Oculus",
+      "internal": "1HWand_Unique_Sorc_101",
+      "classes": [],
+      "keys": [
+        "the-oculus"
+      ]
+    },
+    {
+      "hash": "0x0015F732",
+      "name": "Eaglehorn",
+      "internal": "2HBow_Unique_Rogue_100",
+      "classes": [],
+      "keys": [
+        "eaglehorn"
+      ]
+    },
+    {
+      "hash": "0x0015F736",
+      "name": "Lidless Wall",
+      "internal": "1HShield_Unique_Necro_100",
+      "classes": [],
+      "keys": [
+        "lidless-wall"
+      ]
+    },
+    {
+      "hash": "0x001689D8",
+      "name": "Tassets of the Dawning Sky",
+      "internal": "Pants_Unique_Generic_101",
+      "classes": [],
+      "keys": [
+        "tassets-of-the-dawning-sky"
+      ]
+    },
+    {
+      "hash": "0x0016BA9E",
+      "name": "Tuskhelm of Joritz the Mighty",
+      "internal": "Helm_Unique_Barb_100",
+      "classes": [],
+      "keys": [
+        "tuskhelm-of-joritz-the-mighty"
+      ]
+    },
+    {
+      "hash": "0x0017BAFB",
+      "name": "Godslayer Crown",
+      "internal": "Helm_Unique_Generic_003",
+      "classes": [],
+      "keys": [
+        "godslayer-crown"
+      ]
+    },
+    {
+      "hash": "0x0017CB1D",
+      "name": "Paingorger's Gauntlets",
+      "internal": "Gloves_Unique_Generic_004",
+      "classes": [],
+      "keys": [
+        "paingorgers-gauntlets"
+      ]
+    },
+    {
+      "hash": "0x0017CB7B",
+      "name": "Tibault's Will",
+      "internal": "Pants_Unique_Generic_102",
+      "classes": [],
+      "keys": [
+        "tibaults-will"
+      ]
+    },
+    {
+      "hash": "0x0017CD71",
+      "name": "X'Fal's Corroded Signet",
+      "internal": "Ring_Unique_Generic_102",
+      "classes": [],
+      "keys": [
+        "xfals-corroded-signet"
+      ]
+    },
+    {
+      "hash": "0x0017D127",
+      "name": "Soulbrand",
+      "internal": "Chest_Unique_Generic_101",
+      "classes": [],
+      "keys": [
+        "soulbrand"
+      ]
+    },
+    {
+      "hash": "0x0017D2DC",
+      "name": "Banished Lord's Talisman",
+      "internal": "Amulet_Unique_Generic_101",
+      "classes": [],
+      "keys": [
+        "banished-lords-talisman"
+      ]
+    },
+    {
+      "hash": "0x001892C9",
+      "name": "Dolmen Stone",
+      "internal": "Amulet_Unique_Druid_100",
+      "classes": [],
+      "keys": [
+        "dolmen-stone"
+      ]
+    },
+    {
+      "hash": "0x00189A04",
+      "name": "Scoundrel's Leathers",
+      "internal": "Chest_Unique_Rogue_100",
+      "classes": [],
+      "keys": [
+        "scoundrels-leathers"
+      ]
+    },
+    {
+      "hash": "0x001A0351",
+      "name": "Beastfall Boots",
+      "internal": "Boots_Unique_Rogue_100",
+      "classes": [],
+      "keys": [
+        "beastfall-boots"
+      ]
+    },
+    {
+      "hash": "0x001A0A6A",
+      "name": "Ring of Red Furor",
+      "internal": "Ring_Unique_Barb_100",
+      "classes": [],
+      "keys": [
+        "ring-of-red-furor"
+      ]
+    },
+    {
+      "hash": "0x001A0A9B",
+      "name": "Airidah's Inexorable Will",
+      "internal": "Ring_Unique_Druid_100",
+      "classes": [],
+      "keys": [
+        "airidahs-inexorable-will"
+      ]
+    },
+    {
+      "hash": "0x001A0AA2",
+      "name": "Writhing Band of Trickery",
+      "internal": "Ring_Unique_Rogue_100",
+      "classes": [],
+      "keys": [
+        "writhing-band-of-trickery"
+      ]
+    },
+    {
+      "hash": "0x001A0AA4",
+      "name": "Ring of the Sacrilegious Soul",
+      "internal": "Ring_Unique_Necro_101",
+      "classes": [],
+      "keys": [
+        "ring-of-the-sacrilegious-soul"
+      ]
+    },
+    {
+      "hash": "0x001A223E",
+      "name": "Ring of the Ravenous",
+      "internal": "Ring_Unique_Barb_101",
+      "classes": [],
+      "keys": [
+        "ring-of-the-ravenous"
+      ]
+    },
+    {
+      "hash": "0x001A2442",
+      "name": "Starfall Coronet",
+      "internal": "Helm_Unique_Sorc_100",
+      "classes": [],
+      "keys": [
+        "starfall-coronet"
+      ]
+    },
+    {
+      "hash": "0x001A3B76",
+      "name": "Blood-Mad Idol",
+      "internal": "Amulet_Unique_Generic_102",
+      "classes": [],
+      "keys": [
+        "blood-mad-idol"
+      ]
+    },
+    {
+      "hash": "0x001AD4FB",
+      "name": "Pitfighter's Gull",
+      "internal": "x1_Ring_Unique_Rogue_128",
+      "classes": [],
+      "keys": [
+        "pitfighters-gull"
+      ]
+    },
+    {
+      "hash": "0x001B4BE5",
+      "name": "Ugly Bastard Helm",
+      "internal": "Helm_Unique_Barb_101_x1",
+      "classes": [],
+      "keys": [
+        "ugly-bastard-helm"
+      ]
+    },
+    {
+      "hash": "0x001BCA0D",
+      "name": "Snake Glaive",
+      "internal": "X1_2HGlaive_Unique_Spiritborn_03",
+      "classes": [],
+      "keys": [
+        "snake-glaive"
+      ]
+    },
+    {
+      "hash": "0x001C5CB4",
+      "name": "Yen's Blessing",
+      "internal": "Boots_Unique_Generic_003",
+      "classes": [],
+      "keys": [
+        "yens-blessing"
+      ]
+    },
+    {
+      "hash": "0x001C6C65",
+      "name": "Fractured Winterglass",
+      "internal": "Amulet_Unique_Sorc_101",
+      "classes": [],
+      "keys": [
+        "fractured-winterglass"
+      ]
+    },
+    {
+      "hash": "0x001CB4C4",
+      "name": "Earthbreaker",
+      "internal": "Ring_Unique_Druid_101",
+      "classes": [],
+      "keys": [
+        "earthbreaker"
+      ]
+    },
+    {
+      "hash": "0x001CED1F",
+      "name": "Flameweaver",
+      "internal": "Gloves_Unique_Sorc_101",
+      "classes": [],
+      "keys": [
+        "flameweaver"
+      ]
+    },
+    {
+      "hash": "0x001D03AC",
+      "name": "Tyrael's Might",
+      "internal": "Chest_Unique_Generic_127",
+      "classes": [],
+      "keys": [
+        "tyraels-might"
+      ]
+    },
+    {
+      "hash": "0x001D04AC",
+      "name": "Arreat's Bearing",
+      "internal": "Pants_Unique_Barb_100",
+      "classes": [],
+      "keys": [
+        "arreats-bearing"
+      ]
+    },
+    {
+      "hash": "0x001D04B2",
+      "name": "Twin Strikes",
+      "internal": "Gloves_Unique_Barb_100",
+      "classes": [],
+      "keys": [
+        "twin-strikes"
+      ]
+    },
+    {
+      "hash": "0x001D063B",
+      "name": "Wildheart Hunger",
+      "internal": "Boots_Unique_Druid_100",
+      "classes": [],
+      "keys": [
+        "wildheart-hunger"
+      ]
+    },
+    {
+      "hash": "0x001D064B",
+      "name": "Cruor's Embrace",
+      "internal": "Gloves_Unique_Necro_101",
+      "classes": [],
+      "keys": [
+        "cruors-embrace"
+      ]
+    },
+    {
+      "hash": "0x001D06E9",
+      "name": "Scoundrel's Kiss",
+      "internal": "Ring_Unique_Rogue_101",
+      "classes": [],
+      "keys": [
+        "scoundrels-kiss"
+      ]
+    },
+    {
+      "hash": "0x001D0785",
+      "name": "Ebonpiercer",
+      "internal": "Amulet_Unique_Necro_101",
+      "classes": [],
+      "keys": [
+        "ebonpiercer"
+      ]
+    },
+    {
+      "hash": "0x001D0A18",
+      "name": "Saboteur's Signet",
+      "internal": "Ring_Unique_Rogue_102",
+      "classes": [],
+      "keys": [
+        "saboteurs-signet"
+      ]
+    },
+    {
+      "hash": "0x001D8448",
+      "name": "Unbroken Chain",
+      "internal": "Amulet_Unique_Barb_101",
+      "classes": [],
+      "keys": [
+        "unbroken-chain"
+      ]
+    },
+    {
+      "hash": "0x001D8465",
+      "name": "Shroud of Khanduras",
+      "internal": "Chest_Unique_Rogue_101",
+      "classes": [],
+      "keys": [
+        "shroud-of-khanduras"
+      ]
+    },
+    {
+      "hash": "0x001D8469",
+      "name": "Path of Trag'Oul",
+      "internal": "Boots_Unique_Necro_101",
+      "classes": [],
+      "keys": [
+        "path-of-tragoul"
+      ]
+    },
+    {
+      "hash": "0x001D846D",
+      "name": "Axial Conduit",
+      "internal": "Pants_Unique_Sorc_101",
+      "classes": [],
+      "keys": [
+        "axial-conduit"
+      ]
+    },
+    {
+      "hash": "0x001DAB42",
+      "name": "Endurant Faith",
+      "internal": "S05_BSK_Gloves_Unique_Generic_001",
+      "classes": [],
+      "keys": [
+        "endurant-faith"
+      ]
+    },
+    {
+      "hash": "0x001DAB9B",
+      "name": "Crown of Lucion",
+      "internal": "S05_BSK_Helm_Unique_Generic_001",
+      "classes": [],
+      "keys": [
+        "crown-of-lucion"
+      ]
+    },
+    {
+      "hash": "0x001DABAB",
+      "name": "Shard of Verathiel",
+      "internal": "S05_BSK_1HSword_Unique_Generic_001",
+      "classes": [],
+      "keys": [
+        "shard-of-verathiel"
+      ]
+    },
+    {
+      "hash": "0x001DABB8",
+      "name": "Rakanoth's Wake",
+      "internal": "S05_BSK_Boots_Unique_Generic_001",
+      "classes": [],
+      "keys": [
+        "rakanoths-wake"
+      ]
+    },
+    {
+      "hash": "0x001DABBC",
+      "name": "Locran's Talisman",
+      "internal": "S05_BSK_Amulet_Unique_Generic_001",
+      "classes": [],
+      "keys": [
+        "locrans-talisman"
+      ]
+    },
+    {
+      "hash": "0x001DABC1",
+      "name": "Vox Omnium",
+      "internal": "S05_BSK_2HStaff_Unique_Sorcerer_001",
+      "classes": [],
+      "keys": [
+        "vox-omnium"
+      ]
+    },
+    {
+      "hash": "0x001DABD2",
+      "name": "The Third Blade",
+      "internal": "S05_BSK_1HSword_Unique_Barbarian_001",
+      "classes": [],
+      "keys": [
+        "the-third-blade"
+      ]
+    },
+    {
+      "hash": "0x001DABE0",
+      "name": "The Basilisk",
+      "internal": "S05_BSK_2HStaff_Unique_Druid_001",
+      "classes": [],
+      "keys": [
+        "the-basilisk"
+      ]
+    },
+    {
+      "hash": "0x001DABEB",
+      "name": "The Umbracrux",
+      "internal": "S05_BSK_1HDagger_Unique_Rogue_001",
+      "classes": [],
+      "keys": [
+        "the-umbracrux"
+      ]
+    },
+    {
+      "hash": "0x001DABFE",
+      "name": "The Mortacrux",
+      "internal": "S05_BSK_1HDagger_Unique_Necro_001",
+      "classes": [],
+      "keys": [
+        "the-mortacrux"
+      ]
+    },
+    {
+      "hash": "0x001E0147",
+      "name": "Wound Drinker",
+      "internal": "Ring_Unique_Spiritborn_001_x1",
+      "classes": [],
+      "keys": [
+        "wound-drinker"
+      ]
+    },
+    {
+      "hash": "0x001E014B",
+      "name": "Ring of Writhing Moon",
+      "internal": "Ring_Unique_Spiritborn_002_x1",
+      "classes": [],
+      "keys": [
+        "ring-of-writhing-moon"
+      ]
+    },
+    {
+      "hash": "0x001E014E",
+      "name": "Band of First Breath",
+      "internal": "Ring_Unique_Spiritborn_003_x1",
+      "classes": [],
+      "keys": [
+        "band-of-first-breath"
+      ]
+    },
+    {
+      "hash": "0x001E0179",
+      "name": "Peacemonger's Signet",
+      "internal": "Ring_Unique_Spiritborn_004_x1",
+      "classes": [],
+      "keys": [
+        "peacemongers-signet"
+      ]
+    },
+    {
+      "hash": "0x001E017B",
+      "name": "Ring of the Midday Hunt",
+      "internal": "Ring_Unique_Spiritborn_005_x1",
+      "classes": [],
+      "keys": [
+        "ring-of-the-midday-hunt"
+      ]
+    },
+    {
+      "hash": "0x001E017D",
+      "name": "Ring of the Midnight Sun",
+      "internal": "Ring_Unique_Spiritborn_006_x1",
+      "classes": [],
+      "keys": [
+        "ring-of-the-midnight-sun"
+      ]
+    },
+    {
+      "hash": "0x001E08BE",
+      "name": "Scorn of the Earth",
+      "internal": "Boots_Unique_Spiritborn_008_x1",
+      "classes": [],
+      "keys": [
+        "scorn-of-the-earth"
+      ]
+    },
+    {
+      "hash": "0x001E092E",
+      "name": "Craze of the Dead God",
+      "internal": "Gloves_Unique_Spiritborn_007_x1",
+      "classes": [],
+      "keys": [
+        "craze-of-the-dead-god"
+      ]
+    },
+    {
+      "hash": "0x001E0E7B",
+      "name": "Jacinth Shell",
+      "internal": "Chest_Unique_Spiritborn_013_x1",
+      "classes": [],
+      "keys": [
+        "jacinth-shell"
+      ]
+    },
+    {
+      "hash": "0x001E3F21",
+      "name": "Nesekem, the Herald",
+      "internal": "Glaive_Unique_Spiritborn_014_x1",
+      "classes": [],
+      "keys": [
+        "nesekem-the-herald"
+      ]
+    },
+    {
+      "hash": "0x001E52F0",
+      "name": "Sepazontec",
+      "internal": "Quarterstaff_Unique_Spiritborn_012_x1",
+      "classes": [],
+      "keys": [
+        "sepazontec"
+      ]
+    },
+    {
+      "hash": "0x001E53DA",
+      "name": "Harmony of Ebewaka",
+      "internal": "Helm_Unique_Spiritborn_009_x1",
+      "classes": [],
+      "keys": [
+        "harmony-of-ebewaka"
+      ]
+    },
+    {
+      "hash": "0x001E5EEE",
+      "name": "Loyalty's Mantle",
+      "internal": "Helm_Unique_Spiritborn_011_x1",
+      "classes": [],
+      "keys": [
+        "loyaltys-mantle"
+      ]
+    },
+    {
+      "hash": "0x001EB551",
+      "name": "Wushe Nak Pa",
+      "internal": "Glaive_Unique_Spiritborn_010_x1",
+      "classes": [],
+      "keys": [
+        "wushe-nak-pa"
+      ]
+    },
+    {
+      "hash": "0x001EC38B",
+      "name": "Mjölnic Ryng",
+      "internal": "Ring_Unique_Druid_102",
+      "classes": [],
+      "keys": [
+        "mj-lnic-ryng"
+      ]
+    },
+    {
+      "hash": "0x001ED343",
+      "name": "Protection of the Prime",
+      "internal": "Pants_Unique_Spiritborn_015_x1",
+      "classes": [],
+      "keys": [
+        "protection-of-the-prime"
+      ]
+    },
+    {
+      "hash": "0x001EE2B3",
+      "name": "Sunstained War-Crozier",
+      "internal": "Quarterstaff_Unique_Spiritborn_001",
+      "classes": [],
+      "keys": [
+        "sunstained-war-crozier"
+      ]
+    },
+    {
+      "hash": "0x001F2EA3",
+      "name": "Stone of Vehemen",
+      "internal": "Totem_Unique_Druid_101_x1",
+      "classes": [],
+      "keys": [
+        "stone-of-vehemen"
+      ]
+    },
+    {
+      "hash": "0x001F342E",
+      "name": "Bucrani's Tread",
+      "internal": "Boots_Unique_Sorc_96",
+      "classes": [],
+      "keys": [
+        "bucranis-tread"
+      ]
+    },
+    {
+      "hash": "0x001F3430",
+      "name": "Bucrani's Will",
+      "internal": "Chest_Unique_Sorc_96",
+      "classes": [],
+      "keys": [
+        "bucranis-will"
+      ]
+    },
+    {
+      "hash": "0x001F3432",
+      "name": "Bucrani's Grip",
+      "internal": "Gloves_Unique_Sorc_96",
+      "classes": [],
+      "keys": [
+        "bucranis-grip"
+      ]
+    },
+    {
+      "hash": "0x001F3436",
+      "name": "Bucrani's Resolve",
+      "internal": "Pants_Unique_Sorc_96",
+      "classes": [],
+      "keys": [
+        "bucranis-resolve"
+      ]
+    },
+    {
+      "hash": "0x001F4737",
+      "name": "Sidhe Bindings",
+      "internal": "Gloves_Unique_Sorc_143_x1",
+      "classes": [],
+      "keys": [
+        "sidhe-bindings"
+      ]
+    },
+    {
+      "hash": "0x001F5442",
+      "name": "The Unmaker",
+      "internal": "Helm_Unique_Necro_101_x1",
+      "classes": [],
+      "keys": [
+        "the-unmaker"
+      ]
+    },
+    {
+      "hash": "0x001F6E17",
+      "name": "Heir of Perdition",
+      "internal": "Helm_Unique_Generic_004",
+      "classes": [],
+      "keys": [
+        "heir-of-perdition"
+      ]
+    },
+    {
+      "hash": "0x001F6E1B",
+      "name": "Shroud of False Death",
+      "internal": "Chest_Unique_Generic_103",
+      "classes": [],
+      "keys": [
+        "shroud-of-false-death"
+      ]
+    },
+    {
+      "hash": "0x001F6E1D",
+      "name": "Hooves of the Mountain God",
+      "internal": "Boots_Unique_Barb_101",
+      "classes": [],
+      "keys": [
+        "hooves-of-the-mountain-god"
+      ]
+    },
+    {
+      "hash": "0x001F6E20",
+      "name": "Wilted Potential",
+      "internal": "Gloves_Unique_Rogue_101",
+      "classes": [],
+      "keys": [
+        "wilted-potential"
+      ]
+    },
+    {
+      "hash": "0x001F6E25",
+      "name": "Shattered Vow",
+      "internal": "2HPolearm_Unique_Generic_001",
+      "classes": [],
+      "keys": [
+        "shattered-vow"
+      ]
+    },
+    {
+      "hash": "0x001FC162",
+      "name": "Bane of Ahjad-Den",
+      "internal": "Gloves_Unique_Barb_101",
+      "classes": [],
+      "keys": [
+        "bane-of-ahjad-den"
+      ]
+    },
+    {
+      "hash": "0x001FC169",
+      "name": "Gathlen's Birthright",
+      "internal": "Helm_Unique_Druid_102",
+      "classes": [],
+      "keys": [
+        "gathlens-birthright"
+      ]
+    },
+    {
+      "hash": "0x001FC16B",
+      "name": "Mantle of Mountain's Fury",
+      "internal": "Chest_Unique_Barb_101",
+      "classes": [],
+      "keys": [
+        "mantle-of-mountains-fury"
+      ]
+    },
+    {
+      "hash": "0x001FC16F",
+      "name": "Malefic Crescent",
+      "internal": "Amulet_Unique_Druid_101",
+      "classes": [],
+      "keys": [
+        "malefic-crescent"
+      ]
+    },
+    {
+      "hash": "0x001FC175",
+      "name": "Strike of Stormhorn",
+      "internal": "1HFocus_Unique_Sorc_100",
+      "classes": [],
+      "keys": [
+        "strike-of-stormhorn"
+      ]
+    },
+    {
+      "hash": "0x001FC177",
+      "name": "Hail of Verglas",
+      "internal": "Helm_Unique_Sorc_101",
+      "classes": [],
+      "keys": [
+        "hail-of-verglas"
+      ]
+    },
+    {
+      "hash": "0x001FC181",
+      "name": "Kessime's Legacy",
+      "internal": "Pants_Unique_Necro_101",
+      "classes": [],
+      "keys": [
+        "kessimes-legacy"
+      ]
+    },
+    {
+      "hash": "0x001FC187",
+      "name": "Sanguivor, Blade of Zir",
+      "internal": "2HSword_Unique_Necro_100",
+      "classes": [],
+      "keys": [
+        "sanguivor-blade-of-zir"
+      ]
+    },
+    {
+      "hash": "0x001FC18A",
+      "name": "Assassin's Stride",
+      "internal": "Boots_Unique_Rogue_101",
+      "classes": [],
+      "keys": [
+        "assassins-stride"
+      ]
+    },
+    {
+      "hash": "0x001FC1A9",
+      "name": "Sunbird's Gorget",
+      "internal": "Amulet_Unique_Spiritborn_100",
+      "classes": [],
+      "keys": [
+        "sunbirds-gorget"
+      ]
+    },
+    {
+      "hash": "0x001FF06E",
+      "name": "Rod of Kepeleke",
+      "internal": "Quarterstaff_Unique_Spiritborn_016_x1",
+      "classes": [],
+      "keys": [
+        "rod-of-kepeleke"
+      ]
+    },
+    {
+      "hash": "0x00205BCA",
+      "name": "Harriers of War",
+      "internal": "Boots_Unique_Barbarian_98",
+      "classes": [],
+      "keys": [
+        "harriers-of-war"
+      ]
+    },
+    {
+      "hash": "0x00205BCC",
+      "name": "Heart of War",
+      "internal": "Chest_Unique_Barbarian_98",
+      "classes": [],
+      "keys": [
+        "heart-of-war"
+      ]
+    },
+    {
+      "hash": "0x00205BCE",
+      "name": "Fists of War",
+      "internal": "Gloves_Unique_Barbarian_98",
+      "classes": [],
+      "keys": [
+        "fists-of-war"
+      ]
+    },
+    {
+      "hash": "0x00205BD0",
+      "name": "Guise of War",
+      "internal": "Helm_Unique_Barbarian_98",
+      "classes": [],
+      "keys": [
+        "guise-of-war"
+      ]
+    },
+    {
+      "hash": "0x00205BD2",
+      "name": "Strides of War",
+      "internal": "Pants_Unique_Barbarian_98",
+      "classes": [],
+      "keys": [
+        "strides-of-war"
+      ]
+    },
+    {
+      "hash": "0x00206636",
+      "name": "Indira's Memory",
+      "internal": "Pants_Unique_Necro_102",
+      "classes": [],
+      "keys": [
+        "indiras-memory"
+      ]
+    },
+    {
+      "hash": "0x0020665C",
+      "name": "[ph_Hope's Respite]",
+      "internal": "Boots_Unique_Sorc_98",
+      "classes": [],
+      "keys": [
+        "ph-hopes-respite"
+      ]
+    },
+    {
+      "hash": "0x00206660",
+      "name": "[ph_Hope's Respite]",
+      "internal": "Chest_Unique_Sorc_98",
+      "classes": [],
+      "keys": [
+        "ph-hopes-respite"
+      ]
+    },
+    {
+      "hash": "0x00206662",
+      "name": "[ph_Hope's Respite]",
+      "internal": "Gloves_Unique_Sorc_98",
+      "classes": [],
+      "keys": [
+        "ph-hopes-respite"
+      ]
+    },
+    {
+      "hash": "0x00206666",
+      "name": "[ph_Hope's Respite]",
+      "internal": "Helm_Unique_Sorc_98",
+      "classes": [],
+      "keys": [
+        "ph-hopes-respite"
+      ]
+    },
+    {
+      "hash": "0x00206668",
+      "name": "[ph_Hope's Respite]",
+      "internal": "Pants_Unique_Sorc_98",
+      "classes": [],
+      "keys": [
+        "ph-hopes-respite"
+      ]
+    },
+    {
+      "hash": "0x002092DC",
+      "name": "Okun's Catalyst",
+      "internal": "1HFocus_Unique_Sorc_101",
+      "classes": [],
+      "keys": [
+        "okuns-catalyst"
+      ]
+    },
+    {
+      "hash": "0x00215756",
+      "name": "Gladiator's Triumph",
+      "internal": "Gloves_Unique_Rogue_98",
+      "classes": [],
+      "keys": [
+        "gladiators-triumph"
+      ]
+    },
+    {
+      "hash": "0x002236EE",
+      "name": "Rotting Lightbringer",
+      "internal": "2HMace_Unique_Druid_100",
+      "classes": [],
+      "keys": [
+        "rotting-lightbringer"
+      ]
+    },
+    {
+      "hash": "0x002236FD",
+      "name": "The Hand of Naz",
+      "internal": "Gloves_Unique_Necro_102",
+      "classes": [],
+      "keys": [
+        "the-hand-of-naz"
+      ]
+    },
+    {
+      "hash": "0x00223700",
+      "name": "Ophidian Iris",
+      "internal": "Amulet_Unique_Sorc_102",
+      "classes": [],
+      "keys": [
+        "ophidian-iris"
+      ]
+    },
+    {
+      "hash": "0x00223703",
+      "name": "Balazan's Maxtlatl",
+      "internal": "Pants_Unique_Spiritborn_100",
+      "classes": [],
+      "keys": [
+        "balazans-maxtlatl"
+      ]
+    },
+    {
+      "hash": "0x00224737",
+      "name": "Bands of Ichorous Rose",
+      "internal": "Gloves_Unique_Rogue_102",
+      "classes": [],
+      "keys": [
+        "bands-of-ichorous-rose"
+      ]
+    },
+    {
+      "hash": "0x002311B7",
+      "name": "Lightburst Hammer",
+      "internal": "X2_1HMace_Unique_Paladin_uniq14",
+      "classes": [],
+      "keys": [
+        "lightburst-hammer"
+      ]
+    },
+    {
+      "hash": "0x00234BE6",
+      "name": "Tempest Roar",
+      "internal": "S10_Helm_Unique_Druid_100_Chest",
+      "classes": [],
+      "keys": [
+        "tempest-roar"
+      ]
+    },
+    {
+      "hash": "0x00235CE8",
+      "name": "Vasily's Prayer",
+      "internal": "S10_Helm_Unique_Druid_101_Chest",
+      "classes": [],
+      "keys": [
+        "vasilys-prayer"
+      ]
+    },
+    {
+      "hash": "0x002410AF",
+      "name": "Gospel of the Devotee",
+      "internal": "1HFocus_Unique_Necro_100",
+      "classes": [],
+      "keys": [
+        "gospel-of-the-devotee"
+      ]
+    },
+    {
+      "hash": "0x002410B4",
+      "name": "Sabre of Tsasgal",
+      "internal": "1HSword_Unique_Barb_103",
+      "classes": [],
+      "keys": [
+        "sabre-of-tsasgal"
+      ]
+    },
+    {
+      "hash": "0x002410D6",
+      "name": "Hesha e Kesungi",
+      "internal": "Gloves_Unique_Spiritborn_100",
+      "classes": [],
+      "keys": [
+        "hesha-e-kesungi"
+      ]
+    },
+    {
+      "hash": "0x002410E1",
+      "name": "Kilt of Blackwing",
+      "internal": "Pants_Unique_Druid_002",
+      "classes": [],
+      "keys": [
+        "kilt-of-blackwing"
+      ]
+    },
+    {
+      "hash": "0x002410ED",
+      "name": "Galvanic Azurite",
+      "internal": "Ring_Unique_Sorc_102",
+      "classes": [],
+      "keys": [
+        "galvanic-azurite"
+      ]
+    },
+    {
+      "hash": "0x00244EE9",
+      "name": "Airidah's Inexorable Will",
+      "internal": "S10_Ring_Unique_Druid_100_Chest",
+      "classes": [],
+      "keys": [
+        "airidahs-inexorable-will"
+      ]
+    },
+    {
+      "hash": "0x00244F9D",
+      "name": "Tempest Roar",
+      "internal": "S10_Helm_Unique_Druid_100_Gloves",
+      "classes": [],
+      "keys": [
+        "tempest-roar"
+      ]
+    },
+    {
+      "hash": "0x00244FD1",
+      "name": "Tempest Roar",
+      "internal": "S10_Helm_Unique_Druid_100_Boots",
+      "classes": [],
+      "keys": [
+        "tempest-roar"
+      ]
+    },
+    {
+      "hash": "0x00244FD3",
+      "name": "Tempest Roar",
+      "internal": "S10_Helm_Unique_Druid_100_Legs",
+      "classes": [],
+      "keys": [
+        "tempest-roar"
+      ]
+    },
+    {
+      "hash": "0x00245342",
+      "name": "Vasily's Prayer",
+      "internal": "S10_Helm_Unique_Druid_101_Boots",
+      "classes": [],
+      "keys": [
+        "vasilys-prayer"
+      ]
+    },
+    {
+      "hash": "0x00245344",
+      "name": "Vasily's Prayer",
+      "internal": "S10_Helm_Unique_Druid_101_Gloves",
+      "classes": [],
+      "keys": [
+        "vasilys-prayer"
+      ]
+    },
+    {
+      "hash": "0x00245348",
+      "name": "Vasily's Prayer",
+      "internal": "S10_Helm_Unique_Druid_101_Legs",
+      "classes": [],
+      "keys": [
+        "vasilys-prayer"
+      ]
+    },
+    {
+      "hash": "0x0024541C",
+      "name": "Airidah's Inexorable Will",
+      "internal": "S10_Ring_Unique_Druid_100_Boots",
+      "classes": [],
+      "keys": [
+        "airidahs-inexorable-will"
+      ]
+    },
+    {
+      "hash": "0x00245457",
+      "name": "Airidah's Inexorable Will",
+      "internal": "S10_Ring_Unique_Druid_100_Gloves",
+      "classes": [],
+      "keys": [
+        "airidahs-inexorable-will"
+      ]
+    },
+    {
+      "hash": "0x002459B4",
+      "name": "Earthbreaker",
+      "internal": "S10_Ring_Unique_Druid_101_Chest",
+      "classes": [],
+      "keys": [
+        "earthbreaker"
+      ]
+    },
+    {
+      "hash": "0x002459C7",
+      "name": "Earthbreaker",
+      "internal": "S10_Ring_Unique_Druid_101_Helm",
+      "classes": [],
+      "keys": [
+        "earthbreaker"
+      ]
+    },
+    {
+      "hash": "0x002470FD",
+      "name": "Band of First Breath",
+      "internal": "S10_Ring_Unique_Spiritborn_003_x1_Helm",
+      "classes": [],
+      "keys": [
+        "band-of-first-breath"
+      ]
+    },
+    {
+      "hash": "0x0024710F",
+      "name": "Band of First Breath",
+      "internal": "S10_Ring_Unique_Spiritborn_003_x1_Boots",
+      "classes": [],
+      "keys": [
+        "band-of-first-breath"
+      ]
+    },
+    {
+      "hash": "0x0024711F",
+      "name": "Band of First Breath",
+      "internal": "S10_Ring_Unique_Spiritborn_003_x1_Chest",
+      "classes": [],
+      "keys": [
+        "band-of-first-breath"
+      ]
+    },
+    {
+      "hash": "0x00247123",
+      "name": "Band of First Breath",
+      "internal": "S10_Ring_Unique_Spiritborn_003_x1_Gloves",
+      "classes": [],
+      "keys": [
+        "band-of-first-breath"
+      ]
+    },
+    {
+      "hash": "0x00247125",
+      "name": "Band of First Breath",
+      "internal": "S10_Ring_Unique_Spiritborn_003_x1_Legs",
+      "classes": [],
+      "keys": [
+        "band-of-first-breath"
+      ]
+    },
+    {
+      "hash": "0x00247136",
+      "name": "Harmony of Ebewaka",
+      "internal": "S10_Helm_Unique_Spiritborn_009_x1_Gloves",
+      "classes": [],
+      "keys": [
+        "harmony-of-ebewaka"
+      ]
+    },
+    {
+      "hash": "0x0024716F",
+      "name": "Harmony of Ebewaka",
+      "internal": "S10_Helm_Unique_Spiritborn_009_x1_Boots",
+      "classes": [],
+      "keys": [
+        "harmony-of-ebewaka"
+      ]
+    },
+    {
+      "hash": "0x00247177",
+      "name": "Harmony of Ebewaka",
+      "internal": "S10_Helm_Unique_Spiritborn_009_x1_Chest",
+      "classes": [],
+      "keys": [
+        "harmony-of-ebewaka"
+      ]
+    },
+    {
+      "hash": "0x0024717A",
+      "name": "Harmony of Ebewaka",
+      "internal": "S10_Helm_Unique_Spiritborn_009_x1_Legs",
+      "classes": [],
+      "keys": [
+        "harmony-of-ebewaka"
+      ]
+    },
+    {
+      "hash": "0x00247186",
+      "name": "Jacinth Shell",
+      "internal": "S10_Chest_Unique_Spiritborn_013_x1_Helm",
+      "classes": [],
+      "keys": [
+        "jacinth-shell"
+      ]
+    },
+    {
+      "hash": "0x002471C1",
+      "name": "Jacinth Shell",
+      "internal": "S10_Chest_Unique_Spiritborn_013_x1_Boots",
+      "classes": [],
+      "keys": [
+        "jacinth-shell"
+      ]
+    },
+    {
+      "hash": "0x002471C3",
+      "name": "Jacinth Shell",
+      "internal": "S10_Chest_Unique_Spiritborn_013_x1_Gloves",
+      "classes": [],
+      "keys": [
+        "jacinth-shell"
+      ]
+    },
+    {
+      "hash": "0x002471C5",
+      "name": "Jacinth Shell",
+      "internal": "S10_Chest_Unique_Spiritborn_013_x1_Legs",
+      "classes": [],
+      "keys": [
+        "jacinth-shell"
+      ]
+    },
+    {
+      "hash": "0x002471C8",
+      "name": "Loyalty's Mantle",
+      "internal": "S10_Helm_Unique_Spiritborn_011_x1_Chest",
+      "classes": [],
+      "keys": [
+        "loyaltys-mantle"
+      ]
+    },
+    {
+      "hash": "0x002471DC",
+      "name": "Loyalty's Mantle",
+      "internal": "S10_Helm_Unique_Spiritborn_011_x1_Boots",
+      "classes": [],
+      "keys": [
+        "loyaltys-mantle"
+      ]
+    },
+    {
+      "hash": "0x002471DF",
+      "name": "Loyalty's Mantle",
+      "internal": "S10_Helm_Unique_Spiritborn_011_x1_Gloves",
+      "classes": [],
+      "keys": [
+        "loyaltys-mantle"
+      ]
+    },
+    {
+      "hash": "0x002471E1",
+      "name": "Loyalty's Mantle",
+      "internal": "S10_Helm_Unique_Spiritborn_011_x1_Legs",
+      "classes": [],
+      "keys": [
+        "loyaltys-mantle"
+      ]
+    },
+    {
+      "hash": "0x00247483",
+      "name": "Peacemonger's Signet",
+      "internal": "S10_Ring_Unique_Spiritborn_004_x1_Helm",
+      "classes": [],
+      "keys": [
+        "peacemongers-signet"
+      ]
+    },
+    {
+      "hash": "0x0024748A",
+      "name": "Peacemonger's Signet",
+      "internal": "S10_Ring_Unique_Spiritborn_004_x1_Boots",
+      "classes": [],
+      "keys": [
+        "peacemongers-signet"
+      ]
+    },
+    {
+      "hash": "0x0024748D",
+      "name": "Peacemonger's Signet",
+      "internal": "S10_Ring_Unique_Spiritborn_004_x1_Chest",
+      "classes": [],
+      "keys": [
+        "peacemongers-signet"
+      ]
+    },
+    {
+      "hash": "0x0024748F",
+      "name": "Peacemonger's Signet",
+      "internal": "S10_Ring_Unique_Spiritborn_004_x1_Gloves",
+      "classes": [],
+      "keys": [
+        "peacemongers-signet"
+      ]
+    },
+    {
+      "hash": "0x00247491",
+      "name": "Peacemonger's Signet",
+      "internal": "S10_Ring_Unique_Spiritborn_004_x1_Legs",
+      "classes": [],
+      "keys": [
+        "peacemongers-signet"
+      ]
+    },
+    {
+      "hash": "0x00247498",
+      "name": "Ring of the Midday Hunt",
+      "internal": "S10_Ring_Unique_Spiritborn_005_x1_Boots",
+      "classes": [],
+      "keys": [
+        "ring-of-the-midday-hunt"
+      ]
+    },
+    {
+      "hash": "0x002474C2",
+      "name": "Ring of the Midday Hunt",
+      "internal": "S10_Ring_Unique_Spiritborn_005_x1_Chest",
+      "classes": [],
+      "keys": [
+        "ring-of-the-midday-hunt"
+      ]
+    },
+    {
+      "hash": "0x002474C4",
+      "name": "Ring of the Midday Hunt",
+      "internal": "S10_Ring_Unique_Spiritborn_005_x1_Gloves",
+      "classes": [],
+      "keys": [
+        "ring-of-the-midday-hunt"
+      ]
+    },
+    {
+      "hash": "0x002474C6",
+      "name": "Ring of the Midday Hunt",
+      "internal": "S10_Ring_Unique_Spiritborn_005_x1_Helm",
+      "classes": [],
+      "keys": [
+        "ring-of-the-midday-hunt"
+      ]
+    },
+    {
+      "hash": "0x002474C8",
+      "name": "Ring of the Midday Hunt",
+      "internal": "S10_Ring_Unique_Spiritborn_005_x1_Legs",
+      "classes": [],
+      "keys": [
+        "ring-of-the-midday-hunt"
+      ]
+    },
+    {
+      "hash": "0x002475A1",
+      "name": "Rod of Kepeleke",
+      "internal": "S10_Quarterstaff_Unique_Spiritborn_016_x1_Boots",
+      "classes": [],
+      "keys": [
+        "rod-of-kepeleke"
+      ]
+    },
+    {
+      "hash": "0x002475AB",
+      "name": "Rod of Kepeleke",
+      "internal": "S10_Quarterstaff_Unique_Spiritborn_016_x1_Chest",
+      "classes": [],
+      "keys": [
+        "rod-of-kepeleke"
+      ]
+    },
+    {
+      "hash": "0x002475AD",
+      "name": "Rod of Kepeleke",
+      "internal": "S10_Quarterstaff_Unique_Spiritborn_016_x1_Gloves",
+      "classes": [],
+      "keys": [
+        "rod-of-kepeleke"
+      ]
+    },
+    {
+      "hash": "0x002475AF",
+      "name": "Rod of Kepeleke",
+      "internal": "S10_Quarterstaff_Unique_Spiritborn_016_x1_Helm",
+      "classes": [],
+      "keys": [
+        "rod-of-kepeleke"
+      ]
+    },
+    {
+      "hash": "0x002475B1",
+      "name": "Rod of Kepeleke",
+      "internal": "S10_Quarterstaff_Unique_Spiritborn_016_x1_Legs",
+      "classes": [],
+      "keys": [
+        "rod-of-kepeleke"
+      ]
+    },
+    {
+      "hash": "0x002475B6",
+      "name": "Sepazontec",
+      "internal": "S10_Quarterstaff_Unique_Spiritborn_012_x1_Boots",
+      "classes": [],
+      "keys": [
+        "sepazontec"
+      ]
+    },
+    {
+      "hash": "0x002475C5",
+      "name": "Sepazontec",
+      "internal": "S10_Quarterstaff_Unique_Spiritborn_012_x1_Chest",
+      "classes": [],
+      "keys": [
+        "sepazontec"
+      ]
+    },
+    {
+      "hash": "0x002475C8",
+      "name": "Sepazontec",
+      "internal": "S10_Quarterstaff_Unique_Spiritborn_012_x1_Gloves",
+      "classes": [],
+      "keys": [
+        "sepazontec"
+      ]
+    },
+    {
+      "hash": "0x002475CA",
+      "name": "Sepazontec",
+      "internal": "S10_Quarterstaff_Unique_Spiritborn_012_x1_Helm",
+      "classes": [],
+      "keys": [
+        "sepazontec"
+      ]
+    },
+    {
+      "hash": "0x002475CC",
+      "name": "Sepazontec",
+      "internal": "S10_Quarterstaff_Unique_Spiritborn_012_x1_Legs",
+      "classes": [],
+      "keys": [
+        "sepazontec"
+      ]
+    },
+    {
+      "hash": "0x002475CF",
+      "name": "Sunstained War-Crozier",
+      "internal": "S10_Quarterstaff_Unique_Spiritborn_001_Boots",
+      "classes": [],
+      "keys": [
+        "sunstained-war-crozier"
+      ]
+    },
+    {
+      "hash": "0x002475D8",
+      "name": "Sunstained War-Crozier",
+      "internal": "S10_Quarterstaff_Unique_Spiritborn_001_Chest",
+      "classes": [],
+      "keys": [
+        "sunstained-war-crozier"
+      ]
+    },
+    {
+      "hash": "0x002475DA",
+      "name": "Sunstained War-Crozier",
+      "internal": "S10_Quarterstaff_Unique_Spiritborn_001_Gloves",
+      "classes": [],
+      "keys": [
+        "sunstained-war-crozier"
+      ]
+    },
+    {
+      "hash": "0x002475DC",
+      "name": "Sunstained War-Crozier",
+      "internal": "S10_Quarterstaff_Unique_Spiritborn_001_Helm",
+      "classes": [],
+      "keys": [
+        "sunstained-war-crozier"
+      ]
+    },
+    {
+      "hash": "0x002475DE",
+      "name": "Sunstained War-Crozier",
+      "internal": "S10_Quarterstaff_Unique_Spiritborn_001_Legs",
+      "classes": [],
+      "keys": [
+        "sunstained-war-crozier"
+      ]
+    },
+    {
+      "hash": "0x002475E0",
+      "name": "Wushe Nak Pa",
+      "internal": "S10_Glaive_Unique_Spiritborn_010_x1_Boots",
+      "classes": [],
+      "keys": [
+        "wushe-nak-pa"
+      ]
+    },
+    {
+      "hash": "0x002475F0",
+      "name": "Wushe Nak Pa",
+      "internal": "S10_Glaive_Unique_Spiritborn_010_x1_Chest",
+      "classes": [],
+      "keys": [
+        "wushe-nak-pa"
+      ]
+    },
+    {
+      "hash": "0x002475F2",
+      "name": "Wushe Nak Pa",
+      "internal": "S10_Glaive_Unique_Spiritborn_010_x1_Gloves",
+      "classes": [],
+      "keys": [
+        "wushe-nak-pa"
+      ]
+    },
+    {
+      "hash": "0x002475F4",
+      "name": "Wushe Nak Pa",
+      "internal": "S10_Glaive_Unique_Spiritborn_010_x1_Helm",
+      "classes": [],
+      "keys": [
+        "wushe-nak-pa"
+      ]
+    },
+    {
+      "hash": "0x002475F6",
+      "name": "Wushe Nak Pa",
+      "internal": "S10_Glaive_Unique_Spiritborn_010_x1_Legs",
+      "classes": [],
+      "keys": [
+        "wushe-nak-pa"
+      ]
+    },
+    {
+      "hash": "0x002475F9",
+      "name": "Balazan's Maxtlatl",
+      "internal": "S10_Pants_Unique_Spiritborn_100_Boots",
+      "classes": [],
+      "keys": [
+        "balazans-maxtlatl"
+      ]
+    },
+    {
+      "hash": "0x00247602",
+      "name": "Balazan's Maxtlatl",
+      "internal": "S10_Pants_Unique_Spiritborn_100_Chest",
+      "classes": [],
+      "keys": [
+        "balazans-maxtlatl"
+      ]
+    },
+    {
+      "hash": "0x00247604",
+      "name": "Balazan's Maxtlatl",
+      "internal": "S10_Pants_Unique_Spiritborn_100_Gloves",
+      "classes": [],
+      "keys": [
+        "balazans-maxtlatl"
+      ]
+    },
+    {
+      "hash": "0x00247606",
+      "name": "Balazan's Maxtlatl",
+      "internal": "S10_Pants_Unique_Spiritborn_100_Helm",
+      "classes": [],
+      "keys": [
+        "balazans-maxtlatl"
+      ]
+    },
+    {
+      "hash": "0x0024791D",
+      "name": "Blue Rose",
+      "internal": "S10_Ring_Unique_Sorc_100_Boots",
+      "classes": [],
+      "keys": [
+        "blue-rose"
+      ]
+    },
+    {
+      "hash": "0x0024797E",
+      "name": "Blue Rose",
+      "internal": "S10_Ring_Unique_Sorc_100_Chest",
+      "classes": [],
+      "keys": [
+        "blue-rose"
+      ]
+    },
+    {
+      "hash": "0x00247983",
+      "name": "Blue Rose",
+      "internal": "S10_Ring_Unique_Sorc_100_Gloves",
+      "classes": [],
+      "keys": [
+        "blue-rose"
+      ]
+    },
+    {
+      "hash": "0x00247988",
+      "name": "Blue Rose",
+      "internal": "S10_Ring_Unique_Sorc_100_Helm",
+      "classes": [],
+      "keys": [
+        "blue-rose"
+      ]
+    },
+    {
+      "hash": "0x0024798B",
+      "name": "Blue Rose",
+      "internal": "S10_Ring_Unique_Sorc_100_Legs",
+      "classes": [],
+      "keys": [
+        "blue-rose"
+      ]
+    },
+    {
+      "hash": "0x00247994",
+      "name": "Esadora's Overflowing Cameo",
+      "internal": "S10_Amulet_Unique_Sorc_100_Boots",
+      "classes": [],
+      "keys": [
+        "esadoras-overflowing-cameo"
+      ]
+    },
+    {
+      "hash": "0x00247E3B",
+      "name": "Airidah's Inexorable Will",
+      "internal": "S10_Ring_Unique_Druid_100_Helm",
+      "classes": [],
+      "keys": [
+        "airidahs-inexorable-will"
+      ]
+    },
+    {
+      "hash": "0x00247E51",
+      "name": "Airidah's Inexorable Will",
+      "internal": "S10_Ring_Unique_Druid_100_Legs",
+      "classes": [],
+      "keys": [
+        "airidahs-inexorable-will"
+      ]
+    },
+    {
+      "hash": "0x00247E65",
+      "name": "Earthbreaker",
+      "internal": "S10_Ring_Unique_Druid_101_Boots",
+      "classes": [],
+      "keys": [
+        "earthbreaker"
+      ]
+    },
+    {
+      "hash": "0x00247E6E",
+      "name": "Earthbreaker",
+      "internal": "S10_Ring_Unique_Druid_101_Gloves",
+      "classes": [],
+      "keys": [
+        "earthbreaker"
+      ]
+    },
+    {
+      "hash": "0x00247E78",
+      "name": "Earthbreaker",
+      "internal": "S10_Ring_Unique_Druid_101_Legs",
+      "classes": [],
+      "keys": [
+        "earthbreaker"
+      ]
+    },
+    {
+      "hash": "0x00247F66",
+      "name": "Esadora's Overflowing Cameo",
+      "internal": "S10_Amulet_Unique_Sorc_100_Chest",
+      "classes": [],
+      "keys": [
+        "esadoras-overflowing-cameo"
+      ]
+    },
+    {
+      "hash": "0x00247F68",
+      "name": "Esadora's Overflowing Cameo",
+      "internal": "S10_Amulet_Unique_Sorc_100_Gloves",
+      "classes": [],
+      "keys": [
+        "esadoras-overflowing-cameo"
+      ]
+    },
+    {
+      "hash": "0x00247F6A",
+      "name": "Esadora's Overflowing Cameo",
+      "internal": "S10_Amulet_Unique_Sorc_100_Helm",
+      "classes": [],
+      "keys": [
+        "esadoras-overflowing-cameo"
+      ]
+    },
+    {
+      "hash": "0x00247F6C",
+      "name": "Esadora's Overflowing Cameo",
+      "internal": "S10_Amulet_Unique_Sorc_100_Legs",
+      "classes": [],
+      "keys": [
+        "esadoras-overflowing-cameo"
+      ]
+    },
+    {
+      "hash": "0x002488C2",
+      "name": "Banished Lord's Talisman",
+      "internal": "S10_Amulet_Unique_Generic_101_Boots",
+      "classes": [],
+      "keys": [
+        "banished-lords-talisman"
+      ]
+    },
+    {
+      "hash": "0x00248936",
+      "name": "Banished Lord's Talisman",
+      "internal": "S10_Amulet_Unique_Generic_101_Chest",
+      "classes": [],
+      "keys": [
+        "banished-lords-talisman"
+      ]
+    },
+    {
+      "hash": "0x00248938",
+      "name": "Banished Lord's Talisman",
+      "internal": "S10_Amulet_Unique_Generic_101_Gloves",
+      "classes": [],
+      "keys": [
+        "banished-lords-talisman"
+      ]
+    },
+    {
+      "hash": "0x0024893B",
+      "name": "Banished Lord's Talisman",
+      "internal": "S10_Amulet_Unique_Generic_101_Helm",
+      "classes": [],
+      "keys": [
+        "banished-lords-talisman"
+      ]
+    },
+    {
+      "hash": "0x0024893F",
+      "name": "Banished Lord's Talisman",
+      "internal": "S10_Amulet_Unique_Generic_101_Legs",
+      "classes": [],
+      "keys": [
+        "banished-lords-talisman"
+      ]
+    },
+    {
+      "hash": "0x00248993",
+      "name": "Crown of Lucion",
+      "internal": "S10_S05_BSK_Helm_Unique_Generic_001_Boots",
+      "classes": [],
+      "keys": [
+        "crown-of-lucion"
+      ]
+    },
+    {
+      "hash": "0x002489AF",
+      "name": "Crown of Lucion",
+      "internal": "S10_S05_BSK_Helm_Unique_Generic_001_Chest",
+      "classes": [],
+      "keys": [
+        "crown-of-lucion"
+      ]
+    },
+    {
+      "hash": "0x002489B1",
+      "name": "Crown of Lucion",
+      "internal": "S10_S05_BSK_Helm_Unique_Generic_001_Gloves",
+      "classes": [],
+      "keys": [
+        "crown-of-lucion"
+      ]
+    },
+    {
+      "hash": "0x002489B5",
+      "name": "Crown of Lucion",
+      "internal": "S10_S05_BSK_Helm_Unique_Generic_001_Legs",
+      "classes": [],
+      "keys": [
+        "crown-of-lucion"
+      ]
+    },
+    {
+      "hash": "0x00248A32",
+      "name": "Endurant Faith",
+      "internal": "S10_S05_BSK_Gloves_Unique_Generic_001_Boots",
+      "classes": [],
+      "keys": [
+        "endurant-faith"
+      ]
+    },
+    {
+      "hash": "0x00248A4D",
+      "name": "Endurant Faith",
+      "internal": "S10_S05_BSK_Gloves_Unique_Generic_001_Chest",
+      "classes": [],
+      "keys": [
+        "endurant-faith"
+      ]
+    },
+    {
+      "hash": "0x00248A4F",
+      "name": "Endurant Faith",
+      "internal": "S10_S05_BSK_Gloves_Unique_Generic_001_Helm",
+      "classes": [],
+      "keys": [
+        "endurant-faith"
+      ]
+    },
+    {
+      "hash": "0x00248A52",
+      "name": "Endurant Faith",
+      "internal": "S10_S05_BSK_Gloves_Unique_Generic_001_Legs",
+      "classes": [],
+      "keys": [
+        "endurant-faith"
+      ]
+    },
+    {
+      "hash": "0x00248A67",
+      "name": "Fists of Fate",
+      "internal": "S10_Gloves_Unique_Generic_002_Boots",
+      "classes": [],
+      "keys": [
+        "fists-of-fate"
+      ]
+    },
+    {
+      "hash": "0x00248A75",
+      "name": "Fists of Fate",
+      "internal": "S10_Gloves_Unique_Generic_002_Chest",
+      "classes": [],
+      "keys": [
+        "fists-of-fate"
+      ]
+    },
+    {
+      "hash": "0x00248A77",
+      "name": "Fists of Fate",
+      "internal": "S10_Gloves_Unique_Generic_002_Helm",
+      "classes": [],
+      "keys": [
+        "fists-of-fate"
+      ]
+    },
+    {
+      "hash": "0x00248A79",
+      "name": "Fists of Fate",
+      "internal": "S10_Gloves_Unique_Generic_002_Legs",
+      "classes": [],
+      "keys": [
+        "fists-of-fate"
+      ]
+    },
+    {
+      "hash": "0x00248A95",
+      "name": "Flickerstep",
+      "internal": "S10_Boots_Unique_Generic_002_Chest",
+      "classes": [],
+      "keys": [
+        "flickerstep"
+      ]
+    },
+    {
+      "hash": "0x00248AB3",
+      "name": "Flickerstep",
+      "internal": "S10_Boots_Unique_Generic_002_Gloves",
+      "classes": [],
+      "keys": [
+        "flickerstep"
+      ]
+    },
+    {
+      "hash": "0x00248AB9",
+      "name": "Flickerstep",
+      "internal": "S10_Boots_Unique_Generic_002_Helm",
+      "classes": [],
+      "keys": [
+        "flickerstep"
+      ]
+    },
+    {
+      "hash": "0x00248ABD",
+      "name": "Flickerstep",
+      "internal": "S10_Boots_Unique_Generic_002_Legs",
+      "classes": [],
+      "keys": [
+        "flickerstep"
+      ]
+    },
+    {
+      "hash": "0x00248AE8",
+      "name": "Godslayer Crown",
+      "internal": "S10_Helm_Unique_Generic_003_Boots",
+      "classes": [],
+      "keys": [
+        "godslayer-crown"
+      ]
+    },
+    {
+      "hash": "0x00248B13",
+      "name": "Godslayer Crown",
+      "internal": "S10_Helm_Unique_Generic_003_Chest",
+      "classes": [],
+      "keys": [
+        "godslayer-crown"
+      ]
+    },
+    {
+      "hash": "0x00248B15",
+      "name": "Godslayer Crown",
+      "internal": "S10_Helm_Unique_Generic_003_Gloves",
+      "classes": [],
+      "keys": [
+        "godslayer-crown"
+      ]
+    },
+    {
+      "hash": "0x00248B43",
+      "name": "Godslayer Crown",
+      "internal": "S10_Helm_Unique_Generic_003_Legs",
+      "classes": [],
+      "keys": [
+        "godslayer-crown"
+      ]
+    },
+    {
+      "hash": "0x0024A47E",
+      "name": "Locran's Talisman",
+      "internal": "S10_S05_BSK_Amulet_Unique_Generic_001_Boots",
+      "classes": [],
+      "keys": [
+        "locrans-talisman"
+      ]
+    },
+    {
+      "hash": "0x0024A489",
+      "name": "Locran's Talisman",
+      "internal": "S10_S05_BSK_Amulet_Unique_Generic_001_Chest",
+      "classes": [],
+      "keys": [
+        "locrans-talisman"
+      ]
+    },
+    {
+      "hash": "0x0024A48B",
+      "name": "Locran's Talisman",
+      "internal": "S10_S05_BSK_Amulet_Unique_Generic_001_Gloves",
+      "classes": [],
+      "keys": [
+        "locrans-talisman"
+      ]
+    },
+    {
+      "hash": "0x0024A48D",
+      "name": "Locran's Talisman",
+      "internal": "S10_S05_BSK_Amulet_Unique_Generic_001_Helm",
+      "classes": [],
+      "keys": [
+        "locrans-talisman"
+      ]
+    },
+    {
+      "hash": "0x0024A48F",
+      "name": "Locran's Talisman",
+      "internal": "S10_S05_BSK_Amulet_Unique_Generic_001_Legs",
+      "classes": [],
+      "keys": [
+        "locrans-talisman"
+      ]
+    },
+    {
+      "hash": "0x0024A494",
+      "name": "Paingorger's Gauntlets",
+      "internal": "S10_Gloves_Unique_Generic_004_Boots",
+      "classes": [],
+      "keys": [
+        "paingorgers-gauntlets"
+      ]
+    },
+    {
+      "hash": "0x0024A4DA",
+      "name": "Paingorger's Gauntlets",
+      "internal": "S10_Gloves_Unique_Generic_004_Chest",
+      "classes": [],
+      "keys": [
+        "paingorgers-gauntlets"
+      ]
+    },
+    {
+      "hash": "0x0024A4DC",
+      "name": "Paingorger's Gauntlets",
+      "internal": "S10_Gloves_Unique_Generic_004_Helm",
+      "classes": [],
+      "keys": [
+        "paingorgers-gauntlets"
+      ]
+    },
+    {
+      "hash": "0x0024A4E0",
+      "name": "Paingorger's Gauntlets",
+      "internal": "S10_Gloves_Unique_Generic_004_Legs",
+      "classes": [],
+      "keys": [
+        "paingorgers-gauntlets"
+      ]
+    },
+    {
+      "hash": "0x0024A61D",
+      "name": "X'Fal's Corroded Signet",
+      "internal": "S10_Ring_Unique_Generic_102_Boots",
+      "classes": [],
+      "keys": [
+        "xfals-corroded-signet"
+      ]
+    },
+    {
+      "hash": "0x0024A671",
+      "name": "X'Fal's Corroded Signet",
+      "internal": "S10_Ring_Unique_Generic_102_Chest",
+      "classes": [],
+      "keys": [
+        "xfals-corroded-signet"
+      ]
+    },
+    {
+      "hash": "0x0024A67B",
+      "name": "X'Fal's Corroded Signet",
+      "internal": "S10_Ring_Unique_Generic_102_Gloves",
+      "classes": [],
+      "keys": [
+        "xfals-corroded-signet"
+      ]
+    },
+    {
+      "hash": "0x0024A67F",
+      "name": "X'Fal's Corroded Signet",
+      "internal": "S10_Ring_Unique_Generic_102_Helm",
+      "classes": [],
+      "keys": [
+        "xfals-corroded-signet"
+      ]
+    },
+    {
+      "hash": "0x0024A68E",
+      "name": "X'Fal's Corroded Signet",
+      "internal": "S10_Ring_Unique_Generic_102_Legs",
+      "classes": [],
+      "keys": [
+        "xfals-corroded-signet"
+      ]
+    },
+    {
+      "hash": "0x0024AD44",
+      "name": "Flamescar",
+      "internal": "S10_1HWand_Unique_Sorc_100_Boots",
+      "classes": [],
+      "keys": [
+        "flamescar"
+      ]
+    },
+    {
+      "hash": "0x0024AD61",
+      "name": "Flamescar",
+      "internal": "S10_1HWand_Unique_Sorc_100_Chest",
+      "classes": [],
+      "keys": [
+        "flamescar"
+      ]
+    },
+    {
+      "hash": "0x0024AD63",
+      "name": "Flamescar",
+      "internal": "S10_1HWand_Unique_Sorc_100_Gloves",
+      "classes": [],
+      "keys": [
+        "flamescar"
+      ]
+    },
+    {
+      "hash": "0x0024AD65",
+      "name": "Flamescar",
+      "internal": "S10_1HWand_Unique_Sorc_100_Helm",
+      "classes": [],
+      "keys": [
+        "flamescar"
+      ]
+    },
+    {
+      "hash": "0x0024AD67",
+      "name": "Flamescar",
+      "internal": "S10_1HWand_Unique_Sorc_100_Legs",
+      "classes": [],
+      "keys": [
+        "flamescar"
+      ]
+    },
+    {
+      "hash": "0x0024AD7A",
+      "name": "Fractured Winterglass",
+      "internal": "S10_Amulet_Unique_Sorc_101_Boots",
+      "classes": [],
+      "keys": [
+        "fractured-winterglass"
+      ]
+    },
+    {
+      "hash": "0x0024ADAD",
+      "name": "Fractured Winterglass",
+      "internal": "S10_Amulet_Unique_Sorc_101_Chest",
+      "classes": [],
+      "keys": [
+        "fractured-winterglass"
+      ]
+    },
+    {
+      "hash": "0x0024ADAF",
+      "name": "Fractured Winterglass",
+      "internal": "S10_Amulet_Unique_Sorc_101_Gloves",
+      "classes": [],
+      "keys": [
+        "fractured-winterglass"
+      ]
+    },
+    {
+      "hash": "0x0024ADB3",
+      "name": "Fractured Winterglass",
+      "internal": "S10_Amulet_Unique_Sorc_101_Helm",
+      "classes": [],
+      "keys": [
+        "fractured-winterglass"
+      ]
+    },
+    {
+      "hash": "0x0024ADB8",
+      "name": "Fractured Winterglass",
+      "internal": "S10_Amulet_Unique_Sorc_101_Legs",
+      "classes": [],
+      "keys": [
+        "fractured-winterglass"
+      ]
+    },
+    {
+      "hash": "0x0024AF21",
+      "name": "Mother's Embrace",
+      "internal": "S10_Ring_Unique_Generic_100_Boots",
+      "classes": [],
+      "keys": [
+        "mothers-embrace"
+      ]
+    },
+    {
+      "hash": "0x0024AF5F",
+      "name": "Mother's Embrace",
+      "internal": "S10_Ring_Unique_Generic_100_Chest",
+      "classes": [],
+      "keys": [
+        "mothers-embrace"
+      ]
+    },
+    {
+      "hash": "0x0024AF67",
+      "name": "Mother's Embrace",
+      "internal": "S10_Ring_Unique_Generic_100_Gloves",
+      "classes": [],
+      "keys": [
+        "mothers-embrace"
+      ]
+    },
+    {
+      "hash": "0x0024AF6B",
+      "name": "Mother's Embrace",
+      "internal": "S10_Ring_Unique_Generic_100_Helm",
+      "classes": [],
+      "keys": [
+        "mothers-embrace"
+      ]
+    },
+    {
+      "hash": "0x0024AF70",
+      "name": "Mother's Embrace",
+      "internal": "S10_Ring_Unique_Generic_100_Legs",
+      "classes": [],
+      "keys": [
+        "mothers-embrace"
+      ]
+    },
+    {
+      "hash": "0x0024AF91",
+      "name": "Raiment of the Infinite",
+      "internal": "S10_Chest_Unique_Sorc_002_Boots",
+      "classes": [],
+      "keys": [
+        "raiment-of-the-infinite"
+      ]
+    },
+    {
+      "hash": "0x0024AFC6",
+      "name": "Raiment of the Infinite",
+      "internal": "S10_Chest_Unique_Sorc_002_Gloves",
+      "classes": [],
+      "keys": [
+        "raiment-of-the-infinite"
+      ]
+    },
+    {
+      "hash": "0x0024AFCB",
+      "name": "Raiment of the Infinite",
+      "internal": "S10_Chest_Unique_Sorc_002_Helm",
+      "classes": [],
+      "keys": [
+        "raiment-of-the-infinite"
+      ]
+    },
+    {
+      "hash": "0x0024AFCE",
+      "name": "Raiment of the Infinite",
+      "internal": "S10_Chest_Unique_Sorc_002_Legs",
+      "classes": [],
+      "keys": [
+        "raiment-of-the-infinite"
+      ]
+    },
+    {
+      "hash": "0x0024BC4B",
+      "name": "Staff of Lam Esen",
+      "internal": "S10_2HStaff_Unique_Sorc_100_Boots",
+      "classes": [],
+      "keys": [
+        "staff-of-lam-esen"
+      ]
+    },
+    {
+      "hash": "0x0024BC61",
+      "name": "Staff of Lam Esen",
+      "internal": "S10_2HStaff_Unique_Sorc_100_Chest",
+      "classes": [],
+      "keys": [
+        "staff-of-lam-esen"
+      ]
+    },
+    {
+      "hash": "0x0024BC63",
+      "name": "Staff of Lam Esen",
+      "internal": "S10_2HStaff_Unique_Sorc_100_Gloves",
+      "classes": [],
+      "keys": [
+        "staff-of-lam-esen"
+      ]
+    },
+    {
+      "hash": "0x0024BC66",
+      "name": "Staff of Lam Esen",
+      "internal": "S10_2HStaff_Unique_Sorc_100_Helm",
+      "classes": [],
+      "keys": [
+        "staff-of-lam-esen"
+      ]
+    },
+    {
+      "hash": "0x0024BC68",
+      "name": "Staff of Lam Esen",
+      "internal": "S10_2HStaff_Unique_Sorc_100_Legs",
+      "classes": [],
+      "keys": [
+        "staff-of-lam-esen"
+      ]
+    },
+    {
+      "hash": "0x0024BCCD",
+      "name": "Starfall Coronet",
+      "internal": "S10_Helm_Unique_Sorc_100_Boots",
+      "classes": [],
+      "keys": [
+        "starfall-coronet"
+      ]
+    },
+    {
+      "hash": "0x0024BCF1",
+      "name": "Starfall Coronet",
+      "internal": "S10_Helm_Unique_Sorc_100_Chest",
+      "classes": [],
+      "keys": [
+        "starfall-coronet"
+      ]
+    },
+    {
+      "hash": "0x0024BCF6",
+      "name": "Starfall Coronet",
+      "internal": "S10_Helm_Unique_Sorc_100_Gloves",
+      "classes": [],
+      "keys": [
+        "starfall-coronet"
+      ]
+    },
+    {
+      "hash": "0x0024BCFF",
+      "name": "Starfall Coronet",
+      "internal": "S10_Helm_Unique_Sorc_100_Legs",
+      "classes": [],
+      "keys": [
+        "starfall-coronet"
+      ]
+    },
+    {
+      "hash": "0x0024BD68",
+      "name": "Vox Omnium",
+      "internal": "S10_S05_BSK_2HStaff_Unique_Sorcerer_001_Boots",
+      "classes": [],
+      "keys": [
+        "vox-omnium"
+      ]
+    },
+    {
+      "hash": "0x0024BED9",
+      "name": "Vox Omnium",
+      "internal": "S10_S05_BSK_2HStaff_Unique_Sorcerer_001_Chest",
+      "classes": [],
+      "keys": [
+        "vox-omnium"
+      ]
+    },
+    {
+      "hash": "0x0024BEDC",
+      "name": "Vox Omnium",
+      "internal": "S10_S05_BSK_2HStaff_Unique_Sorcerer_001_Gloves",
+      "classes": [],
+      "keys": [
+        "vox-omnium"
+      ]
+    },
+    {
+      "hash": "0x0024BEDF",
+      "name": "Vox Omnium",
+      "internal": "S10_S05_BSK_2HStaff_Unique_Sorcerer_001_Helm",
+      "classes": [],
+      "keys": [
+        "vox-omnium"
+      ]
+    },
+    {
+      "hash": "0x0024BEE1",
+      "name": "Vox Omnium",
+      "internal": "S10_S05_BSK_2HStaff_Unique_Sorcerer_001_Legs",
+      "classes": [],
+      "keys": [
+        "vox-omnium"
+      ]
+    },
+    {
+      "hash": "0x0024C404",
+      "name": "Ophidian Iris",
+      "internal": "S10_Amulet_Unique_Sorc_102_Boots",
+      "classes": [],
+      "keys": [
+        "ophidian-iris"
+      ]
+    },
+    {
+      "hash": "0x0024C432",
+      "name": "Battle Trance",
+      "internal": "S10_Amulet_Unique_Barb_100_Boots",
+      "classes": [],
+      "keys": [
+        "battle-trance"
+      ]
+    },
+    {
+      "hash": "0x0024C48C",
+      "name": "Battle Trance",
+      "internal": "S10_Amulet_Unique_Barb_100_Chest",
+      "classes": [],
+      "keys": [
+        "battle-trance"
+      ]
+    },
+    {
+      "hash": "0x0024C490",
+      "name": "Battle Trance",
+      "internal": "S10_Amulet_Unique_Barb_100_Gloves",
+      "classes": [],
+      "keys": [
+        "battle-trance"
+      ]
+    },
+    {
+      "hash": "0x0024C496",
+      "name": "Battle Trance",
+      "internal": "S10_Amulet_Unique_Barb_100_Helm",
+      "classes": [],
+      "keys": [
+        "battle-trance"
+      ]
+    },
+    {
+      "hash": "0x0024C498",
+      "name": "Battle Trance",
+      "internal": "S10_Amulet_Unique_Barb_100_Legs",
+      "classes": [],
+      "keys": [
+        "battle-trance"
+      ]
+    },
+    {
+      "hash": "0x0024C49D",
+      "name": "Ophidian Iris",
+      "internal": "S10_Amulet_Unique_Sorc_102_Chest",
+      "classes": [],
+      "keys": [
+        "ophidian-iris"
+      ]
+    },
+    {
+      "hash": "0x0024C4A0",
+      "name": "Ophidian Iris",
+      "internal": "S10_Amulet_Unique_Sorc_102_Gloves",
+      "classes": [],
+      "keys": [
+        "ophidian-iris"
+      ]
+    },
+    {
+      "hash": "0x0024C4A2",
+      "name": "Ophidian Iris",
+      "internal": "S10_Amulet_Unique_Sorc_102_Helm",
+      "classes": [],
+      "keys": [
+        "ophidian-iris"
+      ]
+    },
+    {
+      "hash": "0x0024C4A4",
+      "name": "Ophidian Iris",
+      "internal": "S10_Amulet_Unique_Sorc_102_Legs",
+      "classes": [],
+      "keys": [
+        "ophidian-iris"
+      ]
+    },
+    {
+      "hash": "0x0024C5A5",
+      "name": "Gohr's Devastating Grips",
+      "internal": "S10_Gloves_Unique_Barb_001_Boots",
+      "classes": [],
+      "keys": [
+        "gohrs-devastating-grips"
+      ]
+    },
+    {
+      "hash": "0x0024C5AF",
+      "name": "Gohr's Devastating Grips",
+      "internal": "S10_Gloves_Unique_Barb_001_Chest",
+      "classes": [],
+      "keys": [
+        "gohrs-devastating-grips"
+      ]
+    },
+    {
+      "hash": "0x0024C5B2",
+      "name": "Gohr's Devastating Grips",
+      "internal": "S10_Gloves_Unique_Barb_001_Helm",
+      "classes": [],
+      "keys": [
+        "gohrs-devastating-grips"
+      ]
+    },
+    {
+      "hash": "0x0024C5B4",
+      "name": "Gohr's Devastating Grips",
+      "internal": "S10_Gloves_Unique_Barb_001_Legs",
+      "classes": [],
+      "keys": [
+        "gohrs-devastating-grips"
+      ]
+    },
+    {
+      "hash": "0x0024C6EE",
+      "name": "Beastfall Boots",
+      "internal": "S10_Boots_Unique_Rogue_100_Chest",
+      "classes": [],
+      "keys": [
+        "beastfall-boots"
+      ]
+    },
+    {
+      "hash": "0x0024C6FC",
+      "name": "Beastfall Boots",
+      "internal": "S10_Boots_Unique_Rogue_100_Gloves",
+      "classes": [],
+      "keys": [
+        "beastfall-boots"
+      ]
+    },
+    {
+      "hash": "0x0024C6FE",
+      "name": "Beastfall Boots",
+      "internal": "S10_Boots_Unique_Rogue_100_Helm",
+      "classes": [],
+      "keys": [
+        "beastfall-boots"
+      ]
+    },
+    {
+      "hash": "0x0024C702",
+      "name": "Beastfall Boots",
+      "internal": "S10_Boots_Unique_Rogue_100_Legs",
+      "classes": [],
+      "keys": [
+        "beastfall-boots"
+      ]
+    },
+    {
+      "hash": "0x0024C70A",
+      "name": "Condemnation",
+      "internal": "S10_1HDagger_Unique_Rogue_001_Boots",
+      "classes": [],
+      "keys": [
+        "condemnation"
+      ]
+    },
+    {
+      "hash": "0x0024C76F",
+      "name": "Condemnation",
+      "internal": "S10_1HDagger_Unique_Rogue_001_Chest",
+      "classes": [],
+      "keys": [
+        "condemnation"
+      ]
+    },
+    {
+      "hash": "0x0024C775",
+      "name": "Condemnation",
+      "internal": "S10_1HDagger_Unique_Rogue_001_Gloves",
+      "classes": [],
+      "keys": [
+        "condemnation"
+      ]
+    },
+    {
+      "hash": "0x0024C779",
+      "name": "Condemnation",
+      "internal": "S10_1HDagger_Unique_Rogue_001_Helm",
+      "classes": [],
+      "keys": [
+        "condemnation"
+      ]
+    },
+    {
+      "hash": "0x0024C77E",
+      "name": "Condemnation",
+      "internal": "S10_1HDagger_Unique_Rogue_001_Legs",
+      "classes": [],
+      "keys": [
+        "condemnation"
+      ]
+    },
+    {
+      "hash": "0x0024CBEB",
+      "name": "Cowl of the Nameless",
+      "internal": "S10_Helm_Unique_Rogue_001_Boots",
+      "classes": [],
+      "keys": [
+        "cowl-of-the-nameless"
+      ]
+    },
+    {
+      "hash": "0x0024CBF8",
+      "name": "Cowl of the Nameless",
+      "internal": "S10_Helm_Unique_Rogue_001_Chest",
+      "classes": [],
+      "keys": [
+        "cowl-of-the-nameless"
+      ]
+    },
+    {
+      "hash": "0x0024CBFB",
+      "name": "Cowl of the Nameless",
+      "internal": "S10_Helm_Unique_Rogue_001_Gloves",
+      "classes": [],
+      "keys": [
+        "cowl-of-the-nameless"
+      ]
+    },
+    {
+      "hash": "0x0024CBFE",
+      "name": "Cowl of the Nameless",
+      "internal": "S10_Helm_Unique_Rogue_001_Legs",
+      "classes": [],
+      "keys": [
+        "cowl-of-the-nameless"
+      ]
+    },
+    {
+      "hash": "0x0024CC22",
+      "name": "Grasp of Shadow",
+      "internal": "S10_Gloves_Unique_Rogue_100_Boots",
+      "classes": [],
+      "keys": [
+        "grasp-of-shadow"
+      ]
+    },
+    {
+      "hash": "0x0024CC2D",
+      "name": "Grasp of Shadow",
+      "internal": "S10_Gloves_Unique_Rogue_100_Chest",
+      "classes": [],
+      "keys": [
+        "grasp-of-shadow"
+      ]
+    },
+    {
+      "hash": "0x0024CC36",
+      "name": "Grasp of Shadow",
+      "internal": "S10_Gloves_Unique_Rogue_100_Helm",
+      "classes": [],
+      "keys": [
+        "grasp-of-shadow"
+      ]
+    },
+    {
+      "hash": "0x0024CC3A",
+      "name": "Grasp of Shadow",
+      "internal": "S10_Gloves_Unique_Rogue_100_Legs",
+      "classes": [],
+      "keys": [
+        "grasp-of-shadow"
+      ]
+    },
+    {
+      "hash": "0x0024CC84",
+      "name": "Pitfighter's Gull",
+      "internal": "S10_x1_Ring_Unique_Rogue_128_Boots",
+      "classes": [],
+      "keys": [
+        "pitfighters-gull"
+      ]
+    },
+    {
+      "hash": "0x0024CC9F",
+      "name": "Pitfighter's Gull",
+      "internal": "S10_x1_Ring_Unique_Rogue_128_Chest",
+      "classes": [],
+      "keys": [
+        "pitfighters-gull"
+      ]
+    },
+    {
+      "hash": "0x0024CCA4",
+      "name": "Pitfighter's Gull",
+      "internal": "S10_x1_Ring_Unique_Rogue_128_Gloves",
+      "classes": [],
+      "keys": [
+        "pitfighters-gull"
+      ]
+    },
+    {
+      "hash": "0x0024CCA8",
+      "name": "Pitfighter's Gull",
+      "internal": "S10_x1_Ring_Unique_Rogue_128_Helm",
+      "classes": [],
+      "keys": [
+        "pitfighters-gull"
+      ]
+    },
+    {
+      "hash": "0x0024CCAA",
+      "name": "Pitfighter's Gull",
+      "internal": "S10_x1_Ring_Unique_Rogue_128_Legs",
+      "classes": [],
+      "keys": [
+        "pitfighters-gull"
+      ]
+    },
+    {
+      "hash": "0x0024CCD2",
+      "name": "Saboteur's Signet",
+      "internal": "S10_Ring_Unique_Rogue_102_Boots",
+      "classes": [],
+      "keys": [
+        "saboteurs-signet"
+      ]
+    },
+    {
+      "hash": "0x0024CCF2",
+      "name": "Saboteur's Signet",
+      "internal": "S10_Ring_Unique_Rogue_102_Chest",
+      "classes": [],
+      "keys": [
+        "saboteurs-signet"
+      ]
+    },
+    {
+      "hash": "0x0024CCF4",
+      "name": "Saboteur's Signet",
+      "internal": "S10_Ring_Unique_Rogue_102_Gloves",
+      "classes": [],
+      "keys": [
+        "saboteurs-signet"
+      ]
+    },
+    {
+      "hash": "0x0024CCF6",
+      "name": "Saboteur's Signet",
+      "internal": "S10_Ring_Unique_Rogue_102_Helm",
+      "classes": [],
+      "keys": [
+        "saboteurs-signet"
+      ]
+    },
+    {
+      "hash": "0x0024CCFA",
+      "name": "Saboteur's Signet",
+      "internal": "S10_Ring_Unique_Rogue_102_Legs",
+      "classes": [],
+      "keys": [
+        "saboteurs-signet"
+      ]
+    },
+    {
+      "hash": "0x0024D434",
+      "name": "Mantle of Mountain's Fury",
+      "internal": "S10_Chest_Unique_Barb_101_Helm",
+      "classes": [],
+      "keys": [
+        "mantle-of-mountains-fury"
+      ]
+    },
+    {
+      "hash": "0x0024D43C",
+      "name": "Mantle of Mountain's Fury",
+      "internal": "S10_Chest_Unique_Barb_101_Legs",
+      "classes": [],
+      "keys": [
+        "mantle-of-mountains-fury"
+      ]
+    },
+    {
+      "hash": "0x0024D43E",
+      "name": "Mantle of Mountain's Fury",
+      "internal": "S10_Chest_Unique_Barb_101_Boots",
+      "classes": [],
+      "keys": [
+        "mantle-of-mountains-fury"
+      ]
+    },
+    {
+      "hash": "0x0024D440",
+      "name": "Mantle of Mountain's Fury",
+      "internal": "S10_Chest_Unique_Barb_101_Gloves",
+      "classes": [],
+      "keys": [
+        "mantle-of-mountains-fury"
+      ]
+    },
+    {
+      "hash": "0x0024D45F",
+      "name": "Scoundrel's Leathers",
+      "internal": "S10_Chest_Unique_Rogue_100_Boots",
+      "classes": [],
+      "keys": [
+        "scoundrels-leathers"
+      ]
+    },
+    {
+      "hash": "0x0024D4AC",
+      "name": "Overkill",
+      "internal": "S10_2HMace_Unique_Barb_100_Helm",
+      "classes": [],
+      "keys": [
+        "overkill"
+      ]
+    },
+    {
+      "hash": "0x0024D4B1",
+      "name": "Overkill",
+      "internal": "S10_2HMace_Unique_Barb_100_Chest",
+      "classes": [],
+      "keys": [
+        "overkill"
+      ]
+    },
+    {
+      "hash": "0x0024D4B3",
+      "name": "Overkill",
+      "internal": "S10_2HMace_Unique_Barb_100_Gloves",
+      "classes": [],
+      "keys": [
+        "overkill"
+      ]
+    },
+    {
+      "hash": "0x0024D4B5",
+      "name": "Overkill",
+      "internal": "S10_2HMace_Unique_Barb_100_Boots",
+      "classes": [],
+      "keys": [
+        "overkill"
+      ]
+    },
+    {
+      "hash": "0x0024D4B7",
+      "name": "Overkill",
+      "internal": "S10_2HMace_Unique_Barb_100_Legs",
+      "classes": [],
+      "keys": [
+        "overkill"
+      ]
+    },
+    {
+      "hash": "0x0024D5A3",
+      "name": "Rage of Harrogath",
+      "internal": "S10_Chest_Unique_Barb_100_Helm",
+      "classes": [],
+      "keys": [
+        "rage-of-harrogath"
+      ]
+    },
+    {
+      "hash": "0x0024D5A7",
+      "name": "Rage of Harrogath",
+      "internal": "S10_Chest_Unique_Barb_100_Gloves",
+      "classes": [],
+      "keys": [
+        "rage-of-harrogath"
+      ]
+    },
+    {
+      "hash": "0x0024D5A9",
+      "name": "Rage of Harrogath",
+      "internal": "S10_Chest_Unique_Barb_100_Legs",
+      "classes": [],
+      "keys": [
+        "rage-of-harrogath"
+      ]
+    },
+    {
+      "hash": "0x0024D5AC",
+      "name": "Rage of Harrogath",
+      "internal": "S10_Chest_Unique_Barb_100_Boots",
+      "classes": [],
+      "keys": [
+        "rage-of-harrogath"
+      ]
+    },
+    {
+      "hash": "0x0024D5D1",
+      "name": "Ring of Red Furor",
+      "internal": "S10_Ring_Unique_Barb_100_Helm",
+      "classes": [],
+      "keys": [
+        "ring-of-red-furor"
+      ]
+    },
+    {
+      "hash": "0x0024D742",
+      "name": "Scoundrel's Leathers",
+      "internal": "S10_Chest_Unique_Rogue_100_Gloves",
+      "classes": [],
+      "keys": [
+        "scoundrels-leathers"
+      ]
+    },
+    {
+      "hash": "0x0024D744",
+      "name": "Scoundrel's Leathers",
+      "internal": "S10_Chest_Unique_Rogue_100_Helm",
+      "classes": [],
+      "keys": [
+        "scoundrels-leathers"
+      ]
+    },
+    {
+      "hash": "0x0024D746",
+      "name": "Scoundrel's Leathers",
+      "internal": "S10_Chest_Unique_Rogue_100_Legs",
+      "classes": [],
+      "keys": [
+        "scoundrels-leathers"
+      ]
+    },
+    {
+      "hash": "0x0024D756",
+      "name": "Ring of Red Furor",
+      "internal": "S10_Ring_Unique_Barb_100_Chest",
+      "classes": [],
+      "keys": [
+        "ring-of-red-furor"
+      ]
+    },
+    {
+      "hash": "0x0024D758",
+      "name": "Ring of Red Furor",
+      "internal": "S10_Ring_Unique_Barb_100_Gloves",
+      "classes": [],
+      "keys": [
+        "ring-of-red-furor"
+      ]
+    },
+    {
+      "hash": "0x0024D75A",
+      "name": "Ring of Red Furor",
+      "internal": "S10_Ring_Unique_Barb_100_Legs",
+      "classes": [],
+      "keys": [
+        "ring-of-red-furor"
+      ]
+    },
+    {
+      "hash": "0x0024D75F",
+      "name": "Ring of Red Furor",
+      "internal": "S10_Ring_Unique_Barb_100_Boots",
+      "classes": [],
+      "keys": [
+        "ring-of-red-furor"
+      ]
+    },
+    {
+      "hash": "0x0024D76B",
+      "name": "Ring of the Ravenous",
+      "internal": "S10_Ring_Unique_Barb_101_Helm",
+      "classes": [],
+      "keys": [
+        "ring-of-the-ravenous"
+      ]
+    },
+    {
+      "hash": "0x0024D77B",
+      "name": "Ring of the Ravenous",
+      "internal": "S10_Ring_Unique_Barb_101_Chest",
+      "classes": [],
+      "keys": [
+        "ring-of-the-ravenous"
+      ]
+    },
+    {
+      "hash": "0x0024D77E",
+      "name": "Ring of the Ravenous",
+      "internal": "S10_Ring_Unique_Barb_101_Gloves",
+      "classes": [],
+      "keys": [
+        "ring-of-the-ravenous"
+      ]
+    },
+    {
+      "hash": "0x0024D783",
+      "name": "Ring of the Ravenous",
+      "internal": "S10_Ring_Unique_Barb_101_Legs",
+      "classes": [],
+      "keys": [
+        "ring-of-the-ravenous"
+      ]
+    },
+    {
+      "hash": "0x0024D785",
+      "name": "Ring of the Ravenous",
+      "internal": "S10_Ring_Unique_Barb_101_Boots",
+      "classes": [],
+      "keys": [
+        "ring-of-the-ravenous"
+      ]
+    },
+    {
+      "hash": "0x0024D790",
+      "name": "Tuskhelm of Joritz the Mighty",
+      "internal": "S10_Helm_Unique_Barb_100_Chest",
+      "classes": [],
+      "keys": [
+        "tuskhelm-of-joritz-the-mighty"
+      ]
+    },
+    {
+      "hash": "0x0024D7A0",
+      "name": "Tuskhelm of Joritz the Mighty",
+      "internal": "S10_Helm_Unique_Barb_100_Gloves",
+      "classes": [],
+      "keys": [
+        "tuskhelm-of-joritz-the-mighty"
+      ]
+    },
+    {
+      "hash": "0x0024D7A3",
+      "name": "Tuskhelm of Joritz the Mighty",
+      "internal": "S10_Helm_Unique_Barb_100_Legs",
+      "classes": [],
+      "keys": [
+        "tuskhelm-of-joritz-the-mighty"
+      ]
+    },
+    {
+      "hash": "0x0024D7A5",
+      "name": "Tuskhelm of Joritz the Mighty",
+      "internal": "S10_Helm_Unique_Barb_100_Boots",
+      "classes": [],
+      "keys": [
+        "tuskhelm-of-joritz-the-mighty"
+      ]
+    },
+    {
+      "hash": "0x0024D7D8",
+      "name": "Ugly Bastard Helm",
+      "internal": "S10_Helm_Unique_Barb_101_x1_Chest",
+      "classes": [],
+      "keys": [
+        "ugly-bastard-helm"
+      ]
+    },
+    {
+      "hash": "0x0024D826",
+      "name": "Ugly Bastard Helm",
+      "internal": "S10_Helm_Unique_Barb_101_x1_Gloves",
+      "classes": [],
+      "keys": [
+        "ugly-bastard-helm"
+      ]
+    },
+    {
+      "hash": "0x0024D828",
+      "name": "Ugly Bastard Helm",
+      "internal": "S10_Helm_Unique_Barb_101_x1_Legs",
+      "classes": [],
+      "keys": [
+        "ugly-bastard-helm"
+      ]
+    },
+    {
+      "hash": "0x0024D82A",
+      "name": "Ugly Bastard Helm",
+      "internal": "S10_Helm_Unique_Barb_101_x1_Boots",
+      "classes": [],
+      "keys": [
+        "ugly-bastard-helm"
+      ]
+    },
+    {
+      "hash": "0x0024D83C",
+      "name": "Unbroken Chain",
+      "internal": "S10_Amulet_Unique_Barb_101_Helm",
+      "classes": [],
+      "keys": [
+        "unbroken-chain"
+      ]
+    },
+    {
+      "hash": "0x0024D846",
+      "name": "Unbroken Chain",
+      "internal": "S10_Amulet_Unique_Barb_101_Chest",
+      "classes": [],
+      "keys": [
+        "unbroken-chain"
+      ]
+    },
+    {
+      "hash": "0x0024D848",
+      "name": "Unbroken Chain",
+      "internal": "S10_Amulet_Unique_Barb_101_Gloves",
+      "classes": [],
+      "keys": [
+        "unbroken-chain"
+      ]
+    },
+    {
+      "hash": "0x0024D84A",
+      "name": "Unbroken Chain",
+      "internal": "S10_Amulet_Unique_Barb_101_Legs",
+      "classes": [],
+      "keys": [
+        "unbroken-chain"
+      ]
+    },
+    {
+      "hash": "0x0024D84C",
+      "name": "Unbroken Chain",
+      "internal": "S10_Amulet_Unique_Barb_101_Boots",
+      "classes": [],
+      "keys": [
+        "unbroken-chain"
+      ]
+    },
+    {
+      "hash": "0x0024D874",
+      "name": "Hooves of the Mountain God",
+      "internal": "S10_Boots_Unique_Barb_101_Helm",
+      "classes": [],
+      "keys": [
+        "hooves-of-the-mountain-god"
+      ]
+    },
+    {
+      "hash": "0x0024D88A",
+      "name": "Hooves of the Mountain God",
+      "internal": "S10_Boots_Unique_Barb_101_Chest",
+      "classes": [],
+      "keys": [
+        "hooves-of-the-mountain-god"
+      ]
+    },
+    {
+      "hash": "0x0024D88C",
+      "name": "Hooves of the Mountain God",
+      "internal": "S10_Boots_Unique_Barb_101_Gloves",
+      "classes": [],
+      "keys": [
+        "hooves-of-the-mountain-god"
+      ]
+    },
+    {
+      "hash": "0x0024D88E",
+      "name": "Hooves of the Mountain God",
+      "internal": "S10_Boots_Unique_Barb_101_Legs",
+      "classes": [],
+      "keys": [
+        "hooves-of-the-mountain-god"
+      ]
+    },
+    {
+      "hash": "0x0024DC51",
+      "name": "Shroud of Khanduras",
+      "internal": "S10_Chest_Unique_Rogue_101_Boots",
+      "classes": [],
+      "keys": [
+        "shroud-of-khanduras"
+      ]
+    },
+    {
+      "hash": "0x0024DC7F",
+      "name": "Shroud of Khanduras",
+      "internal": "S10_Chest_Unique_Rogue_101_Gloves",
+      "classes": [],
+      "keys": [
+        "shroud-of-khanduras"
+      ]
+    },
+    {
+      "hash": "0x0024DC91",
+      "name": "Shroud of Khanduras",
+      "internal": "S10_Chest_Unique_Rogue_101_Helm",
+      "classes": [],
+      "keys": [
+        "shroud-of-khanduras"
+      ]
+    },
+    {
+      "hash": "0x0024DC93",
+      "name": "Shroud of Khanduras",
+      "internal": "S10_Chest_Unique_Rogue_101_Legs",
+      "classes": [],
+      "keys": [
+        "shroud-of-khanduras"
+      ]
+    },
+    {
+      "hash": "0x0024DD73",
+      "name": "Skyhunter",
+      "internal": "S10_2HBow_Unique_Rogue_001_Boots",
+      "classes": [],
+      "keys": [
+        "skyhunter"
+      ]
+    },
+    {
+      "hash": "0x0024DD79",
+      "name": "Skyhunter",
+      "internal": "S10_2HBow_Unique_Rogue_001_Chest",
+      "classes": [],
+      "keys": [
+        "skyhunter"
+      ]
+    },
+    {
+      "hash": "0x0024DD7D",
+      "name": "Skyhunter",
+      "internal": "S10_2HBow_Unique_Rogue_001_Gloves",
+      "classes": [],
+      "keys": [
+        "skyhunter"
+      ]
+    },
+    {
+      "hash": "0x0024DD87",
+      "name": "Skyhunter",
+      "internal": "S10_2HBow_Unique_Rogue_001_Helm",
+      "classes": [],
+      "keys": [
+        "skyhunter"
+      ]
+    },
+    {
+      "hash": "0x0024DD95",
+      "name": "Skyhunter",
+      "internal": "S10_2HBow_Unique_Rogue_001_Legs",
+      "classes": [],
+      "keys": [
+        "skyhunter"
+      ]
+    },
+    {
+      "hash": "0x0024DFB3",
+      "name": "Word of Hakan",
+      "internal": "S10_Amulet_Unique_Rogue_100_Boots",
+      "classes": [],
+      "keys": [
+        "word-of-hakan"
+      ]
+    },
+    {
+      "hash": "0x0024DFBF",
+      "name": "Word of Hakan",
+      "internal": "S10_Amulet_Unique_Rogue_100_Chest",
+      "classes": [],
+      "keys": [
+        "word-of-hakan"
+      ]
+    },
+    {
+      "hash": "0x0024DFC1",
+      "name": "Word of Hakan",
+      "internal": "S10_Amulet_Unique_Rogue_100_Gloves",
+      "classes": [],
+      "keys": [
+        "word-of-hakan"
+      ]
+    },
+    {
+      "hash": "0x0024DFC3",
+      "name": "Word of Hakan",
+      "internal": "S10_Amulet_Unique_Rogue_100_Helm",
+      "classes": [],
+      "keys": [
+        "word-of-hakan"
+      ]
+    },
+    {
+      "hash": "0x0024DFC5",
+      "name": "Word of Hakan",
+      "internal": "S10_Amulet_Unique_Rogue_100_Legs",
+      "classes": [],
+      "keys": [
+        "word-of-hakan"
+      ]
+    },
+    {
+      "hash": "0x0024E243",
+      "name": "Black River",
+      "internal": "S10_1HScythe_Unique_Necro_100_Helm",
+      "classes": [],
+      "keys": [
+        "black-river"
+      ]
+    },
+    {
+      "hash": "0x0024E24D",
+      "name": "Black River",
+      "internal": "S10_1HScythe_Unique_Necro_100_Chest",
+      "classes": [],
+      "keys": [
+        "black-river"
+      ]
+    },
+    {
+      "hash": "0x0024E24F",
+      "name": "Black River",
+      "internal": "S10_1HScythe_Unique_Necro_100_Gloves",
+      "classes": [],
+      "keys": [
+        "black-river"
+      ]
+    },
+    {
+      "hash": "0x0024E252",
+      "name": "Black River",
+      "internal": "S10_1HScythe_Unique_Necro_100_Legs",
+      "classes": [],
+      "keys": [
+        "black-river"
+      ]
+    },
+    {
+      "hash": "0x0024E254",
+      "name": "Black River",
+      "internal": "S10_1HScythe_Unique_Necro_100_Boots",
+      "classes": [],
+      "keys": [
+        "black-river"
+      ]
+    },
+    {
+      "hash": "0x0024E26D",
+      "name": "Deathmask of Nirmitruq",
+      "internal": "S10_Helm_Unique_Rogue_002_Boots",
+      "classes": [],
+      "keys": [
+        "deathmask-of-nirmitruq"
+      ]
+    },
+    {
+      "hash": "0x0024E317",
+      "name": "Deathmask of Nirmitruq",
+      "internal": "S10_Helm_Unique_Rogue_002_Chest",
+      "classes": [],
+      "keys": [
+        "deathmask-of-nirmitruq"
+      ]
+    },
+    {
+      "hash": "0x0024E319",
+      "name": "Deathmask of Nirmitruq",
+      "internal": "S10_Helm_Unique_Rogue_002_Gloves",
+      "classes": [],
+      "keys": [
+        "deathmask-of-nirmitruq"
+      ]
+    },
+    {
+      "hash": "0x0024E31C",
+      "name": "Deathmask of Nirmitruq",
+      "internal": "S10_Helm_Unique_Rogue_002_Legs",
+      "classes": [],
+      "keys": [
+        "deathmask-of-nirmitruq"
+      ]
+    },
+    {
+      "hash": "0x0024E331",
+      "name": "Bloodless Scream",
+      "internal": "S10_2HScythe_Unique_Necro_100_Helm",
+      "classes": [],
+      "keys": [
+        "bloodless-scream"
+      ]
+    },
+    {
+      "hash": "0x0024E33D",
+      "name": "Bloodless Scream",
+      "internal": "S10_2HScythe_Unique_Necro_100_Chest",
+      "classes": [],
+      "keys": [
+        "bloodless-scream"
+      ]
+    },
+    {
+      "hash": "0x0024E342",
+      "name": "Bloodless Scream",
+      "internal": "S10_2HScythe_Unique_Necro_100_Gloves",
+      "classes": [],
+      "keys": [
+        "bloodless-scream"
+      ]
+    },
+    {
+      "hash": "0x0024E344",
+      "name": "Bloodless Scream",
+      "internal": "S10_2HScythe_Unique_Necro_100_Legs",
+      "classes": [],
+      "keys": [
+        "bloodless-scream"
+      ]
+    },
+    {
+      "hash": "0x0024E347",
+      "name": "Bloodless Scream",
+      "internal": "S10_2HScythe_Unique_Necro_100_Boots",
+      "classes": [],
+      "keys": [
+        "bloodless-scream"
+      ]
+    },
+    {
+      "hash": "0x0024E360",
+      "name": "Deathless Visage",
+      "internal": "S10_Helm_Unique_Necro_100_Chest",
+      "classes": [],
+      "keys": [
+        "deathless-visage"
+      ]
+    },
+    {
+      "hash": "0x0024E368",
+      "name": "Deathless Visage",
+      "internal": "S10_Helm_Unique_Necro_100_Gloves",
+      "classes": [],
+      "keys": [
+        "deathless-visage"
+      ]
+    },
+    {
+      "hash": "0x0024E36A",
+      "name": "Deathless Visage",
+      "internal": "S10_Helm_Unique_Necro_100_Legs",
+      "classes": [],
+      "keys": [
+        "deathless-visage"
+      ]
+    },
+    {
+      "hash": "0x0024E36C",
+      "name": "Deathless Visage",
+      "internal": "S10_Helm_Unique_Necro_100_Boots",
+      "classes": [],
+      "keys": [
+        "deathless-visage"
+      ]
+    },
+    {
+      "hash": "0x0024E429",
+      "name": "Deathspeaker's Pendant",
+      "internal": "S10_Amulet_Unique_Necro_100_Helm",
+      "classes": [],
+      "keys": [
+        "deathspeakers-pendant"
+      ]
+    },
+    {
+      "hash": "0x0024E444",
+      "name": "Deathspeaker's Pendant",
+      "internal": "S10_Amulet_Unique_Necro_100_Chest",
+      "classes": [],
+      "keys": [
+        "deathspeakers-pendant"
+      ]
+    },
+    {
+      "hash": "0x0024E446",
+      "name": "Deathspeaker's Pendant",
+      "internal": "S10_Amulet_Unique_Necro_100_Gloves",
+      "classes": [],
+      "keys": [
+        "deathspeakers-pendant"
+      ]
+    },
+    {
+      "hash": "0x0024E449",
+      "name": "Deathspeaker's Pendant",
+      "internal": "S10_Amulet_Unique_Necro_100_Legs",
+      "classes": [],
+      "keys": [
+        "deathspeakers-pendant"
+      ]
+    },
+    {
+      "hash": "0x0024E44B",
+      "name": "Deathspeaker's Pendant",
+      "internal": "S10_Amulet_Unique_Necro_100_Boots",
+      "classes": [],
+      "keys": [
+        "deathspeakers-pendant"
+      ]
+    },
+    {
+      "hash": "0x0024E44E",
+      "name": "Fleshrender",
+      "internal": "S10_1HMace_Unique_Druid_001_Boots",
+      "classes": [],
+      "keys": [
+        "fleshrender"
+      ]
+    },
+    {
+      "hash": "0x0024E4AA",
+      "name": "Fleshrender",
+      "internal": "S10_1HMace_Unique_Druid_001_Chest",
+      "classes": [],
+      "keys": [
+        "fleshrender"
+      ]
+    },
+    {
+      "hash": "0x0024E4AE",
+      "name": "Fleshrender",
+      "internal": "S10_1HMace_Unique_Druid_001_Gloves",
+      "classes": [],
+      "keys": [
+        "fleshrender"
+      ]
+    },
+    {
+      "hash": "0x0024E4B0",
+      "name": "Fleshrender",
+      "internal": "S10_1HMace_Unique_Druid_001_Helm",
+      "classes": [],
+      "keys": [
+        "fleshrender"
+      ]
+    },
+    {
+      "hash": "0x0024E4B3",
+      "name": "Fleshrender",
+      "internal": "S10_1HMace_Unique_Druid_001_Legs",
+      "classes": [],
+      "keys": [
+        "fleshrender"
+      ]
+    },
+    {
+      "hash": "0x0024E4F2",
+      "name": "Ebonpiercer",
+      "internal": "S10_Amulet_Unique_Necro_101_Helm",
+      "classes": [],
+      "keys": [
+        "ebonpiercer"
+      ]
+    },
+    {
+      "hash": "0x0024E50C",
+      "name": "Greatstaff of the Crone",
+      "internal": "S10_2HStaff_Unique_Druid_001_Boots",
+      "classes": [],
+      "keys": [
+        "greatstaff-of-the-crone"
+      ]
+    },
+    {
+      "hash": "0x0024E516",
+      "name": "Ebonpiercer",
+      "internal": "S10_Amulet_Unique_Necro_101_Chest",
+      "classes": [],
+      "keys": [
+        "ebonpiercer"
+      ]
+    },
+    {
+      "hash": "0x0024E518",
+      "name": "Ebonpiercer",
+      "internal": "S10_Amulet_Unique_Necro_101_Gloves",
+      "classes": [],
+      "keys": [
+        "ebonpiercer"
+      ]
+    },
+    {
+      "hash": "0x0024E51C",
+      "name": "Ebonpiercer",
+      "internal": "S10_Amulet_Unique_Necro_101_Legs",
+      "classes": [],
+      "keys": [
+        "ebonpiercer"
+      ]
+    },
+    {
+      "hash": "0x0024E51E",
+      "name": "Ebonpiercer",
+      "internal": "S10_Amulet_Unique_Necro_101_Boots",
+      "classes": [],
+      "keys": [
+        "ebonpiercer"
+      ]
+    },
+    {
+      "hash": "0x0024E52B",
+      "name": "Greatstaff of the Crone",
+      "internal": "S10_2HStaff_Unique_Druid_001_Chest",
+      "classes": [],
+      "keys": [
+        "greatstaff-of-the-crone"
+      ]
+    },
+    {
+      "hash": "0x0024E52F",
+      "name": "Greatstaff of the Crone",
+      "internal": "S10_2HStaff_Unique_Druid_001_Gloves",
+      "classes": [],
+      "keys": [
+        "greatstaff-of-the-crone"
+      ]
+    },
+    {
+      "hash": "0x0024E531",
+      "name": "Greatstaff of the Crone",
+      "internal": "S10_2HStaff_Unique_Druid_001_Helm",
+      "classes": [],
+      "keys": [
+        "greatstaff-of-the-crone"
+      ]
+    },
+    {
+      "hash": "0x0024E535",
+      "name": "Greatstaff of the Crone",
+      "internal": "S10_2HStaff_Unique_Druid_001_Legs",
+      "classes": [],
+      "keys": [
+        "greatstaff-of-the-crone"
+      ]
+    },
+    {
+      "hash": "0x0024E55F",
+      "name": "Lidless Wall",
+      "internal": "S10_1HShield_Unique_Necro_100_Helm",
+      "classes": [],
+      "keys": [
+        "lidless-wall"
+      ]
+    },
+    {
+      "hash": "0x0024E579",
+      "name": "Hunter's Zenith",
+      "internal": "S10_Ring_Unique_Druid_003_Boots",
+      "classes": [],
+      "keys": [
+        "hunters-zenith"
+      ]
+    },
+    {
+      "hash": "0x0024E57E",
+      "name": "Hunter's Zenith",
+      "internal": "S10_Ring_Unique_Druid_003_Chest",
+      "classes": [],
+      "keys": [
+        "hunters-zenith"
+      ]
+    },
+    {
+      "hash": "0x0024E581",
+      "name": "Hunter's Zenith",
+      "internal": "S10_Ring_Unique_Druid_003_Gloves",
+      "classes": [],
+      "keys": [
+        "hunters-zenith"
+      ]
+    },
+    {
+      "hash": "0x0024E584",
+      "name": "Hunter's Zenith",
+      "internal": "S10_Ring_Unique_Druid_003_Helm",
+      "classes": [],
+      "keys": [
+        "hunters-zenith"
+      ]
+    },
+    {
+      "hash": "0x0024E587",
+      "name": "Hunter's Zenith",
+      "internal": "S10_Ring_Unique_Druid_003_Legs",
+      "classes": [],
+      "keys": [
+        "hunters-zenith"
+      ]
+    },
+    {
+      "hash": "0x0024E5A2",
+      "name": "Malefic Crescent",
+      "internal": "S10_Amulet_Unique_Druid_101_Boots",
+      "classes": [],
+      "keys": [
+        "malefic-crescent"
+      ]
+    },
+    {
+      "hash": "0x0024E61B",
+      "name": "Lidless Wall",
+      "internal": "S10_1HShield_Unique_Necro_100_Chest",
+      "classes": [],
+      "keys": [
+        "lidless-wall"
+      ]
+    },
+    {
+      "hash": "0x0024E61E",
+      "name": "Lidless Wall",
+      "internal": "S10_1HShield_Unique_Necro_100_Gloves",
+      "classes": [],
+      "keys": [
+        "lidless-wall"
+      ]
+    },
+    {
+      "hash": "0x0024E622",
+      "name": "Lidless Wall",
+      "internal": "S10_1HShield_Unique_Necro_100_Legs",
+      "classes": [],
+      "keys": [
+        "lidless-wall"
+      ]
+    },
+    {
+      "hash": "0x0024E624",
+      "name": "Lidless Wall",
+      "internal": "S10_1HShield_Unique_Necro_100_Boots",
+      "classes": [],
+      "keys": [
+        "lidless-wall"
+      ]
+    },
+    {
+      "hash": "0x0024E638",
+      "name": "Malefic Crescent",
+      "internal": "S10_Amulet_Unique_Druid_101_Chest",
+      "classes": [],
+      "keys": [
+        "malefic-crescent"
+      ]
+    },
+    {
+      "hash": "0x0024E63A",
+      "name": "Malefic Crescent",
+      "internal": "S10_Amulet_Unique_Druid_101_Gloves",
+      "classes": [],
+      "keys": [
+        "malefic-crescent"
+      ]
+    },
+    {
+      "hash": "0x0024E63D",
+      "name": "Malefic Crescent",
+      "internal": "S10_Amulet_Unique_Druid_101_Helm",
+      "classes": [],
+      "keys": [
+        "malefic-crescent"
+      ]
+    },
+    {
+      "hash": "0x0024E63F",
+      "name": "Malefic Crescent",
+      "internal": "S10_Amulet_Unique_Druid_101_Legs",
+      "classes": [],
+      "keys": [
+        "malefic-crescent"
+      ]
+    },
+    {
+      "hash": "0x0024E7D0",
+      "name": "Ring of Mendeln",
+      "internal": "S10_Ring_Unique_Necro_100_Helm",
+      "classes": [],
+      "keys": [
+        "ring-of-mendeln"
+      ]
+    },
+    {
+      "hash": "0x0024E7DE",
+      "name": "Ring of Mendeln",
+      "internal": "S10_Ring_Unique_Necro_100_Chest",
+      "classes": [],
+      "keys": [
+        "ring-of-mendeln"
+      ]
+    },
+    {
+      "hash": "0x0024E7E2",
+      "name": "Ring of Mendeln",
+      "internal": "S10_Ring_Unique_Necro_100_Gloves",
+      "classes": [],
+      "keys": [
+        "ring-of-mendeln"
+      ]
+    },
+    {
+      "hash": "0x0024E7E4",
+      "name": "Ring of Mendeln",
+      "internal": "S10_Ring_Unique_Necro_100_Legs",
+      "classes": [],
+      "keys": [
+        "ring-of-mendeln"
+      ]
+    },
+    {
+      "hash": "0x0024E7E6",
+      "name": "Ring of Mendeln",
+      "internal": "S10_Ring_Unique_Necro_100_Boots",
+      "classes": [],
+      "keys": [
+        "ring-of-mendeln"
+      ]
+    },
+    {
+      "hash": "0x0024E7F2",
+      "name": "Mjölnic Ryng",
+      "internal": "S10_Ring_Unique_Druid_102_Boots",
+      "classes": [],
+      "keys": [
+        "mj-lnic-ryng"
+      ]
+    },
+    {
+      "hash": "0x0024E803",
+      "name": "Ring of the Sacrilegious Soul",
+      "internal": "S10_Ring_Unique_Necro_101_Helm",
+      "classes": [],
+      "keys": [
+        "ring-of-the-sacrilegious-soul"
+      ]
+    },
+    {
+      "hash": "0x0024E80F",
+      "name": "Mjölnic Ryng",
+      "internal": "S10_Ring_Unique_Druid_102_Chest",
+      "classes": [],
+      "keys": [
+        "mj-lnic-ryng"
+      ]
+    },
+    {
+      "hash": "0x0024E815",
+      "name": "Mjölnic Ryng",
+      "internal": "S10_Ring_Unique_Druid_102_Gloves",
+      "classes": [],
+      "keys": [
+        "mj-lnic-ryng"
+      ]
+    },
+    {
+      "hash": "0x0024E819",
+      "name": "Mjölnic Ryng",
+      "internal": "S10_Ring_Unique_Druid_102_Helm",
+      "classes": [],
+      "keys": [
+        "mj-lnic-ryng"
+      ]
+    },
+    {
+      "hash": "0x0024E81B",
+      "name": "Mjölnic Ryng",
+      "internal": "S10_Ring_Unique_Druid_102_Legs",
+      "classes": [],
+      "keys": [
+        "mj-lnic-ryng"
+      ]
+    },
+    {
+      "hash": "0x0024E81D",
+      "name": "Ring of the Sacrilegious Soul",
+      "internal": "S10_Ring_Unique_Necro_101_Chest",
+      "classes": [],
+      "keys": [
+        "ring-of-the-sacrilegious-soul"
+      ]
+    },
+    {
+      "hash": "0x0024E81F",
+      "name": "Ring of the Sacrilegious Soul",
+      "internal": "S10_Ring_Unique_Necro_101_Gloves",
+      "classes": [],
+      "keys": [
+        "ring-of-the-sacrilegious-soul"
+      ]
+    },
+    {
+      "hash": "0x0024E821",
+      "name": "Ring of the Sacrilegious Soul",
+      "internal": "S10_Ring_Unique_Necro_101_Legs",
+      "classes": [],
+      "keys": [
+        "ring-of-the-sacrilegious-soul"
+      ]
+    },
+    {
+      "hash": "0x0024E823",
+      "name": "Ring of the Sacrilegious Soul",
+      "internal": "S10_Ring_Unique_Necro_101_Boots",
+      "classes": [],
+      "keys": [
+        "ring-of-the-sacrilegious-soul"
+      ]
+    },
+    {
+      "hash": "0x0024E836",
+      "name": "The Basilisk",
+      "internal": "S10_S05_BSK_2HStaff_Unique_Druid_001_Boots",
+      "classes": [],
+      "keys": [
+        "the-basilisk"
+      ]
+    },
+    {
+      "hash": "0x0024E83E",
+      "name": "The Basilisk",
+      "internal": "S10_S05_BSK_2HStaff_Unique_Druid_001_Chest",
+      "classes": [],
+      "keys": [
+        "the-basilisk"
+      ]
+    },
+    {
+      "hash": "0x0024E844",
+      "name": "The Basilisk",
+      "internal": "S10_S05_BSK_2HStaff_Unique_Druid_001_Gloves",
+      "classes": [],
+      "keys": [
+        "the-basilisk"
+      ]
+    },
+    {
+      "hash": "0x0024E846",
+      "name": "The Basilisk",
+      "internal": "S10_S05_BSK_2HStaff_Unique_Druid_001_Helm",
+      "classes": [],
+      "keys": [
+        "the-basilisk"
+      ]
+    },
+    {
+      "hash": "0x0024E849",
+      "name": "The Basilisk",
+      "internal": "S10_S05_BSK_2HStaff_Unique_Druid_001_Legs",
+      "classes": [],
+      "keys": [
+        "the-basilisk"
+      ]
+    },
+    {
+      "hash": "0x0024E855",
+      "name": "The Mortacrux",
+      "internal": "S10_S05_BSK_1HDagger_Unique_Necro_001_Helm",
+      "classes": [],
+      "keys": [
+        "the-mortacrux"
+      ]
+    },
+    {
+      "hash": "0x0024E8D3",
+      "name": "The Mortacrux",
+      "internal": "S10_S05_BSK_1HDagger_Unique_Necro_001_Chest",
+      "classes": [],
+      "keys": [
+        "the-mortacrux"
+      ]
+    },
+    {
+      "hash": "0x0024E8D7",
+      "name": "The Mortacrux",
+      "internal": "S10_S05_BSK_1HDagger_Unique_Necro_001_Gloves",
+      "classes": [],
+      "keys": [
+        "the-mortacrux"
+      ]
+    },
+    {
+      "hash": "0x0024E8DA",
+      "name": "The Mortacrux",
+      "internal": "S10_S05_BSK_1HDagger_Unique_Necro_001_Legs",
+      "classes": [],
+      "keys": [
+        "the-mortacrux"
+      ]
+    },
+    {
+      "hash": "0x0024E8DC",
+      "name": "The Mortacrux",
+      "internal": "S10_S05_BSK_1HDagger_Unique_Necro_001_Boots",
+      "classes": [],
+      "keys": [
+        "the-mortacrux"
+      ]
+    },
+    {
+      "hash": "0x0024E8EB",
+      "name": "The Unmaker",
+      "internal": "S10_Helm_Unique_Necro_101_x1_Chest",
+      "classes": [],
+      "keys": [
+        "the-unmaker"
+      ]
+    },
+    {
+      "hash": "0x0024E9BF",
+      "name": "The Unmaker",
+      "internal": "S10_Helm_Unique_Necro_101_x1_Gloves",
+      "classes": [],
+      "keys": [
+        "the-unmaker"
+      ]
+    },
+    {
+      "hash": "0x0024E9C6",
+      "name": "The Unmaker",
+      "internal": "S10_Helm_Unique_Necro_101_x1_Legs",
+      "classes": [],
+      "keys": [
+        "the-unmaker"
+      ]
+    },
+    {
+      "hash": "0x0024E9C8",
+      "name": "The Unmaker",
+      "internal": "S10_Helm_Unique_Necro_101_x1_Boots",
+      "classes": [],
+      "keys": [
+        "the-unmaker"
+      ]
+    },
+    {
+      "hash": "0x0024E9CB",
+      "name": "The Hand of Naz",
+      "internal": "S10_Gloves_Unique_Necro_102_Helm",
+      "classes": [],
+      "keys": [
+        "the-hand-of-naz"
+      ]
+    },
+    {
+      "hash": "0x0024E9E5",
+      "name": "The Hand of Naz",
+      "internal": "S10_Gloves_Unique_Necro_102_Chest",
+      "classes": [],
+      "keys": [
+        "the-hand-of-naz"
+      ]
+    },
+    {
+      "hash": "0x0024E9EB",
+      "name": "The Hand of Naz",
+      "internal": "S10_Gloves_Unique_Necro_102_Legs",
+      "classes": [],
+      "keys": [
+        "the-hand-of-naz"
+      ]
+    },
+    {
+      "hash": "0x0024E9ED",
+      "name": "The Hand of Naz",
+      "internal": "S10_Gloves_Unique_Necro_102_Boots",
+      "classes": [],
+      "keys": [
+        "the-hand-of-naz"
+      ]
+    },
+    {
+      "hash": "0x0024F031",
+      "name": "Herald's Morningstar",
+      "internal": "1HMace_Unique_Paladin_001",
+      "classes": [],
+      "keys": [
+        "heralds-morningstar"
+      ]
+    },
+    {
+      "hash": "0x0024F0CC",
+      "name": "Gate of the Red Dawn",
+      "internal": "1HShield_Unique_Paladin_001",
+      "classes": [],
+      "keys": [
+        "gate-of-the-red-dawn"
+      ]
+    },
+    {
+      "hash": "0x0024FE35",
+      "name": "Rustbitten Dirk",
+      "internal": "1HDagger_Unique_Generic_001",
+      "classes": [],
+      "keys": [
+        "rustbitten-dirk"
+      ]
+    },
+    {
+      "hash": "0x002501BD",
+      "name": "Axial Conduit",
+      "internal": "S10_Pants_Unique_Sorc_101_Boots",
+      "classes": [],
+      "keys": [
+        "axial-conduit"
+      ]
+    },
+    {
+      "hash": "0x002501C6",
+      "name": "Axial Conduit",
+      "internal": "S10_Pants_Unique_Sorc_101_Chest",
+      "classes": [],
+      "keys": [
+        "axial-conduit"
+      ]
+    },
+    {
+      "hash": "0x002501C8",
+      "name": "Axial Conduit",
+      "internal": "S10_Pants_Unique_Sorc_101_Gloves",
+      "classes": [],
+      "keys": [
+        "axial-conduit"
+      ]
+    },
+    {
+      "hash": "0x002501CA",
+      "name": "Axial Conduit",
+      "internal": "S10_Pants_Unique_Sorc_101_Helm",
+      "classes": [],
+      "keys": [
+        "axial-conduit"
+      ]
+    },
+    {
+      "hash": "0x00250229",
+      "name": "Sabre of Tsasgal",
+      "internal": "S10_1HSword_Unique_Barb_103_Boots",
+      "classes": [],
+      "keys": [
+        "sabre-of-tsasgal"
+      ]
+    },
+    {
+      "hash": "0x00250258",
+      "name": "Sabre of Tsasgal",
+      "internal": "S10_1HSword_Unique_Barb_103_Chest",
+      "classes": [],
+      "keys": [
+        "sabre-of-tsasgal"
+      ]
+    },
+    {
+      "hash": "0x0025025E",
+      "name": "Sabre of Tsasgal",
+      "internal": "S10_1HSword_Unique_Barb_103_Gloves",
+      "classes": [],
+      "keys": [
+        "sabre-of-tsasgal"
+      ]
+    },
+    {
+      "hash": "0x00250261",
+      "name": "Sabre of Tsasgal",
+      "internal": "S10_1HSword_Unique_Barb_103_Helm",
+      "classes": [],
+      "keys": [
+        "sabre-of-tsasgal"
+      ]
+    },
+    {
+      "hash": "0x00250263",
+      "name": "Sabre of Tsasgal",
+      "internal": "S10_1HSword_Unique_Barb_103_Legs",
+      "classes": [],
+      "keys": [
+        "sabre-of-tsasgal"
+      ]
+    },
+    {
+      "hash": "0x0025026B",
+      "name": "Kilt of Blackwing",
+      "internal": "S10_Pants_Unique_Druid_002_Boots",
+      "classes": [],
+      "keys": [
+        "kilt-of-blackwing"
+      ]
+    },
+    {
+      "hash": "0x0025027D",
+      "name": "Kilt of Blackwing",
+      "internal": "S10_Pants_Unique_Druid_002_Chest",
+      "classes": [],
+      "keys": [
+        "kilt-of-blackwing"
+      ]
+    },
+    {
+      "hash": "0x00250284",
+      "name": "Kilt of Blackwing",
+      "internal": "S10_Pants_Unique_Druid_002_Gloves",
+      "classes": [],
+      "keys": [
+        "kilt-of-blackwing"
+      ]
+    },
+    {
+      "hash": "0x00250286",
+      "name": "Kilt of Blackwing",
+      "internal": "S10_Pants_Unique_Druid_002_Helm",
+      "classes": [],
+      "keys": [
+        "kilt-of-blackwing"
+      ]
+    },
+    {
+      "hash": "0x00250296",
+      "name": "Orphan Maker",
+      "internal": "S10_2HCrossbow_Unique_Rogue_100_Boots",
+      "classes": [],
+      "keys": [
+        "orphan-maker"
+      ]
+    },
+    {
+      "hash": "0x0025032B",
+      "name": "Orphan Maker",
+      "internal": "S10_2HCrossbow_Unique_Rogue_100_Chest",
+      "classes": [],
+      "keys": [
+        "orphan-maker"
+      ]
+    },
+    {
+      "hash": "0x0025032F",
+      "name": "Orphan Maker",
+      "internal": "S10_2HCrossbow_Unique_Rogue_100_Gloves",
+      "classes": [],
+      "keys": [
+        "orphan-maker"
+      ]
+    },
+    {
+      "hash": "0x00250333",
+      "name": "Orphan Maker",
+      "internal": "S10_2HCrossbow_Unique_Rogue_100_Helm",
+      "classes": [],
+      "keys": [
+        "orphan-maker"
+      ]
+    },
+    {
+      "hash": "0x0025033A",
+      "name": "Orphan Maker",
+      "internal": "S10_2HCrossbow_Unique_Rogue_100_Legs",
+      "classes": [],
+      "keys": [
+        "orphan-maker"
+      ]
+    },
+    {
+      "hash": "0x00250341",
+      "name": "Gospel of the Devotee",
+      "internal": "S10_1HFocus_Unique_Necro_100_Boots",
+      "classes": [],
+      "keys": [
+        "gospel-of-the-devotee"
+      ]
+    },
+    {
+      "hash": "0x00250379",
+      "name": "Gospel of the Devotee",
+      "internal": "S10_1HFocus_Unique_Necro_100_Chest",
+      "classes": [],
+      "keys": [
+        "gospel-of-the-devotee"
+      ]
+    },
+    {
+      "hash": "0x0025037F",
+      "name": "Gospel of the Devotee",
+      "internal": "S10_1HFocus_Unique_Necro_100_Gloves",
+      "classes": [],
+      "keys": [
+        "gospel-of-the-devotee"
+      ]
+    },
+    {
+      "hash": "0x00250383",
+      "name": "Gospel of the Devotee",
+      "internal": "S10_1HFocus_Unique_Necro_100_Helm",
+      "classes": [],
+      "keys": [
+        "gospel-of-the-devotee"
+      ]
+    },
+    {
+      "hash": "0x00250386",
+      "name": "Gospel of the Devotee",
+      "internal": "S10_1HFocus_Unique_Necro_100_Legs",
+      "classes": [],
+      "keys": [
+        "gospel-of-the-devotee"
+      ]
+    },
+    {
+      "hash": "0x00250396",
+      "name": "Galvanic Azurite",
+      "internal": "S10_Ring_Unique_Sorc_102_Boots",
+      "classes": [],
+      "keys": [
+        "galvanic-azurite"
+      ]
+    },
+    {
+      "hash": "0x002503C4",
+      "name": "Galvanic Azurite",
+      "internal": "S10_Ring_Unique_Sorc_102_Chest",
+      "classes": [],
+      "keys": [
+        "galvanic-azurite"
+      ]
+    },
+    {
+      "hash": "0x002503C7",
+      "name": "Galvanic Azurite",
+      "internal": "S10_Ring_Unique_Sorc_102_Gloves",
+      "classes": [],
+      "keys": [
+        "galvanic-azurite"
+      ]
+    },
+    {
+      "hash": "0x002503C9",
+      "name": "Galvanic Azurite",
+      "internal": "S10_Ring_Unique_Sorc_102_Helm",
+      "classes": [],
+      "keys": [
+        "galvanic-azurite"
+      ]
+    },
+    {
+      "hash": "0x002503CB",
+      "name": "Galvanic Azurite",
+      "internal": "S10_Ring_Unique_Sorc_102_Legs",
+      "classes": [],
+      "keys": [
+        "galvanic-azurite"
+      ]
+    },
+    {
+      "hash": "0x002503CF",
+      "name": "Hesha e Kesungi",
+      "internal": "S10_Gloves_Unique_Spiritborn_100_Boots",
+      "classes": [],
+      "keys": [
+        "hesha-e-kesungi"
+      ]
+    },
+    {
+      "hash": "0x002503DB",
+      "name": "Hesha e Kesungi",
+      "internal": "S10_Gloves_Unique_Spiritborn_100_Chests",
+      "classes": [],
+      "keys": [
+        "hesha-e-kesungi"
+      ]
+    },
+    {
+      "hash": "0x002503E0",
+      "name": "Hesha e Kesungi",
+      "internal": "S10_Gloves_Unique_Spiritborn_100_Gloves",
+      "classes": [],
+      "keys": [
+        "hesha-e-kesungi"
+      ]
+    },
+    {
+      "hash": "0x002503E2",
+      "name": "Hesha e Kesungi",
+      "internal": "S10_Gloves_Unique_Spiritborn_100_Helm",
+      "classes": [],
+      "keys": [
+        "hesha-e-kesungi"
+      ]
+    },
+    {
+      "hash": "0x002503E5",
+      "name": "Hesha e Kesungi",
+      "internal": "S10_Gloves_Unique_Spiritborn_100_Legs",
+      "classes": [],
+      "keys": [
+        "hesha-e-kesungi"
+      ]
+    },
+    {
+      "hash": "0x0025122A",
+      "name": "Bastion of Sir Matthias",
+      "internal": "1HShield_Unique_Paladin_002",
+      "classes": [],
+      "keys": [
+        "bastion-of-sir-matthias"
+      ]
+    },
+    {
+      "hash": "0x0025127B",
+      "name": "Argent Veil",
+      "internal": "Ring_Unique_Paladin_001",
+      "classes": [],
+      "keys": [
+        "argent-veil"
+      ]
+    },
+    {
+      "hash": "0x002516DE",
+      "name": "Ward of the White Dove",
+      "internal": "1HShield_Unique_Paladin_003",
+      "classes": [],
+      "keys": [
+        "ward-of-the-white-dove"
+      ]
+    },
+    {
+      "hash": "0x002539A2",
+      "name": "March of the Stalwart Soul",
+      "internal": "Boots_Unique_Paladin_001",
+      "classes": [],
+      "keys": [
+        "march-of-the-stalwart-soul"
+      ]
+    },
+    {
+      "hash": "0x00253A6A",
+      "name": "Supplication",
+      "internal": "1HSword_Unique_Paladin_001",
+      "classes": [],
+      "keys": [
+        "supplication"
+      ]
+    },
+    {
+      "hash": "0x0025527E",
+      "name": "Red Sermon",
+      "internal": "2HSword_Unique_Paladin_002",
+      "classes": [],
+      "keys": [
+        "red-sermon"
+      ]
+    },
+    {
+      "hash": "0x002554D9",
+      "name": "Judicant's Glaivehelm",
+      "internal": "Helm_Unique_Paladin_002",
+      "classes": [],
+      "keys": [
+        "judicants-glaivehelm"
+      ]
+    },
+    {
+      "hash": "0x00256991",
+      "name": "Dolmen Stone",
+      "internal": "S10_Amulet_Unique_Druid_100_Boots",
+      "classes": [],
+      "keys": [
+        "dolmen-stone"
+      ]
+    },
+    {
+      "hash": "0x002569A5",
+      "name": "Dolmen Stone",
+      "internal": "S10_Amulet_Unique_Druid_100_Chest",
+      "classes": [],
+      "keys": [
+        "dolmen-stone"
+      ]
+    },
+    {
+      "hash": "0x002569A7",
+      "name": "Dolmen Stone",
+      "internal": "S10_Amulet_Unique_Druid_100_Gloves",
+      "classes": [],
+      "keys": [
+        "dolmen-stone"
+      ]
+    },
+    {
+      "hash": "0x002569A9",
+      "name": "Dolmen Stone",
+      "internal": "S10_Amulet_Unique_Druid_100_Helm",
+      "classes": [],
+      "keys": [
+        "dolmen-stone"
+      ]
+    },
+    {
+      "hash": "0x002569AB",
+      "name": "Dolmen Stone",
+      "internal": "S10_Amulet_Unique_Druid_100_Legs",
+      "classes": [],
+      "keys": [
+        "dolmen-stone"
+      ]
+    },
+    {
+      "hash": "0x002569BA",
+      "name": "Mutilator Plate",
+      "internal": "S10_Chest_Unique_Necro_100_Boots",
+      "classes": [],
+      "keys": [
+        "mutilator-plate"
+      ]
+    },
+    {
+      "hash": "0x002569C0",
+      "name": "Mutilator Plate",
+      "internal": "S10_Chest_Unique_Necro_100_Gloves",
+      "classes": [],
+      "keys": [
+        "mutilator-plate"
+      ]
+    },
+    {
+      "hash": "0x002569C2",
+      "name": "Mutilator Plate",
+      "internal": "S10_Chest_Unique_Necro_100_Helm",
+      "classes": [],
+      "keys": [
+        "mutilator-plate"
+      ]
+    },
+    {
+      "hash": "0x00256CE3",
+      "name": "Mutilator Plate",
+      "internal": "S10_Chest_Unique_Necro_100_Legs",
+      "classes": [],
+      "keys": [
+        "mutilator-plate"
+      ]
+    },
+    {
+      "hash": "0x00256D03",
+      "name": "Scoundrel's Kiss",
+      "internal": "S10_Ring_Unique_Rogue_101_Boots",
+      "classes": [],
+      "keys": [
+        "scoundrels-kiss"
+      ]
+    },
+    {
+      "hash": "0x00256D84",
+      "name": "Scoundrel's Kiss",
+      "internal": "S10_Ring_Unique_Rogue_101_Chest",
+      "classes": [],
+      "keys": [
+        "scoundrels-kiss"
+      ]
+    },
+    {
+      "hash": "0x00256D88",
+      "name": "Scoundrel's Kiss",
+      "internal": "S10_Ring_Unique_Rogue_101_Gloves",
+      "classes": [],
+      "keys": [
+        "scoundrels-kiss"
+      ]
+    },
+    {
+      "hash": "0x00256D90",
+      "name": "Scoundrel's Kiss",
+      "internal": "S10_Ring_Unique_Rogue_101_Helm",
+      "classes": [],
+      "keys": [
+        "scoundrels-kiss"
+      ]
+    },
+    {
+      "hash": "0x00256D92",
+      "name": "Scoundrel's Kiss",
+      "internal": "S10_Ring_Unique_Rogue_101_Legs",
+      "classes": [],
+      "keys": [
+        "scoundrels-kiss"
+      ]
+    },
+    {
+      "hash": "0x00256DED",
+      "name": "Esu's Heirloom",
+      "internal": "S10_Boots_Unique_Sorc_100_Chest",
+      "classes": [],
+      "keys": [
+        "esus-heirloom"
+      ]
+    },
+    {
+      "hash": "0x002570B2",
+      "name": "Esu's Heirloom",
+      "internal": "S10_Boots_Unique_Sorc_100_Gloves",
+      "classes": [],
+      "keys": [
+        "esus-heirloom"
+      ]
+    },
+    {
+      "hash": "0x002570B4",
+      "name": "Esu's Heirloom",
+      "internal": "S10_Boots_Unique_Sorc_100_Helm",
+      "classes": [],
+      "keys": [
+        "esus-heirloom"
+      ]
+    },
+    {
+      "hash": "0x002570B8",
+      "name": "Esu's Heirloom",
+      "internal": "S10_Boots_Unique_Sorc_100_Legs",
+      "classes": [],
+      "keys": [
+        "esus-heirloom"
+      ]
+    },
+    {
+      "hash": "0x002570DE",
+      "name": "Sunbird's Gorget",
+      "internal": "S10_Amulet_Unique_Spiritborn_100_Boots",
+      "classes": [],
+      "keys": [
+        "sunbirds-gorget"
+      ]
+    },
+    {
+      "hash": "0x0025724C",
+      "name": "Sunbird's Gorget",
+      "internal": "S10_Amulet_Unique_Spiritborn_100_Chest",
+      "classes": [],
+      "keys": [
+        "sunbirds-gorget"
+      ]
+    },
+    {
+      "hash": "0x00257251",
+      "name": "Sunbird's Gorget",
+      "internal": "S10_Amulet_Unique_Spiritborn_100_Gloves",
+      "classes": [],
+      "keys": [
+        "sunbirds-gorget"
+      ]
+    },
+    {
+      "hash": "0x00257255",
+      "name": "Sunbird's Gorget",
+      "internal": "S10_Amulet_Unique_Spiritborn_100_Helm",
+      "classes": [],
+      "keys": [
+        "sunbirds-gorget"
+      ]
+    },
+    {
+      "hash": "0x0025725B",
+      "name": "Sunbird's Gorget",
+      "internal": "S10_Amulet_Unique_Spiritborn_100_Legs",
+      "classes": [],
+      "keys": [
+        "sunbirds-gorget"
+      ]
+    },
+    {
+      "hash": "0x002580F2",
+      "name": "Ramaladni's Magnum Opus",
+      "internal": "S10_1HSword_Unique_Barb_101_Boots",
+      "classes": [],
+      "keys": [
+        "ramaladnis-magnum-opus"
+      ]
+    },
+    {
+      "hash": "0x002581F8",
+      "name": "Ramaladni's Magnum Opus",
+      "internal": "S10_1HSword_Unique_Barb_101_Chest",
+      "classes": [],
+      "keys": [
+        "ramaladnis-magnum-opus"
+      ]
+    },
+    {
+      "hash": "0x0025823E",
+      "name": "Ramaladni's Magnum Opus",
+      "internal": "S10_1HSword_Unique_Barb_101_Gloves",
+      "classes": [],
+      "keys": [
+        "ramaladnis-magnum-opus"
+      ]
+    },
+    {
+      "hash": "0x00258240",
+      "name": "Ramaladni's Magnum Opus",
+      "internal": "S10_1HSword_Unique_Barb_101_Helm",
+      "classes": [],
+      "keys": [
+        "ramaladnis-magnum-opus"
+      ]
+    },
+    {
+      "hash": "0x00258243",
+      "name": "Ramaladni's Magnum Opus",
+      "internal": "S10_1HSword_Unique_Barb_101_Legs",
+      "classes": [],
+      "keys": [
+        "ramaladnis-magnum-opus"
+      ]
+    },
+    {
+      "hash": "0x0025827C",
+      "name": "Esadora's Overflowing Cameo",
+      "internal": "S10_Amulet_Unique_Sorc_100_Boots_V2",
+      "classes": [],
+      "keys": [
+        "esadoras-overflowing-cameo"
+      ]
+    },
+    {
+      "hash": "0x00258283",
+      "name": "Esadora's Overflowing Cameo",
+      "internal": "S10_Amulet_Unique_Sorc_100_Chest_V2",
+      "classes": [],
+      "keys": [
+        "esadoras-overflowing-cameo"
+      ]
+    },
+    {
+      "hash": "0x00258289",
+      "name": "Esadora's Overflowing Cameo",
+      "internal": "S10_Amulet_Unique_Sorc_100_Gloves_V2",
+      "classes": [],
+      "keys": [
+        "esadoras-overflowing-cameo"
+      ]
+    },
+    {
+      "hash": "0x0025828B",
+      "name": "Esadora's Overflowing Cameo",
+      "internal": "S10_Amulet_Unique_Sorc_100_Helm_V2",
+      "classes": [],
+      "keys": [
+        "esadoras-overflowing-cameo"
+      ]
+    },
+    {
+      "hash": "0x0025828D",
+      "name": "Esadora's Overflowing Cameo",
+      "internal": "S10_Amulet_Unique_Sorc_100_Legs_V2",
+      "classes": [],
+      "keys": [
+        "esadoras-overflowing-cameo"
+      ]
+    },
+    {
+      "hash": "0x002582AF",
+      "name": "Staff of Endless Rage",
+      "internal": "S10_2HStaff_Unique_Sorc_002_Boots_V2",
+      "classes": [],
+      "keys": [
+        "staff-of-endless-rage"
+      ]
+    },
+    {
+      "hash": "0x002582B1",
+      "name": "Staff of Endless Rage",
+      "internal": "S10_2HStaff_Unique_Sorc_002_Chest_V2",
+      "classes": [],
+      "keys": [
+        "staff-of-endless-rage"
+      ]
+    },
+    {
+      "hash": "0x002582B4",
+      "name": "Staff of Endless Rage",
+      "internal": "S10_2HStaff_Unique_Sorc_002_Gloves_V2",
+      "classes": [],
+      "keys": [
+        "staff-of-endless-rage"
+      ]
+    },
+    {
+      "hash": "0x002582B6",
+      "name": "Staff of Endless Rage",
+      "internal": "S10_2HStaff_Unique_Sorc_002_Helm_V2",
+      "classes": [],
+      "keys": [
+        "staff-of-endless-rage"
+      ]
+    },
+    {
+      "hash": "0x002582B8",
+      "name": "Staff of Endless Rage",
+      "internal": "S10_2HStaff_Unique_Sorc_002_Legs_V2",
+      "classes": [],
+      "keys": [
+        "staff-of-endless-rage"
+      ]
+    },
+    {
+      "hash": "0x002582D2",
+      "name": "Rotting Lightbringer",
+      "internal": "S10_2HMace_Unique_Druid_100_Boots_V2",
+      "classes": [],
+      "keys": [
+        "rotting-lightbringer"
+      ]
+    },
+    {
+      "hash": "0x002582D4",
+      "name": "Rotting Lightbringer",
+      "internal": "S10_2HMace_Unique_Druid_100_Chest_V2",
+      "classes": [],
+      "keys": [
+        "rotting-lightbringer"
+      ]
+    },
+    {
+      "hash": "0x002582D6",
+      "name": "Rotting Lightbringer",
+      "internal": "S10_2HMace_Unique_Druid_100_Gloves_V2",
+      "classes": [],
+      "keys": [
+        "rotting-lightbringer"
+      ]
+    },
+    {
+      "hash": "0x002582D8",
+      "name": "Rotting Lightbringer",
+      "internal": "S10_2HMace_Unique_Druid_100_Helm_V2",
+      "classes": [],
+      "keys": [
+        "rotting-lightbringer"
+      ]
+    },
+    {
+      "hash": "0x002582DA",
+      "name": "Rotting Lightbringer",
+      "internal": "S10_2HMace_Unique_Druid_100_Legs_V2",
+      "classes": [],
+      "keys": [
+        "rotting-lightbringer"
+      ]
+    },
+    {
+      "hash": "0x0025914E",
+      "name": "Path of the Emissary",
+      "internal": "Boots_Unique_Spiritborn_001",
+      "classes": [],
+      "keys": [
+        "path-of-the-emissary"
+      ]
+    },
+    {
+      "hash": "0x00259790",
+      "name": "Orsivane",
+      "internal": "1HMace_Unique_Sorc_100",
+      "classes": [],
+      "keys": [
+        "orsivane"
+      ]
+    },
+    {
+      "hash": "0x00259FE1",
+      "name": "Khamsin Steppewalkers",
+      "internal": "Boots_Unique_Druid_101",
+      "classes": [],
+      "keys": [
+        "khamsin-steppewalkers"
+      ]
+    },
+    {
+      "hash": "0x0025AFF6",
+      "name": "Mace of King Leoric",
+      "internal": "1HMace_Unique_Necro_100",
+      "classes": [],
+      "keys": [
+        "mace-of-king-leoric"
+      ]
+    },
+    {
+      "hash": "0x0025B0D6",
+      "name": "Light's Rebuke",
+      "internal": "1HFlail_Unique_Paladin_003",
+      "classes": [],
+      "keys": [
+        "lights-rebuke"
+      ]
+    },
+    {
+      "hash": "0x0025BB4B",
+      "name": "Herald of Zakarum",
+      "internal": "1HShield_Unique_Paladin_004",
+      "classes": [],
+      "keys": [
+        "herald-of-zakarum"
+      ]
+    },
+    {
+      "hash": "0x0025BFC9",
+      "name": "Cathedral's Song",
+      "internal": "1HShield_Unique_Paladin_005",
+      "classes": [],
+      "keys": [
+        "cathedrals-song"
+      ]
+    },
+    {
+      "hash": "0x0025C1DA",
+      "name": "Dawnfire",
+      "internal": "Gloves_Unique_Paladin_003",
+      "classes": [],
+      "keys": [
+        "dawnfire"
+      ]
+    },
+    {
+      "hash": "0x0025C7C1",
+      "name": "Sanctis of Kethamar",
+      "internal": "Amulet_Unique_Paladin_002",
+      "classes": [],
+      "keys": [
+        "sanctis-of-kethamar"
+      ]
+    },
+    {
+      "hash": "0x0025CBB1",
+      "name": "Griswold's Opus",
+      "internal": "1HSword_Unique_Paladin_002",
+      "classes": [],
+      "keys": [
+        "griswolds-opus"
+      ]
+    },
+    {
+      "hash": "0x0025CEE2",
+      "name": "(DNS)",
+      "internal": "Boots_Unique_Paladin_95",
+      "classes": [],
+      "keys": [
+        "dns"
+      ]
+    },
+    {
+      "hash": "0x0025CEE5",
+      "name": "(DNS)",
+      "internal": "Chest_Unique_Paladin_95",
+      "classes": [],
+      "keys": [
+        "dns"
+      ]
+    },
+    {
+      "hash": "0x0025CEE8",
+      "name": "(DNS)",
+      "internal": "Glove_Unique_Paladin_95",
+      "classes": [],
+      "keys": [
+        "dns"
+      ]
+    },
+    {
+      "hash": "0x0025CEEC",
+      "name": "(DNS)",
+      "internal": "Helm_Unique_Paladin_95",
+      "classes": [],
+      "keys": [
+        "dns"
+      ]
+    },
+    {
+      "hash": "0x0025CEEF",
+      "name": "(DNS)",
+      "internal": "Pants_Unique_Paladin_95",
+      "classes": [],
+      "keys": [
+        "dns"
+      ]
+    },
+    {
+      "hash": "0x0025D064",
+      "name": "Sundered Night",
+      "internal": "2HAxe_Unique_Paladin_001",
+      "classes": [],
+      "keys": [
+        "sundered-night"
+      ]
+    },
+    {
+      "hash": "0x0025D35D",
+      "name": "Chainscourged Mail",
+      "internal": "Pants_Unique_Barb_101",
+      "classes": [],
+      "keys": [
+        "chainscourged-mail"
+      ]
+    },
+    {
+      "hash": "0x0025D428",
+      "name": "Mantle of the Grey",
+      "internal": "Chest_Unique_Paladin_001",
+      "classes": [],
+      "keys": [
+        "mantle-of-the-grey"
+      ]
+    },
+    {
+      "hash": "0x0025D677",
+      "name": "Seal of the Second Trumpet",
+      "internal": "Ring_Unique_Paladin_002",
+      "classes": [],
+      "keys": [
+        "seal-of-the-second-trumpet"
+      ]
+    },
+    {
+      "hash": "0x0025D6F8",
+      "name": "Arcadia",
+      "internal": "Pants_Unique_Paladin_002",
+      "classes": [],
+      "keys": [
+        "arcadia"
+      ]
+    },
+    {
+      "hash": "0x00264FAA",
+      "name": "Judgment of Auriel",
+      "internal": "Amulet_Unique_Paladin_003",
+      "classes": [],
+      "keys": [
+        "judgment-of-auriel"
+      ]
+    },
+    {
+      "hash": "0x002654B3",
+      "name": "Wreath of Auric Laurel",
+      "internal": "Ring_Unique_Paladin_003",
+      "classes": [],
+      "keys": [
+        "wreath-of-auric-laurel"
+      ]
+    },
+    {
+      "hash": "0x00265A83",
+      "name": "Sunbrand",
+      "internal": "1HFlail_Unique_Paladin_004",
+      "classes": [],
+      "keys": [
+        "sunbrand"
+      ]
+    },
+    {
+      "hash": "0x0026BC52",
+      "name": "Wendigo Brand",
+      "internal": "Ring_Unique_Generic_103",
+      "classes": [],
+      "keys": [
+        "wendigo-brand"
+      ]
+    },
+    {
+      "hash": "0x0026BD89",
+      "name": "Wyrdskin",
+      "internal": "Gloves_Unique_Generic_005",
+      "classes": [],
+      "keys": [
+        "wyrdskin"
+      ]
+    },
+    {
+      "hash": "0x0026BD93",
+      "name": "Thousand-Eye Reaver",
+      "internal": "1HAxe_Unique_Generic_003",
+      "classes": [],
+      "keys": [
+        "thousand-eye-reaver"
+      ]
+    },
+    {
+      "hash": "0x0026E047",
+      "name": "Lurid Pact",
+      "internal": "Ring_Unique_Warlock_001",
+      "classes": [],
+      "keys": [
+        "lurid-pact"
+      ]
+    },
+    {
+      "hash": "0x0026E38C",
+      "name": "Elegy",
+      "internal": "1HSword_Unique_Warlock_001",
+      "classes": [],
+      "keys": [
+        "elegy"
+      ]
+    },
+    {
+      "hash": "0x0026E38E",
+      "name": "Anathema of the Primes",
+      "internal": "2HSword_Unique_Warlock_001",
+      "classes": [],
+      "keys": [
+        "anathema-of-the-primes"
+      ]
+    },
+    {
+      "hash": "0x0026E392",
+      "name": "Dirge of Odium",
+      "internal": "2HAxe_Unique_Warlock_001",
+      "classes": [],
+      "keys": [
+        "dirge-of-odium"
+      ]
+    },
+    {
+      "hash": "0x0026E397",
+      "name": "Spine of Tathamet",
+      "internal": "1HMace_Unique_Warlock_001",
+      "classes": [],
+      "keys": [
+        "spine-of-tathamet"
+      ]
+    },
+    {
+      "hash": "0x0026E399",
+      "name": "Scepter of the Three",
+      "internal": "2HMace_Unique_Warlock_001",
+      "classes": [],
+      "keys": [
+        "scepter-of-the-three"
+      ]
+    },
+    {
+      "hash": "0x0026E39B",
+      "name": "Litany of Sable",
+      "internal": "1HDagger_Unique_Warlock_001",
+      "classes": [],
+      "keys": [
+        "litany-of-sable"
+      ]
+    },
+    {
+      "hash": "0x0026E39E",
+      "name": "Infernal Homunculus",
+      "internal": "1HFocus_Unique_Warlock_001",
+      "classes": [],
+      "keys": [
+        "infernal-homunculus"
+      ]
+    },
+    {
+      "hash": "0x0026E3A0",
+      "name": "Scourge of Duriel",
+      "internal": "1HFlail_Unique_Warlock_001",
+      "classes": [],
+      "keys": [
+        "scourge-of-duriel"
+      ]
+    },
+    {
+      "hash": "0x0026E4B6",
+      "name": "Cluckonomicon",
+      "internal": "2HStaff_Unique_AF_001",
+      "classes": [],
+      "keys": [
+        "cluckonomicon"
+      ]
+    },
+    {
+      "hash": "0x0026E4BB",
+      "name": "Cluckeye",
+      "internal": "2HBow_Unique_AF_001",
+      "classes": [],
+      "keys": [
+        "cluckeye"
+      ]
+    },
+    {
+      "hash": "0x0026E590",
+      "name": "Sire of Sin",
+      "internal": "Ring_Unique_Warlock_002",
+      "classes": [],
+      "keys": [
+        "sire-of-sin"
+      ]
+    },
+    {
+      "hash": "0x0026E597",
+      "name": "Hecaton Chasm",
+      "internal": "Ring_Unique_Warlock_003",
+      "classes": [],
+      "keys": [
+        "hecaton-chasm"
+      ]
+    },
+    {
+      "hash": "0x0026E59B",
+      "name": "Seal of the Ophanim",
+      "internal": "Ring_Unique_Warlock_004",
+      "classes": [],
+      "keys": [
+        "seal-of-the-ophanim"
+      ]
+    },
+    {
+      "hash": "0x0026E59D",
+      "name": "The Fecund Seal",
+      "internal": "Ring_Unique_Warlock_005",
+      "classes": [],
+      "keys": [
+        "the-fecund-seal"
+      ]
+    },
+    {
+      "hash": "0x0026E5A1",
+      "name": "Hellbrand Signet",
+      "internal": "Ring_Unique_Warlock_006",
+      "classes": [],
+      "keys": [
+        "hellbrand-signet"
+      ]
+    },
+    {
+      "hash": "0x0026E5A3",
+      "name": "The Eightfold Idol",
+      "internal": "Ring_Unique_Warlock_007",
+      "classes": [],
+      "keys": [
+        "the-eightfold-idol"
+      ]
+    },
+    {
+      "hash": "0x0026E5A7",
+      "name": "Seed of Horazon",
+      "internal": "Amulet_Unique_Warlock_001",
+      "classes": [],
+      "keys": [
+        "seed-of-horazon"
+      ]
+    },
+    {
+      "hash": "0x0026E5AA",
+      "name": "Nails of the Gore-Crowned",
+      "internal": "Helm_Unique_Warlock_001",
+      "classes": [],
+      "keys": [
+        "nails-of-the-gore-crowned"
+      ]
+    },
+    {
+      "hash": "0x0026E5AC",
+      "name": "Fleshwrit Carapace",
+      "internal": "Chest_Unique_Warlock_001",
+      "classes": [],
+      "keys": [
+        "fleshwrit-carapace"
+      ]
+    },
+    {
+      "hash": "0x0026E5AE",
+      "name": "Gauntlets of Sheol",
+      "internal": "Gloves_Unique_Warlock_001",
+      "classes": [],
+      "keys": [
+        "gauntlets-of-sheol"
+      ]
+    },
+    {
+      "hash": "0x0026E5B0",
+      "name": "Kabraxis' Will",
+      "internal": "Pants_Unique_Warlock_001",
+      "classes": [],
+      "keys": [
+        "kabraxis-will"
+      ]
+    },
+    {
+      "hash": "0x0026E5B2",
+      "name": "Footfalls of the Waning World",
+      "internal": "Boots_Unique_Warlock_001",
+      "classes": [],
+      "keys": [
+        "footfalls-of-the-waning-world"
+      ]
+    },
+    {
+      "hash": "0x0026E5D0",
+      "name": "Hellhound's Sabatons",
+      "internal": "Boots_Unique_Warlock_002",
+      "classes": [],
+      "keys": [
+        "hellhounds-sabatons"
+      ]
+    },
+    {
+      "hash": "0x0026E5D3",
+      "name": "Ae'grom's Schism",
+      "internal": "Chest_Unique_Warlock_002",
+      "classes": [],
+      "keys": [
+        "aegroms-schism"
+      ]
+    },
+    {
+      "hash": "0x0026E5D5",
+      "name": "Hand of Apotheosis",
+      "internal": "Gloves_Unique_Warlock_002",
+      "classes": [],
+      "keys": [
+        "hand-of-apotheosis"
+      ]
+    },
+    {
+      "hash": "0x0026E5D8",
+      "name": "Thrice-Woven Nightmare",
+      "internal": "Gloves_Unique_Warlock_003",
+      "classes": [],
+      "keys": [
+        "thrice-woven-nightmare"
+      ]
+    },
+    {
+      "hash": "0x0026E5DA",
+      "name": "Hands of the Worldbreaker",
+      "internal": "Gloves_Unique_Warlock_004",
+      "classes": [],
+      "keys": [
+        "hands-of-the-worldbreaker"
+      ]
+    },
+    {
+      "hash": "0x0026E5DC",
+      "name": "Cowl of Malefic Torment",
+      "internal": "Helm_Unique_Warlock_002",
+      "classes": [],
+      "keys": [
+        "cowl-of-malefic-torment"
+      ]
+    },
+    {
+      "hash": "0x0026E5DE",
+      "name": "Cage of Madness",
+      "internal": "Helm_Unique_Warlock_003",
+      "classes": [],
+      "keys": [
+        "cage-of-madness"
+      ]
+    },
+    {
+      "hash": "0x0026E5E0",
+      "name": "Rictus of Terror",
+      "internal": "Helm_Unique_Warlock_004",
+      "classes": [],
+      "keys": [
+        "rictus-of-terror"
+      ]
+    },
+    {
+      "hash": "0x0026E5E2",
+      "name": "Bridle of Tor'Baalos",
+      "internal": "Helm_Unique_Warlock_005",
+      "classes": [],
+      "keys": [
+        "bridle-of-torbaalos"
+      ]
+    },
+    {
+      "hash": "0x0026E5E4",
+      "name": "Sashes of the Wretched",
+      "internal": "Pants_Unique_Warlock_002",
+      "classes": [],
+      "keys": [
+        "sashes-of-the-wretched"
+      ]
+    },
+    {
+      "hash": "0x0026E5E6",
+      "name": "Bindings of Attrition",
+      "internal": "Pants_Unique_Warlock_003",
+      "classes": [],
+      "keys": [
+        "bindings-of-attrition"
+      ]
+    },
+    {
+      "hash": "0x0026E5E8",
+      "name": "Morlu Fleshward",
+      "internal": "Pants_Unique_Warlock_004",
+      "classes": [],
+      "keys": [
+        "morlu-fleshward"
+      ]
+    },
+    {
+      "hash": "0x0026E5EA",
+      "name": "Moloch's Beating Flame",
+      "internal": "Amulet_Unique_Warlock_002",
+      "classes": [],
+      "keys": [
+        "molochs-beating-flame"
+      ]
+    },
+    {
+      "hash": "0x0026E5EC",
+      "name": "Night Terror",
+      "internal": "Amulet_Unique_Warlock_003",
+      "classes": [],
+      "keys": [
+        "night-terror"
+      ]
+    },
+    {
+      "hash": "0x0026E5EE",
+      "name": "The Hemat Stone",
+      "internal": "Amulet_Unique_Warlock_004",
+      "classes": [],
+      "keys": [
+        "the-hemat-stone"
+      ]
+    },
+    {
+      "hash": "0x0026E5F0",
+      "name": "Eye of Baal",
+      "internal": "1HFocus_Unique_Warlock_002",
+      "classes": [],
+      "keys": [
+        "eye-of-baal"
+      ]
+    },
+    {
+      "hash": "0x00270F30",
+      "name": "Will of Stone",
+      "internal": "Helm_Unique_Druid_100_x2",
+      "classes": [],
+      "keys": [
+        "will-of-stone"
+      ]
+    },
+    {
+      "hash": "0x00270F45",
+      "name": "The Blade of Sight Aflame",
+      "internal": "1HSword_Unique_Warlock_002",
+      "classes": [],
+      "keys": [
+        "the-blade-of-sight-aflame"
+      ]
+    },
+    {
+      "hash": "0x00270F70",
+      "name": "Autumnal Crown",
+      "internal": "Helm_Unique_Druid_101_x2",
+      "classes": [],
+      "keys": [
+        "autumnal-crown"
+      ]
+    },
+    {
+      "hash": "0x00272ED0",
+      "name": "Echo of Kwatli",
+      "internal": "Amulet_Unique_Spiritborn_101",
+      "classes": [],
+      "keys": [
+        "echo-of-kwatli"
+      ]
+    },
+    {
+      "hash": "0x00272ED2",
+      "name": "Protean Heart",
+      "internal": "Amulet_Unique_Spiritborn_102",
+      "classes": [],
+      "keys": [
+        "protean-heart"
+      ]
+    },
+    {
+      "hash": "0x00272EFB",
+      "name": "Widow's Web",
+      "internal": "Amulet_Unique_Spiritborn_103",
+      "classes": [],
+      "keys": [
+        "widows-web"
+      ]
+    },
+    {
+      "hash": "0x00273986",
+      "name": "Dark Howl",
+      "internal": "Gloves_Unique_Druid_01_x2",
+      "classes": [],
+      "keys": [
+        "dark-howl"
+      ]
+    },
+    {
+      "hash": "0x00273AB7",
+      "name": "Greenwalker's Oath",
+      "internal": "Boots_Unique_Druid_01_x2",
+      "classes": [],
+      "keys": [
+        "greenwalkers-oath"
+      ]
+    },
+    {
+      "hash": "0x00273C36",
+      "name": "Ifeh's Dire Totem",
+      "internal": "1HTotem_Unique_Druid_01_x2",
+      "classes": [],
+      "keys": [
+        "ifehs-dire-totem"
+      ]
+    },
+    {
+      "hash": "0x00273C44",
+      "name": "Eggcecutioner",
+      "internal": "2HScythe_Unique_AF_001",
+      "classes": [],
+      "keys": [
+        "eggcecutioner"
+      ]
+    },
+    {
+      "hash": "0x00273C57",
+      "name": "Heart of Azgar",
+      "internal": "Chest_Unique_Druid_97_x2",
+      "classes": [],
+      "keys": [
+        "heart-of-azgar"
+      ]
+    },
+    {
+      "hash": "0x00273E5D",
+      "name": "Dirge of Airidah",
+      "internal": "Ring_Unique_Druid_01_x2",
+      "classes": [],
+      "keys": [
+        "dirge-of-airidah"
+      ]
+    },
+    {
+      "hash": "0x00273EC7",
+      "name": "Greenwalker's Signet",
+      "internal": "Ring_Unique_Druid_02_x2",
+      "classes": [],
+      "keys": [
+        "greenwalkers-signet"
+      ]
+    },
+    {
+      "hash": "0x00274088",
+      "name": "Coop de Grâce",
+      "internal": "2HPolearm_Unique_AF_001",
+      "classes": [],
+      "keys": [
+        "coop-de-gr-ce"
+      ]
+    },
+    {
+      "hash": "0x00274230",
+      "name": "Fractured Runestone",
+      "internal": "Ring_Unique_Druid_03_x2",
+      "classes": [],
+      "keys": [
+        "fractured-runestone"
+      ]
+    },
+    {
+      "hash": "0x002742F2",
+      "name": "Accord of the Wilds",
+      "internal": "Ring_Unique_Druid_04_x2",
+      "classes": [],
+      "keys": [
+        "accord-of-the-wilds"
+      ]
+    },
+    {
+      "hash": "0x00274308",
+      "name": "Eggis",
+      "internal": "1HShield_Unique_AF_001",
+      "classes": [],
+      "keys": [
+        "eggis"
+      ]
+    },
+    {
+      "hash": "0x00274332",
+      "name": "Mark of the Old Wolf",
+      "internal": "Ring_Unique_Druid_05_x2",
+      "classes": [],
+      "keys": [
+        "mark-of-the-old-wolf"
+      ]
+    },
+    {
+      "hash": "0x0027484E",
+      "name": "Fury of the Wilds",
+      "internal": "Ring_Unique_Druid_06_x2",
+      "classes": [],
+      "keys": [
+        "fury-of-the-wilds"
+      ]
+    },
+    {
+      "hash": "0x0027485A",
+      "name": "Might of the Ursine",
+      "internal": "Ring_Unique_Druid_07_x2",
+      "classes": [],
+      "keys": [
+        "might-of-the-ursine"
+      ]
+    },
+    {
+      "hash": "0x00274862",
+      "name": "Purified Lightbringer",
+      "internal": "2HMace_Unique_Druid_100_x2",
+      "classes": [],
+      "keys": [
+        "purified-lightbringer"
+      ]
+    },
+    {
+      "hash": "0x002760BC",
+      "name": "Cassia's Grace",
+      "internal": "2HBow_Unique_Rogue_002_x2",
+      "classes": [],
+      "keys": [
+        "cassias-grace"
+      ]
+    },
+    {
+      "hash": "0x002760EB",
+      "name": "Fist of the Iron Rose",
+      "internal": "Gloves_Unique_Rogue_001_x2",
+      "classes": [],
+      "keys": [
+        "fist-of-the-iron-rose"
+      ]
+    },
+    {
+      "hash": "0x0027616E",
+      "name": "Sea Lord's Fine Gloves",
+      "internal": "Gloves_Unique_Rogue_002_x2",
+      "classes": [],
+      "keys": [
+        "sea-lords-fine-gloves"
+      ]
+    },
+    {
+      "hash": "0x00276181",
+      "name": "Etna's Lost Dagger",
+      "internal": "1HDagger_Unique_Rogue_003_x2",
+      "classes": [],
+      "keys": [
+        "etnas-lost-dagger"
+      ]
+    },
+    {
+      "hash": "0x002761A2",
+      "name": "Misericorde",
+      "internal": "1HSword_Unique_Rogue_001_x2",
+      "classes": [],
+      "keys": [
+        "misericorde"
+      ]
+    },
+    {
+      "hash": "0x002764DB",
+      "name": "Desperate March",
+      "internal": "Boots_Unique_Rogue_001_x2",
+      "classes": [],
+      "keys": [
+        "desperate-march"
+      ]
+    },
+    {
+      "hash": "0x00276526",
+      "name": "Emblem of Staalbreak",
+      "internal": "Amulet_Unique_Barb_102_x2",
+      "classes": [],
+      "keys": [
+        "emblem-of-staalbreak"
+      ]
+    },
+    {
+      "hash": "0x00276531",
+      "name": "Dark Stalker's Medallion",
+      "internal": "Amulet_Unique_Barb_103_x2",
+      "classes": [],
+      "keys": [
+        "dark-stalkers-medallion"
+      ]
+    },
+    {
+      "hash": "0x00276534",
+      "name": "Nomad's Longing Heart",
+      "internal": "Amulet_Unique_Barb_104_x2",
+      "classes": [],
+      "keys": [
+        "nomads-longing-heart"
+      ]
+    },
+    {
+      "hash": "0x00276536",
+      "name": "The Open Eye of Gorgorra",
+      "internal": "Amulet_Unique_Barb_105_x2",
+      "classes": [],
+      "keys": [
+        "the-open-eye-of-gorgorra"
+      ]
+    },
+    {
+      "hash": "0x0027665B",
+      "name": "Shrouded Gift",
+      "internal": "Pants_Unique_Rogue_001_x2",
+      "classes": [],
+      "keys": [
+        "shrouded-gift"
+      ]
+    },
+    {
+      "hash": "0x002767F3",
+      "name": "The Maestro",
+      "internal": "1HDagger_Unique_Rogue_004_x2",
+      "classes": [],
+      "keys": [
+        "the-maestro"
+      ]
+    },
+    {
+      "hash": "0x00276C39",
+      "name": "The Relentless Heart",
+      "internal": "Chest_Unique_Barb_102_x2",
+      "classes": [],
+      "keys": [
+        "the-relentless-heart"
+      ]
+    },
+    {
+      "hash": "0x00276C3D",
+      "name": "Might of Qual-Kehk",
+      "internal": "Gloves_Unique_Barb_102_x2",
+      "classes": [],
+      "keys": [
+        "might-of-qual-kehk"
+      ]
+    },
+    {
+      "hash": "0x002770DF",
+      "name": "Fang of the Vipermagi",
+      "internal": "1HDagger_Unique_Sorc_100_x2",
+      "classes": [],
+      "keys": [
+        "fang-of-the-vipermagi"
+      ]
+    },
+    {
+      "hash": "0x00277124",
+      "name": "Shanar's Resonance",
+      "internal": "1HFocus_Unique_Sorc_102_x2",
+      "classes": [],
+      "keys": [
+        "shanars-resonance"
+      ]
+    },
+    {
+      "hash": "0x00277143",
+      "name": "Thundergod's Blessing",
+      "internal": "Ring_Unique_Generic_104_x2",
+      "classes": [],
+      "keys": [
+        "thundergods-blessing"
+      ]
+    },
+    {
+      "hash": "0x0027714F",
+      "name": "Vision of the Firestorm",
+      "internal": "Helm_Unique_Sorc_102_x2",
+      "classes": [],
+      "keys": [
+        "vision-of-the-firestorm"
+      ]
+    },
+    {
+      "hash": "0x00277549",
+      "name": "Staff of Zerae",
+      "internal": "2HStaff_Unique_Sorc_101_x2",
+      "classes": [],
+      "keys": [
+        "staff-of-zerae"
+      ]
+    },
+    {
+      "hash": "0x00277592",
+      "name": "Onyx Soul",
+      "internal": "1HFocus_Unique_Sorc_103_x2",
+      "classes": [],
+      "keys": [
+        "onyx-soul"
+      ]
+    },
+    {
+      "hash": "0x00277679",
+      "name": "Molten Band",
+      "internal": "Ring_Unique_Sorc_103_x2",
+      "classes": [],
+      "keys": [
+        "molten-band"
+      ]
+    },
+    {
+      "hash": "0x002776F6",
+      "name": "Signet of Pelghain",
+      "internal": "Ring_Unique_Generic_105_x2",
+      "classes": [],
+      "keys": [
+        "signet-of-pelghain"
+      ]
+    },
+    {
+      "hash": "0x00277719",
+      "name": "Emberfury",
+      "internal": "Amulet_Unique_Sorc_103_x2",
+      "classes": [],
+      "keys": [
+        "emberfury"
+      ]
+    },
+    {
+      "hash": "0x00277736",
+      "name": "Drognan's Anguish",
+      "internal": "Ring_Unique_Sorc_104_x2",
+      "classes": [],
+      "keys": [
+        "drognans-anguish"
+      ]
+    },
+    {
+      "hash": "0x00277A7D",
+      "name": "Rimeblood",
+      "internal": "Gloves_Unique_Sorc_103_x2",
+      "classes": [],
+      "keys": [
+        "rimeblood"
+      ]
+    },
+    {
+      "hash": "0x00277A9D",
+      "name": "Levin Grasp",
+      "internal": "Gloves_Unique_Sorc_102_x2",
+      "classes": [],
+      "keys": [
+        "levin-grasp"
+      ]
+    },
+    {
+      "hash": "0x00277C1C",
+      "name": "Hangman's Hand",
+      "internal": "Gloves_Unique_Necro_103",
+      "classes": [],
+      "keys": [
+        "hangmans-hand"
+      ]
+    },
+    {
+      "hash": "0x00277CCF",
+      "name": "Raiment of the Sea",
+      "internal": "Chest_Unique_Sorc_100_x2",
+      "classes": [],
+      "keys": [
+        "raiment-of-the-sea"
+      ]
+    },
+    {
+      "hash": "0x00277CF2",
+      "name": "Deathgrip",
+      "internal": "Gloves_Unique_Necro_104",
+      "classes": [],
+      "keys": [
+        "deathgrip"
+      ]
+    },
+    {
+      "hash": "0x00277D3D",
+      "name": "The Undercrown",
+      "internal": "Helm_Unique_Necro_101",
+      "classes": [],
+      "keys": [
+        "the-undercrown"
+      ]
+    },
+    {
+      "hash": "0x00277D58",
+      "name": "Pact of Bone",
+      "internal": "Ring_Unique_Necro_100_x2",
+      "classes": [],
+      "keys": [
+        "pact-of-bone"
+      ]
+    },
+    {
+      "hash": "0x00277DC7",
+      "name": "Gift of Frost",
+      "internal": "Boots_Unique_Sorc_101_x2",
+      "classes": [],
+      "keys": [
+        "gift-of-frost"
+      ]
+    },
+    {
+      "hash": "0x0027805D",
+      "name": "Vengeful Sinew",
+      "internal": "Chest_Unique_Necro_101_x2",
+      "classes": [],
+      "keys": [
+        "vengeful-sinew"
+      ]
+    },
+    {
+      "hash": "0x0027828F",
+      "name": "Blood Wake",
+      "internal": "Boots_Unique_Necro_102",
+      "classes": [],
+      "keys": [
+        "blood-wake"
+      ]
+    },
+    {
+      "hash": "0x002782A7",
+      "name": "Red Blessing",
+      "internal": "Amulet_Unique_Necro_100_x2",
+      "classes": [],
+      "keys": [
+        "red-blessing"
+      ]
+    },
+    {
+      "hash": "0x002782C1",
+      "name": "The Gloom Ward",
+      "internal": "1HShield_Unique_Necro_101",
+      "classes": [],
+      "keys": [
+        "the-gloom-ward"
+      ]
+    },
+    {
+      "hash": "0x002782CB",
+      "name": "Will of Rathma",
+      "internal": "Amulet_Unique_Necro_102",
+      "classes": [],
+      "keys": [
+        "will-of-rathma"
+      ]
+    },
+    {
+      "hash": "0x00278D92",
+      "name": "Omen of Pain",
+      "internal": "Ring_Unique_Necro_102",
+      "classes": [],
+      "keys": [
+        "omen-of-pain"
+      ]
+    },
+    {
+      "hash": "0x00279D1F",
+      "name": "Gravewalker's Hand",
+      "internal": "Gloves_Unique_Necro_105",
+      "classes": [],
+      "keys": [
+        "gravewalkers-hand"
+      ]
+    },
+    {
+      "hash": "0x0027B52B",
+      "name": "Ramaladni's Magnum Opus (Crucible)",
+      "internal": "S12_1HSword_Unique_Barb_101",
+      "classes": [],
+      "keys": [
+        "ramaladnis-magnum-opus-crucible"
+      ]
+    },
+    {
+      "hash": "0x0027B52D",
+      "name": "Sabre of Tsasgal (Crucible)",
+      "internal": "S12_1HSword_Unique_Barb_103",
+      "classes": [],
+      "keys": [
+        "sabre-of-tsasgal-crucible"
+      ]
+    },
+    {
+      "hash": "0x0027B52F",
+      "name": "Doombringer (Crucible)",
+      "internal": "S12_1HSword_Unique_Generic_001",
+      "classes": [],
+      "keys": [
+        "doombringer-crucible"
+      ]
+    },
+    {
+      "hash": "0x0027B531",
+      "name": "Azurewrath (Crucible)",
+      "internal": "S12_1HSword_Unique_Generic_100",
+      "classes": [],
+      "keys": [
+        "azurewrath-crucible"
+      ]
+    },
+    {
+      "hash": "0x0027B533",
+      "name": "Supplication (Crucible)",
+      "internal": "S12_1HSword_Unique_Paladin_001",
+      "classes": [],
+      "keys": [
+        "supplication-crucible"
+      ]
+    },
+    {
+      "hash": "0x0027B535",
+      "name": "Griswold's Opus (Crucible)",
+      "internal": "S12_1HSword_Unique_Paladin_002",
+      "classes": [],
+      "keys": [
+        "griswolds-opus-crucible"
+      ]
+    },
+    {
+      "hash": "0x0027B53B",
+      "name": "The Third Blade (Crucible)",
+      "internal": "S12_BSK_1HSword_Unique_Barbarian_001",
+      "classes": [],
+      "keys": [
+        "the-third-blade-crucible"
+      ]
+    },
+    {
+      "hash": "0x0027B53D",
+      "name": "Shard of Verathiel (Crucible)",
+      "internal": "S12_BSK_1HSword_Unique_Generic_001",
+      "classes": [],
+      "keys": [
+        "shard-of-verathiel-crucible"
+      ]
+    },
+    {
+      "hash": "0x0027B53F",
+      "name": "Waxing Gibbous (Crucible)",
+      "internal": "S12_1HAxe_Unique_Druid_100",
+      "classes": [],
+      "keys": [
+        "waxing-gibbous-crucible"
+      ]
+    },
+    {
+      "hash": "0x0027B541",
+      "name": "The Butcher's Cleaver (Crucible)",
+      "internal": "S12_1HAxe_Unique_Generic_001",
+      "classes": [],
+      "keys": [
+        "the-butchers-cleaver-crucible"
+      ]
+    },
+    {
+      "hash": "0x0027B543",
+      "name": "Thousand-Eye Reaver (Crucible)",
+      "internal": "S12_1HAxe_Unique_Generic_003",
+      "classes": [],
+      "keys": [
+        "thousand-eye-reaver-crucible"
+      ]
+    },
+    {
+      "hash": "0x0027B545",
+      "name": "Fields of Crimson (Crucible)",
+      "internal": "S12_2HSword_Unique_Barb_002",
+      "classes": [],
+      "keys": [
+        "fields-of-crimson-crucible"
+      ]
+    },
+    {
+      "hash": "0x0027B547",
+      "name": "The Grandfather (Crucible)",
+      "internal": "S12_2HSword_Unique_Generic_001",
+      "classes": [],
+      "keys": [
+        "the-grandfather-crucible"
+      ]
+    },
+    {
+      "hash": "0x0027B549",
+      "name": "Sanguivor, Blade of Zir (Crucible)",
+      "internal": "S12_2HSword_Unique_Necro_100",
+      "classes": [],
+      "keys": [
+        "sanguivor-blade-of-zir-crucible"
+      ]
+    },
+    {
+      "hash": "0x0027B54B",
+      "name": "Red Sermon (Crucible)",
+      "internal": "S12_2HSword_Unique_Paladin_002",
+      "classes": [],
+      "keys": [
+        "red-sermon-crucible"
+      ]
+    },
+    {
+      "hash": "0x0027B54D",
+      "name": "Shattered Vow (Crucible)",
+      "internal": "S12_2HPolearm_Unique_Generic_001",
+      "classes": [],
+      "keys": [
+        "shattered-vow-crucible"
+      ]
+    },
+    {
+      "hash": "0x0027B54F",
+      "name": "Rustbitten Dirk (Crucible)",
+      "internal": "S12_1HDagger_Unique_Generic_001",
+      "classes": [],
+      "keys": [
+        "rustbitten-dirk-crucible"
+      ]
+    },
+    {
+      "hash": "0x0027B551",
+      "name": "Condemnation (Crucible)",
+      "internal": "S12_1HDagger_Unique_Rogue_001",
+      "classes": [],
+      "keys": [
+        "condemnation-crucible"
+      ]
+    },
+    {
+      "hash": "0x0027B553",
+      "name": "Asheara's Khanjar (Crucible)",
+      "internal": "S12_1HDagger_Unique_Rogue_002",
+      "classes": [],
+      "keys": [
+        "ashearas-khanjar-crucible"
+      ]
+    },
+    {
+      "hash": "0x0027B555",
+      "name": "The Mortacrux (Crucible)",
+      "internal": "S12_BSK_1HDagger_Unique_Necro_001",
+      "classes": [],
+      "keys": [
+        "the-mortacrux-crucible"
+      ]
+    },
+    {
+      "hash": "0x0027B557",
+      "name": "The Umbracrux (Crucible)",
+      "internal": "S12_BSK_1HDagger_Unique_Rogue_001",
+      "classes": [],
+      "keys": [
+        "the-umbracrux-crucible"
+      ]
+    },
+    {
+      "hash": "0x0027BAD5",
+      "name": "El'Druin, Sword of Justice",
+      "internal": "1HSword_Unique_Generic_002",
+      "classes": [],
+      "keys": [
+        "eldruin-sword-of-justice"
+      ]
+    },
+    {
+      "hash": "0x002806E1",
+      "name": "Sliver of Hate",
+      "internal": "Ring_Unique_Generic_106_x2",
+      "classes": [],
+      "keys": [
+        "sliver-of-hate"
+      ]
+    },
+    {
+      "hash": "0x00281FCD",
+      "name": "Ring of Starless Skies",
+      "internal": "S14_Ring_Unique_Generic_104",
+      "classes": [],
+      "keys": [
+        "ring-of-starless-skies"
+      ]
+    },
+    {
+      "hash": "0x002860FF",
+      "name": "Doombringer",
+      "internal": "S14_1HSword_Unique_Generic_001",
+      "classes": [],
+      "keys": [
+        "doombringer"
+      ]
+    },
+    {
+      "hash": "0x00286101",
+      "name": "El'Druin, Sword of Justice",
+      "internal": "S14_1HSword_Unique_Generic_002",
+      "classes": [],
+      "keys": [
+        "eldruin-sword-of-justice"
+      ]
+    },
+    {
+      "hash": "0x00286103",
+      "name": "Shattered Vow",
+      "internal": "S14_2HPolearm_Unique_Generic_001",
+      "classes": [],
+      "keys": [
+        "shattered-vow"
+      ]
+    },
+    {
+      "hash": "0x00286105",
+      "name": "Ahavarion, Spear of Lycander",
+      "internal": "S14_2HStaff_Unique_Generic_100",
+      "classes": [],
+      "keys": [
+        "ahavarion-spear-of-lycander"
+      ]
+    },
+    {
+      "hash": "0x00286107",
+      "name": "The Grandfather",
+      "internal": "S14_2HSword_Unique_Generic_001",
+      "classes": [],
+      "keys": [
+        "the-grandfather"
+      ]
+    },
+    {
+      "hash": "0x00286109",
+      "name": "Melted Heart of Selig",
+      "internal": "S14_Amulet_Unique_Generic_100",
+      "classes": [],
+      "keys": [
+        "melted-heart-of-selig"
+      ]
+    },
+    {
+      "hash": "0x0028610B",
+      "name": "Shroud of False Death",
+      "internal": "S14_Chest_Unique_Generic_103",
+      "classes": [],
+      "keys": [
+        "shroud-of-false-death"
+      ]
+    },
+    {
+      "hash": "0x0028610D",
+      "name": "Tyrael's Might",
+      "internal": "S14_Chest_Unique_Generic_127",
+      "classes": [],
+      "keys": [
+        "tyraels-might"
+      ]
+    },
+    {
+      "hash": "0x0028610F",
+      "name": "Nesekem, the Herald",
+      "internal": "S14_Glaive_Unique_Spiritborn_014_x1",
+      "classes": [],
+      "keys": [
+        "nesekem-the-herald"
+      ]
+    },
+    {
+      "hash": "0x00286111",
+      "name": "Andariel's Visage",
+      "internal": "S14_Helm_Unique_Generic_001",
+      "classes": [],
+      "keys": [
+        "andariels-visage"
+      ]
+    },
+    {
+      "hash": "0x00286113",
+      "name": "Harlequin Crest",
+      "internal": "S14_Helm_Unique_Generic_002",
+      "classes": [],
+      "keys": [
+        "harlequin-crest"
+      ]
+    },
+    {
+      "hash": "0x00286115",
+      "name": "Heir of Perdition",
+      "internal": "S14_Helm_Unique_Generic_004",
+      "classes": [],
+      "keys": [
+        "heir-of-perdition"
+      ]
+    }
+  ]
+}

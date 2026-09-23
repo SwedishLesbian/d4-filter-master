@@ -1,0 +1,4 @@
+name = "d4-maxroll-guide"
+main = "worker.js"
+compatibility_date = "2024-11-01"
+workers_dev = true

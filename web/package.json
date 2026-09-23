@@ -1,0 +1,6 @@
+{
+  "name": "d4-lootfilter-web",
+  "private": true,
+  "type": "module",
+  "description": "Static browser app: Maxroll build link -> Diablo 4 loot filter import code"
+}

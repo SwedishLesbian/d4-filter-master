@@ -1,0 +1,12 @@
+*.env
+*.mhtml
+*.pyc
+.dev.vars
+.playwright-mcp/
+.wrangler/
+__pycache__/
+data/maxroll_data.min.json
+node_modules/
+wrangler-secrets.txt
+web/.preview-*.png
+web/data/oracle.json

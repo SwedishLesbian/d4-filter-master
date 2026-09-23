@@ -1,0 +1,196 @@
+{
+  "_meta": {
+    "source": "Derived from ThunderEagle/D4LootBench d4-data.json (MIT)."
+  },
+  "itemTypes": [
+    {
+      "hash": "0x0006D13A",
+      "name": "Mace",
+      "keys": [
+        "mace"
+      ]
+    },
+    {
+      "hash": "0x0006D144",
+      "name": "Two-Handed Mace",
+      "keys": [
+        "two-handed-mace"
+      ]
+    },
+    {
+      "hash": "0x0006D14C",
+      "name": "Sword",
+      "keys": [
+        "sword"
+      ]
+    },
+    {
+      "hash": "0x0006D14F",
+      "name": "Two-Handed Sword",
+      "keys": [
+        "two-handed-sword"
+      ]
+    },
+    {
+      "hash": "0x0006D151",
+      "name": "Axe",
+      "keys": [
+        "axe"
+      ]
+    },
+    {
+      "hash": "0x0006D152",
+      "name": "Two-Handed Axe",
+      "keys": [
+        "two-handed-axe"
+      ]
+    },
+    {
+      "hash": "0x0006D153",
+      "name": "Staff",
+      "keys": [
+        "staff"
+      ]
+    },
+    {
+      "hash": "0x0006D154",
+      "name": "Scythe",
+      "keys": [
+        "scythe"
+      ]
+    },
+    {
+      "hash": "0x0006D155",
+      "name": "Two-Handed Scythe",
+      "keys": [
+        "two-handed-scythe"
+      ]
+    },
+    {
+      "hash": "0x0006D159",
+      "name": "Dagger",
+      "keys": [
+        "dagger"
+      ]
+    },
+    {
+      "hash": "0x0006D15D",
+      "name": "Polearm",
+      "keys": [
+        "polearm"
+      ]
+    },
+    {
+      "hash": "0x0006D163",
+      "name": "Wand",
+      "keys": [
+        "wand"
+      ]
+    },
+    {
+      "hash": "0x0006D167",
+      "name": "Bow",
+      "keys": [
+        "bow"
+      ]
+    },
+    {
+      "hash": "0x0006D168",
+      "name": "Hand Crossbow",
+      "keys": [
+        "hand-crossbow"
+      ]
+    },
+    {
+      "hash": "0x0006D169",
+      "name": "Crossbow",
+      "keys": [
+        "crossbow"
+      ]
+    },
+    {
+      "hash": "0x0006D16A",
+      "name": "Focus",
+      "keys": [
+        "focus"
+      ]
+    },
+    {
+      "hash": "0x0006D16B",
+      "name": "Totem",
+      "keys": [
+        "totem"
+      ]
+    },
+    {
+      "hash": "0x0006D16D",
+      "name": "Chest Armor",
+      "keys": [
+        "chest-armor"
+      ]
+    },
+    {
+      "hash": "0x0006D16E",
+      "name": "Helm",
+      "keys": [
+        "helm"
+      ]
+    },
+    {
+      "hash": "0x0006D16F",
+      "name": "Pants",
+      "keys": [
+        "pants"
+      ]
+    },
+    {
+      "hash": "0x0006D170",
+      "name": "Boots",
+      "keys": [
+        "boots"
+      ]
+    },
+    {
+      "hash": "0x0006D171",
+      "name": "Gloves",
+      "keys": [
+        "gloves"
+      ]
+    },
+    {
+      "hash": "0x0006D172",
+      "name": "Shield",
+      "keys": [
+        "shield"
+      ]
+    },
+    {
+      "hash": "0x0006D174",
+      "name": "Ring",
+      "keys": [
+        "ring"
+      ]
+    },
+    {
+      "hash": "0x0006D175",
+      "name": "Amulet",
+      "keys": [
+        "amulet"
+      ]
+    },
+    {
+      "hash": "0x0022ED05",
+      "name": "Charm",
+      "keys": [
+        "charm"
+      ]
+    },
+    {
+      "hash": "0x00237E80",
+      "name": "Horadric Seal",
+      "keys": [
+        "horadric-seal"
+      ]
+    }
+  ]
+}

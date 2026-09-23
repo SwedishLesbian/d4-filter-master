@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Diablo 4 Filter Master</title>
+<meta name="description" content="Turn a Maxroll Diablo IV build into a native in-game loot filter import code. Runs entirely in your browser." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%9F%A2%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ink:        #000000;
+    --ink-2:      #050605;
+    --panel:      rgba(14,16,14,.62);
+    --edge:       rgba(62,255,120,.16);
+    --edge-lit:   rgba(62,255,120,.55);
+    --text:       #ececec;
+    --muted:      #9a9a9a;
+    --faint:      #6d6d6d;
+    --green:      #3dff78;   /* neon */
+    --green-lt:   #74ff9e;
+    --green-dk:   #17c94f;
+    --green-soft: #9dffbd;
+    --field:      #d3d4d0;   /* light grey input */
+    --field-2:    #e6e7e3;
+    --field-ink:  #141712;   /* dark text on the light field */
+    --field-ph:   #5c5f57;
+    --focus:      #3dff78;
+    /* in-game rule gem colours */
+    --r-red:#ff5a52; --r-purple:#c58bff; --r-green:#4fd06a; --r-white:#f4efe8;
+    --r-blue:#4aa6ff; --r-teal:#16d9b6; --r-cyan:#57e6e6; --r-magenta:#ff77c4;
+    --serif: "Cormorant", Georgia, serif;
+    --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; color-scheme: dark; }
+  body {
+    margin: 0; min-height: 100dvh; color: var(--text);
+    font-family: var(--sans); font-size: 16px; line-height: 1.6;
+    -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+    background:
+      radial-gradient(1100px 620px at 50% -10%, rgba(62,255,120,.10), transparent 60%),
+      radial-gradient(1000px 780px at 88% 8%, rgba(62,255,120,.05), transparent 55%),
+      var(--ink);
+    background-attachment: fixed;
+  }
+  body::before {
+    content:""; position: fixed; inset: -20%; z-index: 0; pointer-events: none;
+    background: radial-gradient(closest-side, rgba(62,255,120,.06), transparent 70%);
+    filter: blur(34px); animation: drift 26s ease-in-out infinite alternate;
+  }
+  @keyframes drift {
+    from { transform: translate3d(-6%, -3%, 0) scale(1.05); }
+    to   { transform: translate3d(7%, 5%, 0) scale(1.15); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    body::before { animation: none; }
+    * { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+  }
+
+  .wrap { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; padding: 7vh 22px 14vh; }
+
+  /* ---- hero ---- */
+  .hero { text-align: center; margin-bottom: 42px; }
+  h1 {
+    font-family: var(--serif); font-weight: 500; font-size: clamp(44px, 8.2vw, 78px);
+    line-height: 1.0; letter-spacing: .5px; margin: 0; color: var(--text);
+  }
+  h1 em {
+    font-style: italic; font-weight: 500;
+    background: linear-gradient(180deg, var(--green-lt), var(--green) 55%, var(--green-dk));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    padding: 0 .06em;
+  }
+  .filigree { display:flex; align-items:center; justify-content:center; gap:14px; margin:22px 0 0; color: var(--edge-lit); }
+  .filigree::before, .filigree::after {
+    content:""; height:1px; width:min(150px, 28vw);
+    background: linear-gradient(90deg, transparent, var(--edge-lit));
+  }
+  .filigree::after { background: linear-gradient(90deg, var(--edge-lit), transparent); }
+  .filigree span { color: var(--green); font-size: 12px; }
+
+  /* ---- panels ---- */
+  .panel {
+    position: relative; background: var(--panel); border: 1px solid var(--edge);
+    border-radius: 16px; padding: 26px; margin-bottom: 20px;
+    backdrop-filter: blur(14px) saturate(1.1); -webkit-backdrop-filter: blur(14px) saturate(1.1);
+    box-shadow: 0 30px 80px -40px #000, inset 0 1px 0 rgba(255,255,255,.03);
+  }
+  .panel::before {
+    content:""; position:absolute; inset:0 0 auto 0; height:1px; border-radius:16px 16px 0 0;
+    background: linear-gradient(90deg, transparent, var(--edge-lit) 30%, var(--edge-lit) 70%, transparent);
+  }
+  .lbl { display:block; font-size: 12px; letter-spacing:.09em; text-transform: uppercase; color: var(--green-soft); font-weight:600; margin: 0 0 9px; }
+  .lbl .tip { text-transform: none; letter-spacing: 0; color: var(--faint); font-weight: 400; font-size: 12px; }
+  code { font-family: var(--mono); font-size: .86em; color: var(--green-soft); }
+
+  .conjure { display:flex; gap:12px; flex-wrap:wrap; }
+  input[type=text], select, textarea.code {
+    width: 100%; padding: 13px 15px; border-radius: 11px; font-family: var(--sans); font-size: 15px;
+    color: var(--field-ink); background: var(--field); border: 1px solid transparent;
+    transition: box-shadow .2s, background .2s, border-color .2s;
+  }
+  input[type=text]::placeholder { color: var(--field-ph); }
+  input[type=text]:focus, select:focus, textarea.code:focus {
+    outline: none; background: var(--field-2); border-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(62,255,120,.22), 0 0 26px -6px rgba(62,255,120,.5);
+  }
+  select { appearance: none; cursor: pointer; color: var(--field-ink);
+    background-image: linear-gradient(45deg, transparent 50%, var(--field-ink) 50%), linear-gradient(135deg, var(--field-ink) 50%, transparent 50%);
+    background-position: right 18px center, right 13px center; background-size: 5px 5px, 5px 5px; background-repeat: no-repeat;
+    padding-right: 38px;
+  }
+
+  button {
+    font-family: var(--sans); font-weight: 700; font-size: 14px; letter-spacing:.02em; cursor: pointer;
+    border: 1px solid transparent; border-radius: 11px; padding: 13px 22px; color: #06210f;
+    background: linear-gradient(180deg, var(--green-lt), var(--green) 60%, var(--green-dk));
+    box-shadow: 0 12px 34px -12px rgba(62,255,120,.6), inset 0 1px 0 rgba(255,255,255,.35);
+    position: relative; overflow: hidden; transition: transform .12s ease, box-shadow .2s, filter .2s;
+  }
+  button::after {
+    content:""; position:absolute; inset:0; transform: translateX(-120%);
+    background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,.55) 50%, transparent 60%);
+  }
+  button:hover { transform: translateY(-1px); box-shadow: 0 18px 46px -12px rgba(62,255,120,.85), inset 0 1px 0 rgba(255,255,255,.4); }
+  button:hover::after { transition: transform .7s ease; transform: translateX(120%); }
+  button:active { transform: translateY(0); }
+  button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+  button:disabled { opacity: .5; cursor: default; }
+  button.ghost {
+    background: rgba(62,255,120,.08); color: var(--green-soft); border: 1px solid var(--edge-lit);
+    box-shadow: none; font-family: var(--mono); font-size: 12.5px; letter-spacing:.06em;
+  }
+  button.ghost::after { display:none; }
+  button.ghost:hover { background: rgba(62,255,120,.16); transform: none; }
+
+  .status { min-height: 20px; font-size: 14px; margin-top: 14px; color: var(--muted); }
+  .status.err { color: #ff6a60; }
+  .status.ok  { color: var(--green-soft); }
+
+  #config { margin-top: 22px; }
+  .reveal { animation: rise .5s cubic-bezier(.2,.7,.2,1) both; }
+  @keyframes rise { from { opacity:0; transform: translateY(10px); } to { opacity:1; transform:none; } }
+  .two { display:flex; gap:14px; flex-wrap:wrap; margin-bottom: 18px; }
+  .two > * { flex:1; min-width: 200px; }
+  .opts { display:grid; grid-template-columns: repeat(auto-fit, minmax(190px,1fr)); gap: 14px; }
+  .toggle { display:flex; align-items:center; gap:10px; font-size:14px; color: var(--text); cursor: pointer; }
+  .toggle input { width:17px; height:17px; accent-color: var(--green); cursor:pointer; }
+  .toggle.mini { gap:8px; }
+  .mini input.num { width:56px; padding:8px 10px; text-align:center; }
+  .colors { margin-top:18px; border-top:1px solid var(--edge); padding-top:14px; }
+  .colors summary { cursor:pointer; color:var(--green-soft); font-size:13px; font-weight:600; letter-spacing:.04em; list-style:none; }
+  .colors summary::before { content:"▸ "; color:var(--green); }
+  .colors[open] summary::before { content:"▾ "; }
+  .cgrid { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; margin-top:14px; }
+  .cswatch { display:flex; align-items:center; gap:9px; font-size:13px; color:var(--muted); }
+  .cswatch input[type=color] { -webkit-appearance:none; appearance:none; width:26px; height:26px; padding:0; border:1px solid var(--edge-lit); border-radius:7px; background:none; cursor:pointer; flex:none; }
+  .cswatch input[type=color]::-webkit-color-swatch-wrapper { padding:2px; }
+  .cswatch input[type=color]::-webkit-color-swatch { border:none; border-radius:4px; }
+
+  /* ---- output ---- */
+  #out { display:none; }
+  #out.show { display:block; }
+  .grimoire { border-color: var(--edge-lit); box-shadow: 0 30px 90px -40px rgba(62,255,120,.35), inset 0 1px 0 rgba(255,255,255,.04); }
+  .codehead { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:12px; }
+  .codehead h3 { margin:0; font-family: var(--serif); font-weight:500; font-size:24px; letter-spacing:.4px; }
+  textarea.code {
+    font-family: var(--mono); font-size:12.5px; line-height:1.55; resize: vertical; min-height: 96px; word-break: break-all;
+  }
+  .steps { color: var(--muted); font-size:13.5px; margin:12px 0 0; }
+  .steps b { color: var(--green-soft); font-weight:600; }
+  .meta { color: var(--faint); font-family: var(--mono); font-size:12px; letter-spacing:.03em; margin:10px 0 0; }
+  .scroll-rule { margin: 20px 0 0; padding: 0; list-style: none; }
+  .scroll-rule li { display:flex; gap:13px; padding:11px 0; border-top:1px solid var(--edge); align-items:center; }
+  .scroll-rule li:first-child { border-top:none; }
+  .gem {
+    width:16px; height:16px; border-radius:5px; flex:none; align-self:flex-start; margin-top:3px;
+    background: currentColor; border:1px solid rgba(255,255,255,.28);
+    box-shadow: 0 0 12px -1px currentColor, inset 0 1px 1px rgba(255,255,255,.45);
+  }
+  .rname { font-weight:600; font-size:14px; min-width:124px; flex:none; letter-spacing:.01em; }
+  .rafx { color: var(--muted); font-size:13.5px; }
+  .rafx .ga { color: var(--green); font-weight:700; }
+  .omen { color: var(--green-soft); font-size:13px; margin-top:12px; display:flex; gap:8px; align-items:baseline; }
+  .omen::before { content:"◆"; color: var(--green); font-size:10px; }
+  .pill { display:inline-block; font-family: var(--sans); background: rgba(62,255,120,.08); border:1px solid var(--edge);
+    border-radius:20px; padding:3px 12px; font-size:12.5px; margin:3px 5px 3px 0; color: var(--green-soft); }
+  .dethead { font-size:12px; letter-spacing:.08em; text-transform:uppercase; color: var(--faint); margin:0 0 6px; }
+
+  footer { text-align:center; color: var(--faint); font-size:12.5px; margin-top:44px; line-height:1.9; }
+  footer a { color: var(--green-soft); text-decoration: none; border-bottom:1px solid var(--edge); }
+  footer a:hover { color: var(--green); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <h1>D4 Filter <em>Master</em></h1>
+    <div class="filigree"><span>✦</span></div>
+  </header>
+
+  <section class="panel" aria-label="Build input">
+    <label class="lbl" for="link">Maxroll build link
+      <span class="tip">— e.g. <code>maxroll.gg/d4/build-guides/dance-of-knives-rogue-guide</code>. A planner link or bare build id works too.</span>
+    </label>
+    <div class="conjure">
+      <input type="text" id="link" placeholder="https://maxroll.gg/d4/build-guides/…     ·     or a planner link / build id"
+             autocomplete="off" spellcheck="false" style="flex:3; min-width:220px" />
+      <button id="load" style="flex:1; min-width:130px">Load build</button>
+    </div>
+    <div id="status" class="status" role="status" aria-live="polite"></div>
+
+    <div id="config" hidden>
+      <div class="two">
+        <div>
+          <label class="lbl" for="variant">Variant</label>
+          <select id="variant"></select>
+        </div>
+        <div>
+          <label class="lbl" for="name">Filter name <span class="tip">(max 30)</span></label>
+          <input type="text" id="name" maxlength="30" />
+        </div>
+      </div>
+      <div class="opts">
+        <label class="toggle" for="hide"><input type="checkbox" id="hide" />Hide gear that doesn't match the build</label>
+        <label class="toggle" for="partial"><input type="checkbox" id="partial" checked />Show partial matches (2 of 3 affixes)</label>
+        <label class="toggle" for="mythic-always"><input type="checkbox" id="mythic-always" checked />Always show Mythic Uniques</label>
+        <label class="toggle" for="anc-all"><input type="checkbox" id="anc-all" />Only show Ancestral items (hide the rest)</label>
+        <label class="toggle" for="anc-u"><input type="checkbox" id="anc-u" />Show a unique only if it's Ancestral</label>
+        <label class="toggle" for="anc-g"><input type="checkbox" id="anc-g" />Show rares &amp; legendaries only if Ancestral</label>
+        <label class="toggle mini" for="ga">Greater-affix catch ≥ <input type="text" inputmode="numeric" id="ga" class="num" value="1" /></label>
+      </div>
+      <details class="colors">
+        <summary>Customize colors</summary>
+        <div id="color-grid" class="cgrid"></div>
+        <button id="color-reset" class="ghost" type="button" style="margin-top:12px">Reset to defaults</button>
+      </details>
+      <div style="margin-top:20px"><button id="gen">Generate filter code</button></div>
+    </div>
+  </section>
+
+  <section id="out" class="panel grimoire" aria-label="Generated filter">
+    <div class="codehead">
+      <h3>Import code</h3>
+      <button id="copy" class="ghost" type="button">Copy</button>
+    </div>
+    <textarea id="code" class="code" readonly spellcheck="false" aria-label="Loot filter import code"></textarea>
+    <p class="steps">In game: <b>Character menu → Loot Filter → New Filter → Import</b>, then paste.</p>
+    <p id="meta" class="meta"></p>
+    <div id="warn"></div>
+    <ul id="rules" class="scroll-rule"></ul>
+    <div id="detected" style="margin-top:16px"></div>
+  </section>
+
+  <footer>
+    Runs entirely in your browser · nothing is uploaded.<br>
+    Unofficial — not affiliated with Blizzard or Maxroll. A fork of
+    <a href="https://github.com/Freitag47/d4-lootfilter-generator">d4-lootfilter-generator</a>.
+  </footer>
+</div>
+
+<script type="module">
+import { parsePlannerId, fetchProfile, listVariants, extractVariant, buildFilter, slotLabelFor } from "./d4filter.js";
+
+// Optional Cloudflare Worker that turns a build-guide URL into a planner id
+// (guide HTML isn't CORS-open; planner + data APIs are, so those need no backend).
+// Empty = guide links unsupported; planner links/ids still work with no backend.
+const WORKER_URL = "https://d4-maxroll-guide.swedishlesbian.workers.dev";
+
+// per-tier colour keys -> default hex (must match the C_* constants in d4filter.js)
+const COLORS = [
+  ["unique", "Build Uniques", "#ff5050"], ["mythic", "Mythic Uniques", "#ffc850"],
+  ["set", "Set Charms", "#be82ff"], ["codex", "Codex Upgrade", "#00c800"],
+  ["bis", "BiS (3/3 + GA)", "#ffffff"], ["gear", "Gear (full 3/3)", "#0096ff"],
+  ["partial", "Partial (2/3)", "#00c8aa"], ["ga", "Greater Affix", "#00ffff"],
+  ["seal", "Legendary Seals", "#ff64c8"],
+];
+// preview rule label -> colour key
+const LABEL_KEY = { "Build Uniques":"unique", "Mythic Uniques":"mythic", "Set Charms":"set",
+  "Codex Upgrade":"codex", "BiS":"bis", "Gear":"gear", "Partial":"partial",
+  "Greater Affix":"ga", "Legendary Seals":"seal" };
+const hexToArgb = (hex) => ((0xff000000 | parseInt(hex.slice(1), 16)) >>> 0);
+
+const $ = (id) => document.getElementById(id);
+const setStatus = (msg, cls = "") => { const s = $("status"); s.textContent = msg; s.className = "status " + cls; };
+
+let bundle = null, profile = null;
+
+async function getBundle() {
+  if (!bundle) bundle = await (await fetch("./data/bundle.json")).json();
+  return bundle;
+}
+
+// ---- colour customisation ----
+(function buildColorInputs() {
+  $("color-grid").innerHTML = COLORS.map(([k, label, def]) =>
+    `<label class="cswatch"><input type="color" id="c-${k}" value="${def}" />${label}</label>`).join("");
+})();
+const getColorsHex = () => Object.fromEntries(COLORS.map(([k]) => [k, $(`c-${k}`).value]));
+const getColorsArgb = () => Object.fromEntries(COLORS.map(([k]) => [k, hexToArgb($(`c-${k}`).value)]));
+function defaultVariant() {
+  // The planner's own saved active profile is the author's intended default
+  // (the URL #fragment is not a profile index). Fall back to the richest variant.
+  const d = profile.data;
+  if (typeof d.activeProfile === "number" && d.profiles[d.activeProfile]
+      && extractVariant(d, d.activeProfile, profile.cls, bundle).rows.length) return d.activeProfile;
+  let best = 0, bestN = -1;
+  d.profiles.forEach((_, i) => { const n = extractVariant(d, i, profile.cls, bundle).rows.length; if (n > bestN) { bestN = n; best = i; } });
+  return best;
+}
+
+async function load() {
+  const raw = $("link").value.trim();
+  if (!raw) { setStatus("Paste a Maxroll build id, planner link, or guide link first.", "err"); return; }
+  $("load").disabled = true;
+  try {
+    let plannerId;
+    if (/build-guides\//.test(raw)) {
+      if (!WORKER_URL) {
+        setStatus("That's a guide link — open the build's “Open in Planner” button and paste the planner link instead.", "err");
+        return;
+      }
+      setStatus("Resolving guide…");
+      const rr = await fetch(`${WORKER_URL}/?url=${encodeURIComponent(raw)}`);
+      const j = await rr.json().catch(() => ({}));
+      if (!rr.ok || !j.id) { setStatus("Couldn't read that guide: " + (j.error || `HTTP ${rr.status}`), "err"); return; }
+      plannerId = j.id;
+    } else {
+      const parsed = parsePlannerId(raw);
+      if (!parsed) { setStatus("No planner id found. Paste a build id or a maxroll.gg/d4/planner/… link.", "err"); return; }
+      plannerId = parsed.id;
+    }
+    setStatus("Loading build…");
+    await getBundle();
+    profile = await fetchProfile(plannerId);
+    const vars = listVariants(profile.data);
+    const sel = $("variant"); sel.innerHTML = "";
+    vars.forEach((v) => {
+      const n = extractVariant(profile.data, v.index, profile.cls, bundle);
+      const o = document.createElement("option");
+      o.value = v.index;
+      o.textContent = `${v.name}  ·  ${n.rows.length} stats, ${n.uniques.length} uniques`;
+      sel.appendChild(o);
+    });
+    sel.value = defaultVariant();
+    $("name").value = (profile.name || "D4 Filter").slice(0, 30);
+    const cfg = $("config"); cfg.hidden = false; cfg.classList.remove("reveal"); void cfg.offsetWidth; cfg.classList.add("reveal");
+    setStatus(`Loaded “${profile.name}” · ${profile.cls || "?"} · ${vars.length} variants.`, "ok");
+    generate();
+  } catch (e) {
+    setStatus("Failed to load: " + e.message, "err");
+  } finally {
+    $("load").disabled = false;
+  }
+}
+
+function syncAncestral() {
+  // "Only show Ancestral items" is the master: it forces both sub-rules on.
+  const all = $("anc-all").checked;
+  for (const id of ["anc-u", "anc-g"]) {
+    const el = $(id); el.disabled = all; if (all) el.checked = true; else if (el.dataset.wasAll) el.checked = false;
+    el.dataset.wasAll = all ? "1" : "";
+  }
+}
+function generate() {
+  if (!profile) return;
+  const vi = Number($("variant").value);
+  const all = $("anc-all").checked;
+  const opts = {
+    gaThreshold: Math.max(0, parseInt($("ga").value, 10) || 1),
+    hideJunk: $("hide").checked,
+    partial: $("partial").checked,
+    alwaysMythic: $("mythic-always").checked,
+    ancestralUniques: all || $("anc-u").checked,
+    ancestralGear: all || $("anc-g").checked,
+    colors: getColorsArgb(),
+  };
+  const name = ($("name").value || "D4 Filter").slice(0, 30);
+  const ex = extractVariant(profile.data, vi, profile.cls, bundle);
+  const res = buildFilter(ex, name, bundle, opts);
+
+  $("code").value = res.code;
+  $("meta").textContent =
+    `${res.ruleCount}/25 rules · ${res.slotRules.length} slot rules · ` +
+    `${res.uids.length ? ex.uniques.length + " uniques" : "no uniques"} · ` +
+    `${res.setIds.length} set charm${res.setIds.length === 1 ? "" : "s"}${ex.hasSeal ? " · seal" : ""}`;
+  renderRules(ex, res, opts);
+  renderWarnings(ex, res);
+  renderDetected(ex);
+  const out = $("out"); out.classList.add("show"); out.classList.remove("reveal"); void out.offsetWidth; out.classList.add("reveal");
+}
+
+const gemSpan = (label) => `<span class="gem" style="color:${getColorsHex()[LABEL_KEY[label]] || "var(--muted)"}"></span>`;
+const afx = (row) => row[2] ? `<span class="ga">${row[3]}★</span>` : row[3];
+function renderRules(ex, res, opts) {
+  const li = [];
+  if (res.uids.length) li.push(`<li>${gemSpan("Build Uniques")}<span class="rname">Build Uniques</span><span class="rafx">${ex.uniques.join(", ") || "—"}</span></li>`);
+  if (res.setIds.length) li.push(`<li>${gemSpan("Set Charms")}<span class="rname">Set Charms</span><span class="rafx">${[...ex.detected.sets].join(", ")}</span></li>`);
+  if (opts.alwaysMythic) li.push(`<li>${gemSpan("Mythic Uniques")}<span class="rname">Mythic Uniques</span><span class="rafx">any Mythic Unique — always shown</span></li>`);
+  li.push(`<li>${gemSpan("Codex Upgrade")}<span class="rname">Codex Upgrade</span><span class="rafx">Aspect upgrades</span></li>`);
+  // bucket each affix under its own slot (a stat shared across slots must not
+  // be attributed to whichever slot rule happens to list it first)
+  const bySlot = new Map();
+  for (const r of ex.rows) {
+    const label = slotLabelFor(r[0], profile.cls);
+    if (!bySlot.has(label)) bySlot.set(label, []);
+    const arr = bySlot.get(label); if (!arr.some(x => x[1] === r[1])) arr.push(r);
+  }
+  for (const sr of res.slotRules) {
+    const rows = (bySlot.get(sr.label) || []).slice(0, 4);
+    const hasGA = sr.ga.length > 0;
+    li.push(`<li>${gemSpan(hasGA ? "BiS" : "Gear")}<span class="rname">${hasGA ? "BiS · " : ""}${sr.label}</span><span class="rafx">${rows.map(afx).join(", ")}</span></li>`);
+  }
+  if (res.partials && res.partials.length)
+    li.push(`<li>${gemSpan("Partial")}<span class="rname">2 of 3 match</span><span class="rafx">progression tier · ${res.partials.map(s => s.label).join(", ")}</span></li>`);
+  li.push(`<li>${gemSpan("Greater Affix")}<span class="rname">${opts.gaThreshold}+ Greater Affix</span><span class="rafx">catch-all for high-GA drops (build items excluded)</span></li>`);
+  if (ex.hasSeal) li.push(`<li>${gemSpan("Legendary Seals")}<span class="rname">Legendary Seals</span><span class="rafx">Horadric seals, Legendary+</span></li>`);
+  $("rules").innerHTML = li.join("");
+}
+function renderWarnings(ex, res) {
+  const w = [];
+  if (res.dropped.length) w.push(`${res.dropped.length} BiS rule(s) dropped to fit the 25-rule limit: ${res.dropped.join(", ")}.`);
+  if (ex.detected.unmappedAffix) w.push(`${ex.detected.unmappedAffix} affix value(s) had no filter mapping and were skipped (usually rune/aspect powers).`);
+  $("warn").innerHTML = w.map(t => `<div class="omen">${t}</div>`).join("");
+}
+function renderDetected(ex) {
+  const p = [];
+  if (ex.uniques.length) p.push(`<p class="dethead">Uniques</p><div>${ex.uniques.map(u => `<span class="pill">${u}</span>`).join("")}</div>`);
+  if (ex.detected.sets.size) p.push(`<p class="dethead" style="margin-top:12px">Set charms</p><div>${[...ex.detected.sets].map(s => `<span class="pill">${s}</span>`).join("")}</div>`);
+  $("detected").innerHTML = p.join("");
+}
+
+$("load").addEventListener("click", load);
+$("gen").addEventListener("click", generate);
+$("link").addEventListener("keydown", (e) => { if (e.key === "Enter") load(); });
+for (const id of ["variant", "name", "hide", "partial", "mythic-always", "anc-u", "anc-g", "ga"])
+  $(id).addEventListener("change", generate);
+$("anc-all").addEventListener("change", () => { syncAncestral(); generate(); });
+for (const [k] of COLORS) $(`c-${k}`).addEventListener("input", generate);
+$("color-reset").addEventListener("click", () => {
+  for (const [k, , def] of COLORS) $(`c-${k}`).value = def;
+  generate();
+});
+$("copy").addEventListener("click", async () => {
+  try { await navigator.clipboard.writeText($("code").value); $("copy").textContent = "Copied ✓"; setTimeout(() => $("copy").textContent = "Copy", 1500); }
+  catch { $("code").select(); }
+});
+</script>
+</body>
+</html>

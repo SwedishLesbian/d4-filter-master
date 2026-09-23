@@ -1,0 +1,1448 @@
+{
+  "_meta": {
+    "source": "Derived from ThunderEagle/D4LootBench d4-data.json (MIT)."
+  },
+  "talismanSets": [
+    {
+      "hash": "0x0022FB15",
+      "name": "Sescheron's Fury",
+      "internal": "Talisman_Barb_01",
+      "classes": [
+        "Barbarian"
+      ],
+      "keys": [
+        "sescherons-fury"
+      ],
+      "items": [
+        {
+          "hash": "0x0025069A",
+          "name": "Phoba of Sescheron's Fury"
+        },
+        {
+          "hash": "0x002506A8",
+          "name": "Fer of Sescheron's Fury"
+        },
+        {
+          "hash": "0x002506B5",
+          "name": "Mlor of Sescheron's Fury"
+        },
+        {
+          "hash": "0x002506B8",
+          "name": "Linta of Sescheron's Fury"
+        },
+        {
+          "hash": "0x002506CD",
+          "name": "Berú of Sescheron's Fury"
+        }
+      ]
+    },
+    {
+      "hash": "0x0022FB41",
+      "name": "Berserker's Crucible",
+      "internal": "Talisman_Barb_02",
+      "classes": [
+        "Barbarian"
+      ],
+      "keys": [
+        "berserkers-crucible"
+      ],
+      "items": [
+        {
+          "hash": "0x002506D4",
+          "name": "Phoba of the Crucible"
+        },
+        {
+          "hash": "0x002506D7",
+          "name": "Fer of the Crucible"
+        },
+        {
+          "hash": "0x002506DC",
+          "name": "Mlor of the Crucible"
+        },
+        {
+          "hash": "0x002506DF",
+          "name": "Linta of the Crucible"
+        },
+        {
+          "hash": "0x002506E2",
+          "name": "Berú of the Crucible"
+        }
+      ]
+    },
+    {
+      "hash": "0x0022FCE9",
+      "name": "Arms of Arreat",
+      "internal": "Talisman_Barb_03",
+      "classes": [
+        "Barbarian"
+      ],
+      "keys": [
+        "arms-of-arreat"
+      ],
+      "items": [
+        {
+          "hash": "0x002506E6",
+          "name": "Phoba of Arreat"
+        },
+        {
+          "hash": "0x002506EA",
+          "name": "Fer of Arreat"
+        },
+        {
+          "hash": "0x002506EE",
+          "name": "Mlor of Arreat"
+        },
+        {
+          "hash": "0x002506F1",
+          "name": "Linta of Arreat"
+        },
+        {
+          "hash": "0x002506F9",
+          "name": "Berú of Arreat"
+        }
+      ]
+    },
+    {
+      "hash": "0x0022FCEB",
+      "name": "Bloodletter's Flow",
+      "internal": "Talisman_Barb_04",
+      "classes": [
+        "Barbarian"
+      ],
+      "keys": [
+        "bloodletters-flow"
+      ],
+      "items": [
+        {
+          "hash": "0x00250701",
+          "name": "Phoba of the Bloodletter"
+        },
+        {
+          "hash": "0x00250704",
+          "name": "Fer of the Bloodletter"
+        },
+        {
+          "hash": "0x0025070A",
+          "name": "Mlor of the Bloodletter"
+        },
+        {
+          "hash": "0x0025070D",
+          "name": "Linta of the Bloodletter"
+        },
+        {
+          "hash": "0x00250711",
+          "name": "Berú of the Bloodletter"
+        }
+      ]
+    },
+    {
+      "hash": "0x0022FCEE",
+      "name": "Bul-Kathos' Pride",
+      "internal": "Talisman_Barb_05",
+      "classes": [
+        "Barbarian"
+      ],
+      "keys": [
+        "bul-kathos-pride"
+      ],
+      "items": [
+        {
+          "hash": "0x00250715",
+          "name": "Phoba of Bul-Kathos' Pride"
+        },
+        {
+          "hash": "0x0025071B",
+          "name": "Fer of Bul-Kathos' Pride"
+        },
+        {
+          "hash": "0x0025071F",
+          "name": "Mlor of Bul-Kathos' Pride"
+        },
+        {
+          "hash": "0x00250721",
+          "name": "Linta of Bul-Kathos' Pride"
+        },
+        {
+          "hash": "0x00250725",
+          "name": "Berú of Bul-Kathos' Pride"
+        }
+      ]
+    },
+    {
+      "hash": "0x00230326",
+      "name": "Storm Shepherd's Call",
+      "internal": "Talisman_Druid_01",
+      "classes": [
+        "Druid"
+      ],
+      "keys": [
+        "storm-shepherds-call"
+      ],
+      "items": [
+        {
+          "hash": "0x0025072A",
+          "name": "Phoba of the Den Mother"
+        },
+        {
+          "hash": "0x0025072D",
+          "name": "Fer of the Den Mother"
+        },
+        {
+          "hash": "0x00250731",
+          "name": "Mlor of the Den Mother"
+        },
+        {
+          "hash": "0x00250734",
+          "name": "Linta of the Den Mother"
+        },
+        {
+          "hash": "0x00250737",
+          "name": "Berú of the Den Mother"
+        }
+      ]
+    },
+    {
+      "hash": "0x00230380",
+      "name": "Song of the Old Mountain",
+      "internal": "Talisman_Druid_02",
+      "classes": [
+        "Druid"
+      ],
+      "keys": [
+        "song-of-the-old-mountain"
+      ],
+      "items": [
+        {
+          "hash": "0x0025073B",
+          "name": "Phoba of the Red Wolf Moon"
+        },
+        {
+          "hash": "0x0025073F",
+          "name": "Fer of the Red Wolf Moon"
+        },
+        {
+          "hash": "0x00250742",
+          "name": "Mlor of the Red Wolf Moon"
+        },
+        {
+          "hash": "0x00250749",
+          "name": "Linta of the Red Wolf Moon"
+        },
+        {
+          "hash": "0x0025074C",
+          "name": "Berú of the Red Wolf Moon"
+        }
+      ]
+    },
+    {
+      "hash": "0x00230383",
+      "name": "Might of the Den Mother",
+      "internal": "Talisman_Druid_03",
+      "classes": [
+        "Druid"
+      ],
+      "keys": [
+        "might-of-the-den-mother"
+      ],
+      "items": [
+        {
+          "hash": "0x00250750",
+          "name": "Phoba of the Storm Shepherd"
+        },
+        {
+          "hash": "0x00250755",
+          "name": "Fer of the Storm Shepherd"
+        },
+        {
+          "hash": "0x00250757",
+          "name": "Mlor of the Storm Shepherd"
+        },
+        {
+          "hash": "0x0025075B",
+          "name": "Linta of the Storm Shepherd"
+        },
+        {
+          "hash": "0x00250760",
+          "name": "Berú of the Storm Shepherd"
+        }
+      ]
+    },
+    {
+      "hash": "0x00230386",
+      "name": "Rush of the Red Wolf Moon",
+      "internal": "Talisman_Druid_04",
+      "classes": [
+        "Druid"
+      ],
+      "keys": [
+        "rush-of-the-red-wolf-moon"
+      ],
+      "items": [
+        {
+          "hash": "0x00250763",
+          "name": "Phoba of the Old Mountain"
+        },
+        {
+          "hash": "0x00250773",
+          "name": "Fer of the Old Mountain"
+        },
+        {
+          "hash": "0x00250776",
+          "name": "Mlor of the Old Mountain"
+        },
+        {
+          "hash": "0x0025077B",
+          "name": "Linta of the Old Mountain"
+        },
+        {
+          "hash": "0x0025077E",
+          "name": "Berú of the Old Mountain"
+        }
+      ]
+    },
+    {
+      "hash": "0x00230389",
+      "name": "Nafain's Bestiary",
+      "internal": "Talisman_Druid_05",
+      "classes": [
+        "Druid"
+      ],
+      "keys": [
+        "nafains-bestiary"
+      ],
+      "items": [
+        {
+          "hash": "0x00250782",
+          "name": "Phoba of Nafain's Bestiary"
+        },
+        {
+          "hash": "0x00250785",
+          "name": "Fer of Nafain's Bestiary"
+        },
+        {
+          "hash": "0x00250788",
+          "name": "Mlor of Nafain's Bestiary"
+        },
+        {
+          "hash": "0x0025078B",
+          "name": "Linta of Nafain's Bestiary"
+        },
+        {
+          "hash": "0x0025078E",
+          "name": "Berú of Nafain's Bestiary"
+        }
+      ]
+    },
+    {
+      "hash": "0x00230C68",
+      "name": "Radament's Desecration",
+      "internal": "Talisman_Necro_01",
+      "classes": [
+        "Necromancer"
+      ],
+      "keys": [
+        "radaments-desecration"
+      ],
+      "items": [
+        {
+          "hash": "0x00250791",
+          "name": "Phoba of the Waking Touch"
+        },
+        {
+          "hash": "0x00250793",
+          "name": "Fer of the Waking Touch"
+        },
+        {
+          "hash": "0x00250796",
+          "name": "Mlor of the Waking Touch"
+        },
+        {
+          "hash": "0x00250799",
+          "name": "Linta of the Waking Touch"
+        },
+        {
+          "hash": "0x0025079B",
+          "name": "Berú of the Waking Touch"
+        }
+      ]
+    },
+    {
+      "hash": "0x00230D68",
+      "name": "Art of the Bone Weaver",
+      "internal": "Talisman_Necro_02",
+      "classes": [
+        "Necromancer"
+      ],
+      "keys": [
+        "art-of-the-bone-weaver"
+      ],
+      "items": [
+        {
+          "hash": "0x0025079F",
+          "name": "Phoba of the Bone Weaver"
+        },
+        {
+          "hash": "0x002507A1",
+          "name": "Fer of the Bone Weaver"
+        },
+        {
+          "hash": "0x002507A5",
+          "name": "Mlor of the Bone Weaver"
+        },
+        {
+          "hash": "0x002507A8",
+          "name": "Linta of the Bone Weaver"
+        },
+        {
+          "hash": "0x002507AC",
+          "name": "Berú of the Bone Weaver"
+        }
+      ]
+    },
+    {
+      "hash": "0x00230D6A",
+      "name": "Word of the Blood Binder",
+      "internal": "Talisman_Necro_03",
+      "classes": [
+        "Necromancer"
+      ],
+      "keys": [
+        "word-of-the-blood-binder"
+      ],
+      "items": [
+        {
+          "hash": "0x002507B1",
+          "name": "Phoba of the Blood Binder"
+        },
+        {
+          "hash": "0x002507B4",
+          "name": "Fer of the Blood Binder"
+        },
+        {
+          "hash": "0x002507B9",
+          "name": "Mlor of the Blood Binder"
+        },
+        {
+          "hash": "0x002507BC",
+          "name": "Linta of the Blood Binder"
+        },
+        {
+          "hash": "0x002507C0",
+          "name": "Berú of the Blood Binder"
+        }
+      ]
+    },
+    {
+      "hash": "0x00230D6C",
+      "name": "Peace of the Black Shroud",
+      "internal": "Talisman_Necro_04",
+      "classes": [
+        "Necromancer"
+      ],
+      "keys": [
+        "peace-of-the-black-shroud"
+      ],
+      "items": [
+        {
+          "hash": "0x002507C7",
+          "name": "Phoba of the Black Shroud"
+        },
+        {
+          "hash": "0x002507C9",
+          "name": "Fer of the Black Shroud"
+        },
+        {
+          "hash": "0x002507CE",
+          "name": "Mlor of the Black Shroud"
+        },
+        {
+          "hash": "0x002507D3",
+          "name": "Linta of the Black Shroud"
+        },
+        {
+          "hash": "0x002507D7",
+          "name": "Berú of the Black Shroud"
+        }
+      ]
+    },
+    {
+      "hash": "0x00230D6E",
+      "name": "Rathma's Waking Touch",
+      "internal": "Talisman_Necro_05",
+      "classes": [
+        "Necromancer"
+      ],
+      "keys": [
+        "rathmas-waking-touch"
+      ],
+      "items": [
+        {
+          "hash": "0x002507DC",
+          "name": "Phoba of Desecration"
+        },
+        {
+          "hash": "0x002507E0",
+          "name": "Fer of Desecration"
+        },
+        {
+          "hash": "0x002507E3",
+          "name": "Mlor of Desecration"
+        },
+        {
+          "hash": "0x002507E6",
+          "name": "Linta of Desecration"
+        },
+        {
+          "hash": "0x002507EB",
+          "name": "Berú of Desecration"
+        }
+      ]
+    },
+    {
+      "hash": "0x0023B4CB",
+      "name": "Cathan's Righteous Will",
+      "internal": "Talisman_Pala_01",
+      "classes": [
+        "All"
+      ],
+      "keys": [
+        "cathans-righteous-will"
+      ],
+      "items": [
+        {
+          "hash": "0x00250E7E",
+          "name": "Phoba of Righteous Will"
+        },
+        {
+          "hash": "0x00250E80",
+          "name": "Fer of Righteous Will"
+        },
+        {
+          "hash": "0x00250E82",
+          "name": "Mlor of Righteous Will"
+        },
+        {
+          "hash": "0x00250E84",
+          "name": "Linta of Righteous Will"
+        },
+        {
+          "hash": "0x00250E86",
+          "name": "Berú of Righteous Will"
+        }
+      ]
+    },
+    {
+      "hash": "0x0023B56A",
+      "name": "Cathan's Dauntless Faith",
+      "internal": "Talisman_Pala_02",
+      "classes": [
+        "All"
+      ],
+      "keys": [
+        "cathans-dauntless-faith"
+      ],
+      "items": [
+        {
+          "hash": "0x00250E88",
+          "name": "Phoba of Dauntless Faith"
+        },
+        {
+          "hash": "0x00250E8A",
+          "name": "Fer of Dauntless Faith"
+        },
+        {
+          "hash": "0x00250E8C",
+          "name": "Mlor of Dauntless Faith"
+        },
+        {
+          "hash": "0x00250E8E",
+          "name": "Linta of Dauntless Faith"
+        },
+        {
+          "hash": "0x00250E90",
+          "name": "Berú of Dauntless Faith"
+        }
+      ]
+    },
+    {
+      "hash": "0x0023B56C",
+      "name": "Heaven's Radiant Fire",
+      "internal": "Talisman_Pala_03",
+      "classes": [
+        "All"
+      ],
+      "keys": [
+        "heavens-radiant-fire"
+      ],
+      "items": [
+        {
+          "hash": "0x00250E92",
+          "name": "Phoba of Radiant Fire"
+        },
+        {
+          "hash": "0x00250E94",
+          "name": "Fer of Radiant Fire"
+        },
+        {
+          "hash": "0x00250E96",
+          "name": "Mlor of Radiant Fire"
+        },
+        {
+          "hash": "0x00250E98",
+          "name": "Linta of Radiant Fire"
+        },
+        {
+          "hash": "0x00250E9A",
+          "name": "Berú of Radiant Fire"
+        }
+      ]
+    },
+    {
+      "hash": "0x0023B56E",
+      "name": "Light's Epiphany",
+      "internal": "Talisman_Pala_04",
+      "classes": [
+        "All"
+      ],
+      "keys": [
+        "lights-epiphany"
+      ],
+      "items": [
+        {
+          "hash": "0x00250E9C",
+          "name": "Phoba of Light's Epiphany"
+        },
+        {
+          "hash": "0x00250E9E",
+          "name": "Fer of Light's Epiphany"
+        },
+        {
+          "hash": "0x00250EA1",
+          "name": "Mlor of Light's Epiphany"
+        },
+        {
+          "hash": "0x00250EA3",
+          "name": "Linta of Light's Epiphany"
+        },
+        {
+          "hash": "0x00250EA5",
+          "name": "Berú of Light's Epiphany"
+        }
+      ]
+    },
+    {
+      "hash": "0x0023B570",
+      "name": "Cathan's Iron Conviction",
+      "internal": "Talisman_Pala_05",
+      "classes": [
+        "All"
+      ],
+      "keys": [
+        "cathans-iron-conviction"
+      ],
+      "items": [
+        {
+          "hash": "0x00250EA7",
+          "name": "Phoba of Iron Conviction"
+        },
+        {
+          "hash": "0x00250EA9",
+          "name": "Fer of Iron Conviction"
+        },
+        {
+          "hash": "0x00250EAB",
+          "name": "Mlor of Iron Conviction"
+        },
+        {
+          "hash": "0x00250EAD",
+          "name": "Linta of Iron Conviction"
+        },
+        {
+          "hash": "0x00250EAF",
+          "name": "Berú of Iron Conviction"
+        }
+      ]
+    },
+    {
+      "hash": "0x00230A6A",
+      "name": "Nilfur's Narrow Eye",
+      "internal": "Talisman_Rogue_01",
+      "classes": [
+        "Rogue"
+      ],
+      "keys": [
+        "nilfurs-narrow-eye"
+      ],
+      "items": [
+        {
+          "hash": "0x00250EB1",
+          "name": "Phoba of the Narrow Eye"
+        },
+        {
+          "hash": "0x00250EB3",
+          "name": "Fer of the Narrow Eye"
+        },
+        {
+          "hash": "0x00250EB5",
+          "name": "Mlor of the Narrow Eye"
+        },
+        {
+          "hash": "0x00250EB7",
+          "name": "Linta of the Narrow Eye"
+        },
+        {
+          "hash": "0x00250EBA",
+          "name": "Berú of the Narrow Eye"
+        }
+      ]
+    },
+    {
+      "hash": "0x00230AA2",
+      "name": "Way of the Blurring Blade",
+      "internal": "Talisman_Rogue_02",
+      "classes": [
+        "Rogue"
+      ],
+      "keys": [
+        "way-of-the-blurring-blade"
+      ],
+      "items": [
+        {
+          "hash": "0x00250EBD",
+          "name": "Phoba of the Blurring Blade"
+        },
+        {
+          "hash": "0x00250EBF",
+          "name": "Fer of the Blurring Blade"
+        },
+        {
+          "hash": "0x00250EC1",
+          "name": "Mlor of the Blurring Blade"
+        },
+        {
+          "hash": "0x00250EC3",
+          "name": "Linta of the Blurring Blade"
+        },
+        {
+          "hash": "0x00250EC5",
+          "name": "Berú of the Blurring Blade"
+        }
+      ]
+    },
+    {
+      "hash": "0x00230AC8",
+      "name": "Applied Alchemy",
+      "internal": "Talisman_Rogue_03",
+      "classes": [
+        "Rogue"
+      ],
+      "keys": [
+        "applied-alchemy"
+      ],
+      "items": [
+        {
+          "hash": "0x00250EC7",
+          "name": "Phoba of Applied Alchemy"
+        },
+        {
+          "hash": "0x00250EC9",
+          "name": "Fer of Applied Alchemy"
+        },
+        {
+          "hash": "0x00250ECB",
+          "name": "Mlor of Applied Alchemy"
+        },
+        {
+          "hash": "0x00250ECD",
+          "name": "Linta of Applied Alchemy"
+        },
+        {
+          "hash": "0x00250ECF",
+          "name": "Berú of Applied Alchemy"
+        }
+      ]
+    },
+    {
+      "hash": "0x00230ACA",
+      "name": "Spellbound Steel",
+      "internal": "Talisman_Rogue_04",
+      "classes": [
+        "Rogue"
+      ],
+      "keys": [
+        "spellbound-steel"
+      ],
+      "items": [
+        {
+          "hash": "0x00250ED1",
+          "name": "Phoba of Spellbound Steel"
+        },
+        {
+          "hash": "0x00250ED3",
+          "name": "Fer of Spellbound Steel"
+        },
+        {
+          "hash": "0x00250ED5",
+          "name": "Mlor of Spellbound Steel"
+        },
+        {
+          "hash": "0x00250ED7",
+          "name": "Linta of Spellbound Steel"
+        },
+        {
+          "hash": "0x00250ED9",
+          "name": "Berú of Spellbound Steel"
+        }
+      ]
+    },
+    {
+      "hash": "0x00230ACC",
+      "name": "Legacy of the Sightless",
+      "internal": "Talisman_Rogue_05",
+      "classes": [
+        "Rogue"
+      ],
+      "keys": [
+        "legacy-of-the-sightless"
+      ],
+      "items": [
+        {
+          "hash": "0x00250EDB",
+          "name": "Phoba of the Sightless"
+        },
+        {
+          "hash": "0x00250EDD",
+          "name": "Fer of the Sightless"
+        },
+        {
+          "hash": "0x00250EDF",
+          "name": "Mlor of the Sightless"
+        },
+        {
+          "hash": "0x00250EE1",
+          "name": "Linta of the Sightless"
+        },
+        {
+          "hash": "0x00250EE3",
+          "name": "Berú of the Sightless"
+        }
+      ]
+    },
+    {
+      "hash": "0x00232F8A",
+      "name": "Slaughter",
+      "internal": "Talisman_Small_Generic01",
+      "classes": [
+        "All"
+      ],
+      "keys": [
+        "slaughter"
+      ],
+      "items": [
+        {
+          "hash": "0x002328B0",
+          "name": "Phoba of Slaughter"
+        },
+        {
+          "hash": "0x00255B18",
+          "name": "Fer of Slaughter"
+        },
+        {
+          "hash": "0x00255B1A",
+          "name": "Mlor of Slaughter"
+        }
+      ]
+    },
+    {
+      "hash": "0x002331E6",
+      "name": "Practiced Technique",
+      "internal": "Talisman_Small_Generic02",
+      "classes": [
+        "All"
+      ],
+      "keys": [
+        "practiced-technique"
+      ],
+      "items": [
+        {
+          "hash": "0x00233A66",
+          "name": "Phoba of Lethality"
+        },
+        {
+          "hash": "0x00255B1E",
+          "name": "Fer of Lethality"
+        },
+        {
+          "hash": "0x00255B22",
+          "name": "Mlor of Lethality"
+        }
+      ]
+    },
+    {
+      "hash": "0x00233C93",
+      "name": "Survival",
+      "internal": "Talisman_Small_Generic03",
+      "classes": [
+        "All"
+      ],
+      "keys": [
+        "survival"
+      ],
+      "items": [
+        {
+          "hash": "0x00233C95",
+          "name": "Phoba of Cruel Fate"
+        },
+        {
+          "hash": "0x00255B24",
+          "name": "Fer of Cruel Fate"
+        },
+        {
+          "hash": "0x00255B28",
+          "name": "Mlor of Cruel Fate"
+        }
+      ]
+    },
+    {
+      "hash": "0x00235120",
+      "name": "Dark Pact",
+      "internal": "Talisman_Small_Generic06",
+      "classes": [
+        "All"
+      ],
+      "keys": [
+        "dark-pact"
+      ],
+      "items": [
+        {
+          "hash": "0x002353A6",
+          "name": "Phoba of Dark Pact"
+        },
+        {
+          "hash": "0x00255B32",
+          "name": "Fer of Dark Pact"
+        },
+        {
+          "hash": "0x00255B34",
+          "name": "Mlor of Dark Pact"
+        }
+      ]
+    },
+    {
+      "hash": "0x00235942",
+      "name": "Mastery",
+      "internal": "Talisman_Small_Generic09",
+      "classes": [
+        "All"
+      ],
+      "keys": [
+        "mastery"
+      ],
+      "items": [
+        {
+          "hash": "0x0023598D",
+          "name": "Phoba of Mastery"
+        },
+        {
+          "hash": "0x00255B3D",
+          "name": "Fer of Mastery"
+        }
+      ]
+    },
+    {
+      "hash": "0x002243BF",
+      "name": "Habacalva's Cauldron",
+      "internal": "Talisman_Sorc_01",
+      "classes": [
+        "Sorcerer"
+      ],
+      "keys": [
+        "habacalvas-cauldron"
+      ],
+      "items": [
+        {
+          "hash": "0x00250E4C",
+          "name": "Phoba of the Cauldron"
+        },
+        {
+          "hash": "0x00250E4E",
+          "name": "Fer of the Cauldron"
+        },
+        {
+          "hash": "0x00250E50",
+          "name": "Mlor of the Cauldron"
+        },
+        {
+          "hash": "0x00250E52",
+          "name": "Linta of the Cauldron"
+        },
+        {
+          "hash": "0x00250E54",
+          "name": "Berú of the Cauldron"
+        }
+      ]
+    },
+    {
+      "hash": "0x002242E0",
+      "name": "Breath of the Frozen Sea",
+      "internal": "Talisman_Sorc_02",
+      "classes": [
+        "Sorcerer"
+      ],
+      "keys": [
+        "breath-of-the-frozen-sea"
+      ],
+      "items": [
+        {
+          "hash": "0x00250E56",
+          "name": "Phoba of the Frozen Sea"
+        },
+        {
+          "hash": "0x00250E58",
+          "name": "Fer of the Frozen Sea"
+        },
+        {
+          "hash": "0x00250E5A",
+          "name": "Mlor of the Frozen Sea"
+        },
+        {
+          "hash": "0x00250E5C",
+          "name": "Linta of the Frozen Sea"
+        },
+        {
+          "hash": "0x00250E5E",
+          "name": "Berú of the Frozen Sea"
+        }
+      ]
+    },
+    {
+      "hash": "0x00225065",
+      "name": "Cain's Wild Lightning",
+      "internal": "Talisman_Sorc_03",
+      "classes": [
+        "Sorcerer"
+      ],
+      "keys": [
+        "cains-wild-lightning"
+      ],
+      "items": [
+        {
+          "hash": "0x00250E60",
+          "name": "Phoba of Wild Lightning"
+        },
+        {
+          "hash": "0x00250E62",
+          "name": "Fer of Wild Lightning"
+        },
+        {
+          "hash": "0x00250E64",
+          "name": "Mlor of Wild Lightning"
+        },
+        {
+          "hash": "0x00250E66",
+          "name": "Linta of Wild Lightning"
+        },
+        {
+          "hash": "0x00250E68",
+          "name": "Berú of Wild Lightning"
+        }
+      ]
+    },
+    {
+      "hash": "0x002250E4",
+      "name": "Tal Rasha's Threefold Way",
+      "internal": "Talisman_Sorc_04",
+      "classes": [
+        "Sorcerer"
+      ],
+      "keys": [
+        "tal-rashas-threefold-way"
+      ],
+      "items": [
+        {
+          "hash": "0x00250E6A",
+          "name": "Phoba of the Threefold"
+        },
+        {
+          "hash": "0x00250E6C",
+          "name": "Fer of the Threefold"
+        },
+        {
+          "hash": "0x00250E6E",
+          "name": "Mlor of the Threefold"
+        },
+        {
+          "hash": "0x00250E70",
+          "name": "Linta of the Threefold"
+        },
+        {
+          "hash": "0x00250E72",
+          "name": "Berú of the Threefold"
+        }
+      ]
+    },
+    {
+      "hash": "0x00225135",
+      "name": "Tiraj's Uncanny Insight",
+      "internal": "Talisman_Sorc_05",
+      "classes": [
+        "Sorcerer"
+      ],
+      "keys": [
+        "tirajs-uncanny-insight"
+      ],
+      "items": [
+        {
+          "hash": "0x00250E74",
+          "name": "Phoba of Uncanny Insight"
+        },
+        {
+          "hash": "0x00250E76",
+          "name": "Fer of Uncanny Insight"
+        },
+        {
+          "hash": "0x00250E78",
+          "name": "Mlor of Uncanny Insight"
+        },
+        {
+          "hash": "0x00250E7A",
+          "name": "Linta of Uncanny Insight"
+        },
+        {
+          "hash": "0x00250E7C",
+          "name": "Berú of Uncanny Insight"
+        }
+      ]
+    },
+    {
+      "hash": "0x00231392",
+      "name": "Balazan's Bite",
+      "internal": "Talisman_Spirit_01",
+      "classes": [
+        "All"
+      ],
+      "keys": [
+        "balazans-bite"
+      ],
+      "items": [
+        {
+          "hash": "0x00250EE5",
+          "name": "Phoba of Balazan's Bite"
+        },
+        {
+          "hash": "0x00250EE7",
+          "name": "Fer of Balazan's Bite"
+        },
+        {
+          "hash": "0x00250EE9",
+          "name": "Mlor of Balazan's Bite"
+        },
+        {
+          "hash": "0x00250EEB",
+          "name": "Linta of Balazan's Bite"
+        },
+        {
+          "hash": "0x00250EED",
+          "name": "Berú of Balazan's Bite"
+        }
+      ]
+    },
+    {
+      "hash": "0x002314DE",
+      "name": "Wumba's Embrace",
+      "internal": "Talisman_Spirit_02",
+      "classes": [
+        "All"
+      ],
+      "keys": [
+        "wumbas-embrace"
+      ],
+      "items": [
+        {
+          "hash": "0x00250EEF",
+          "name": "Phoba of Wumba's Embrace"
+        },
+        {
+          "hash": "0x00250EF1",
+          "name": "Fer of Wumba's Embrace"
+        },
+        {
+          "hash": "0x00250EF3",
+          "name": "Mlor of Wumba's Embrace"
+        },
+        {
+          "hash": "0x00250EF5",
+          "name": "Linta of Wumba's Embrace"
+        },
+        {
+          "hash": "0x00250EF7",
+          "name": "Berú of Wumba's Embrace"
+        }
+      ]
+    },
+    {
+      "hash": "0x002314E0",
+      "name": "Rezoka's Rage",
+      "internal": "Talisman_Spirit_03",
+      "classes": [
+        "All"
+      ],
+      "keys": [
+        "rezokas-rage"
+      ],
+      "items": [
+        {
+          "hash": "0x00250EFA",
+          "name": "Phoba of Rezoka's Rage"
+        },
+        {
+          "hash": "0x00250EFC",
+          "name": "Fer of Rezoka's Rage"
+        },
+        {
+          "hash": "0x00250EFE",
+          "name": "Mlor of Rezoka's Rage"
+        },
+        {
+          "hash": "0x00250F00",
+          "name": "Linta of Rezoka's Rage"
+        },
+        {
+          "hash": "0x00250F05",
+          "name": "Berú of Rezoka's Rage"
+        }
+      ]
+    },
+    {
+      "hash": "0x002314E3",
+      "name": "Kwatli's Grace",
+      "internal": "Talisman_Spirit_04",
+      "classes": [
+        "All"
+      ],
+      "keys": [
+        "kwatlis-grace"
+      ],
+      "items": [
+        {
+          "hash": "0x00250F0A",
+          "name": "Phoba of Kwatli's Grace"
+        },
+        {
+          "hash": "0x00250F0C",
+          "name": "Fer of Kwatli's Grace"
+        },
+        {
+          "hash": "0x00250F0E",
+          "name": "Mlor of Kwatli's Grace"
+        },
+        {
+          "hash": "0x00250F11",
+          "name": "Linta of Kwatli's Grace"
+        },
+        {
+          "hash": "0x00250F13",
+          "name": "Berú of Kwatli's Grace"
+        }
+      ]
+    },
+    {
+      "hash": "0x002314E7",
+      "name": "Bliss of the Multitude",
+      "internal": "Talisman_Spirit_05",
+      "classes": [
+        "All"
+      ],
+      "keys": [
+        "bliss-of-the-multitude"
+      ],
+      "items": [
+        {
+          "hash": "0x00250F15",
+          "name": "Phoba of the Multitude"
+        },
+        {
+          "hash": "0x00250F18",
+          "name": "Fer of the Multitude"
+        },
+        {
+          "hash": "0x00250F1A",
+          "name": "Mlor of the Multitude"
+        },
+        {
+          "hash": "0x00250F1C",
+          "name": "Linta of the Multitude"
+        },
+        {
+          "hash": "0x00250F1E",
+          "name": "Berú of the Multitude"
+        }
+      ]
+    },
+    {
+      "hash": "0x0023B610",
+      "name": "Fulcrum of Mefis",
+      "internal": "Talisman_Warlock_01",
+      "classes": [
+        "Warlock"
+      ],
+      "keys": [
+        "fulcrum-of-mefis"
+      ],
+      "items": [
+        {
+          "hash": "0x00250F20",
+          "name": "Phoba of Mefis' Fulcrum"
+        },
+        {
+          "hash": "0x00250F23",
+          "name": "Fer of Mefis' Fulcrum"
+        },
+        {
+          "hash": "0x00250F25",
+          "name": "Mlor of Mefis' Fulcrum"
+        },
+        {
+          "hash": "0x00250F27",
+          "name": "Linta of Mefis' Fulcrum"
+        },
+        {
+          "hash": "0x00250F29",
+          "name": "Berú of Mefis' Fulcrum"
+        }
+      ]
+    },
+    {
+      "hash": "0x0023B613",
+      "name": "Flesh of Abaddon",
+      "internal": "Talisman_Warlock_02",
+      "classes": [
+        "Warlock"
+      ],
+      "keys": [
+        "flesh-of-abaddon"
+      ],
+      "items": [
+        {
+          "hash": "0x00250F32",
+          "name": "Phoba of Abaddon's Flesh"
+        },
+        {
+          "hash": "0x00250F34",
+          "name": "Fer of Abaddon's Flesh"
+        },
+        {
+          "hash": "0x00250F36",
+          "name": "Mlor of Abaddon's Flesh"
+        },
+        {
+          "hash": "0x00250F38",
+          "name": "Linta of Abaddon's Flesh"
+        },
+        {
+          "hash": "0x00250F3B",
+          "name": "Berú of Abaddon's Flesh"
+        }
+      ]
+    },
+    {
+      "hash": "0x0023B616",
+      "name": "Shadow of Harash",
+      "internal": "Talisman_Warlock_03",
+      "classes": [
+        "Warlock"
+      ],
+      "keys": [
+        "shadow-of-harash"
+      ],
+      "items": [
+        {
+          "hash": "0x00250FB8",
+          "name": "Phoba of Harash's Shadow"
+        },
+        {
+          "hash": "0x00250FBB",
+          "name": "Fer of Harash's Shadow"
+        },
+        {
+          "hash": "0x00250FBE",
+          "name": "Mlor of Harash's Shadow"
+        },
+        {
+          "hash": "0x00250FCB",
+          "name": "Linta of Harash's Shadow"
+        },
+        {
+          "hash": "0x00250FCD",
+          "name": "Berú of Harash's Shadow"
+        }
+      ]
+    },
+    {
+      "hash": "0x0023B618",
+      "name": "Rite of the Nameless",
+      "internal": "Talisman_Warlock_04",
+      "classes": [
+        "Warlock"
+      ],
+      "keys": [
+        "rite-of-the-nameless"
+      ],
+      "items": [
+        {
+          "hash": "0x00250FD0",
+          "name": "Phoba of the Nameless"
+        },
+        {
+          "hash": "0x00250FD4",
+          "name": "Fer of the Nameless"
+        },
+        {
+          "hash": "0x00250FD6",
+          "name": "Mlor of the Nameless"
+        },
+        {
+          "hash": "0x00250FDB",
+          "name": "Linta of the Nameless"
+        },
+        {
+          "hash": "0x00250FDD",
+          "name": "Berú of the Nameless"
+        }
+      ]
+    },
+    {
+      "hash": "0x0023B61A",
+      "name": "Chains of Horazon",
+      "internal": "Talisman_Warlock_05",
+      "classes": [
+        "Warlock"
+      ],
+      "keys": [
+        "chains-of-horazon"
+      ],
+      "items": [
+        {
+          "hash": "0x00250FE0",
+          "name": "Phoba of Horazon's Chains"
+        },
+        {
+          "hash": "0x00250FE3",
+          "name": "Fer of Horazon's Chains"
+        },
+        {
+          "hash": "0x00250FE7",
+          "name": "Mlor of Horazon's Chains"
+        },
+        {
+          "hash": "0x00250FEA",
+          "name": "Linta of Horazon's Chains"
+        },
+        {
+          "hash": "0x00250FEC",
+          "name": "Berú of Horazon's Chains"
+        }
+      ]
+    }
+  ]
+}
