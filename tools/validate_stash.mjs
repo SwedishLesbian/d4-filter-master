@@ -74,10 +74,22 @@ for (let vi = 0; vi < prof.data.profiles.length; vi++) {
   check("FARM generic GA catch is NOT Ancestral-gated", !farmGA.conds.some(c => c.type === T_PROPS));
 
   // ---- STASH: strict classifier ----
-  const stashOff = decodeRules(buildStash(ex, names.stash, bundle, { ancestralGear: false }).code);
+  const stashRes = buildStash(ex, names.stash, bundle, { ancestralGear: false });
+  const stashOff = decodeRules(stashRes.code);
   const stashOn = decodeRules(buildStash(ex, names.stash, bundle, { ancestralGear: true }).code);
+  const named = (rules, name) => rules.some(r => r.name === name);
   check("STASH has NO generic 1+ Greater Affix catch (type 4)", !hasCondType(stashOff, T_GREATER));
   check("STASH has NO generic Codex Upgrade rule (type 3)", !hasCondType(stashOff, T_CODEX));
+  // Phase 1: STASH drops the generic pickup rules; FARM keeps them.
+  check("STASH has NO generic Legendary Seals rule", !named(stashOff, "Legendary Seals"));
+  check("STASH has NO generic Set Charms (all) rule", !named(stashOff, "Set Charms (all)"));
+  check("FARM retains its Legendary Seals rule", named(farmOff, "Legendary Seals"));
+  check("FARM retains its Set Charms (all) rule", named(farmOff, "Set Charms (all)"));
+  if (ex.detected.sets.size)
+    check("STASH keeps the build's own Set Charms rule", named(stashOff, "Set Charms"));
+  // decoded tier count agrees with the reported surviving tiers
+  check("STASH decoded T4 count == surviving T4 tiers",
+    gearTier(stashOff, "T4:").length === stashRes.tiers.t4.length);
 
   // every tier rule: correct item type + (Ancestral when enabled)
   const tiersOn = gearTier(stashOn, "T");

@@ -605,13 +605,9 @@ def stash_filter_code(name, unique_ids, slot_rules, set_ids=(), seal_type=None,
             rules.append(_rule(f"T3: {sr['label']}", RECOLOR, t3_conds(sr), C_STASH_T3))
         for sr in t4r:
             rules.append(_rule(f"T4: {sr['label']}", RECOLOR, t4_conds(sr), C_STASH_T4))
-        if seal_type is not None:
-            rules.append(_rule("Legendary Seals", RECOLOR,
-                               [_c_rarity(LEGENDARY | UNIQUE | MYTHIC),
-                                _c_itemtype([seal_type])], C_SEAL))
-        if charm_type is not None:
-            rules.append(_rule("Set Charms (all)", SHOW,
-                               [_c_rarity(TALISMAN), _c_itemtype([charm_type])]))
+        # STASH intentionally omits the generic Legendary Seals and Set Charms (all)
+        # pickup rules — they would consume budget that upgrade-candidate tiers need.
+        # FARM keeps them; the build's own Set Charms rule stays at the top.
         if ancestral_uniques:
             rules.append(_rule("Ancestral Uniques", SHOW,
                                [_c_rarity(UNIQUE | MYTHIC), _c_props(PROP_ANCESTRAL)]))

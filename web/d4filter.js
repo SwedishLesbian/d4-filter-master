@@ -359,8 +359,8 @@ export function buildStash(extracted, name, bundle, opts = {}) {
     for (const sr of t2) rules.push(rule(`T2: ${sr.label}`, RECOLOR, t2Conds(sr), COL.stashT2));
     for (const sr of t3) rules.push(rule(`T3: ${sr.label}`, RECOLOR, t3Conds(sr), COL.stashT3));
     for (const sr of t4) rules.push(rule(`T4: ${sr.label}`, RECOLOR, t4Conds(sr), COL.stashT4));
-    if (sealType != null) rules.push(rule("Legendary Seals", RECOLOR, [cRarity(LEGENDARY | UNIQUE | MYTHIC), cItemType([sealType])], COL.seal));
-    if (charmType != null) rules.push(rule("Set Charms (all)", SHOW, [cRarity(TALISMAN), cItemType([charmType])]));
+    // STASH omits generic Legendary Seals + Set Charms (all) so budget goes to
+    // upgrade-candidate tiers. FARM keeps them; the build's own Set Charms stays.
     if (ancestralUniques) rules.push(rule("Ancestral Uniques", SHOW, [cRarity(UNIQUE | MYTHIC), cProps(PROP_ANCESTRAL)]));
     else rules.push(rule("Keep Uniques", SHOW, [cRarity(UNIQUE | MYTHIC)]));
     let mask = COMMON | MAGIC | RARE | LEGENDARY;
