@@ -45,7 +45,34 @@ IMPORT CODE (D4 -> Loot Filter -> New Filter -> Import):
 CiEKDUJ1aWxkIFVuaXF1ZXMQAh1QUP...
 ```
 
-## How the filter works
+## Two filters from one build: FARM and STASH
+
+Every run produces **two** import codes from the same parsed build — `<name> — FARM`
+and `<name> — STASH` — for two different jobs:
+
+- **FARM** (active gameplay): keep useful drops visible, hide ordinary junk. This
+  is the rule set described below.
+- **STASH** (upgrade triage): now that you *own* an item, how much attention does
+  it deserve as a possible upgrade? Stricter, and grouped into four graded
+  candidate tiers per slot. It deliberately drops the pickup-oriented catch-alls
+  (no generic Codex rule, no generic Greater-Affix catch), so a random garbage GA
+  never makes a stash item look interesting.
+
+  | Tier | Colour | Meaning |
+  |---|---|---|
+  | T1 | white | full desired match **and** the Maxroll-marked priority Greater Affix |
+  | T2 | blue | full desired match, no GA required |
+  | T3 | pink | **2 desired stats and at least one of them is a Greater Affix** |
+  | T4 | teal | 2 desired stats, no GA (a single enchant may fix the third) |
+
+  T3 is encoded with two affix conditions in one rule — a type-6
+  `HAS_REQUIRED_AFFIXES` (min 2 of the desired pool) **and** a type-7
+  `HAS_OPTIONAL_AFFIXES` (min 1 of the same pool, all pool affixes GA-marked) — so
+  the tier means "≥2 desired **and** ≥1 desired is Greater", not the generic "has
+  any Greater Affix". Over the 25-rule budget STASH sheds weakest tiers first
+  (T4, then T3, T2, T1), last slot first, and reports exactly what it dropped.
+
+## How the FARM filter works
 
 It is a strict endgame filter: it shows what the build can use and hides the rest.
 Rules are evaluated top to bottom in game, first match wins.
@@ -298,8 +325,16 @@ unaffected.
 The wire format follows the community protobuf schema from
 [fnuecke/diablo4-loot-filter-viewer](https://github.com/fnuecke/diablo4-loot-filter-viewer):
 each rule carries a name, visibility, an ARGB color and a list of AND-ed
-conditions. The per-stat Greater Affix requirement of the white tier uses the
-schema's `params2` pair encoding, as seen in real game exports.
+conditions. An affix condition (type 6 `HAS_REQUIRED_AFFIXES`, type 7
+`HAS_OPTIONAL_AFFIXES` — the schema documents type 7 as "same as required")
+encodes `params1` = the affix-id pool, `params2` = one `(affix id, affix id)`
+pair per affix that must roll as a Greater Affix, and `value1` = how many of the
+pool must be present. Each `params2` entry is an independent per-affix
+"this affix must be Greater" requirement (there is no count field on `params2`),
+so the white/T1 tier's marked affixes are each individually required to be
+Greater — matching real game exports. The two condition types exist because the
+in-game UI forbids two conditions of the same type in one rule; type 7 lets a
+single rule (STASH T3) carry a second affix constraint.
 
 ## Credits
 

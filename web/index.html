@@ -164,9 +164,10 @@
   .cswatch input[type=color]::-webkit-color-swatch { border:none; border-radius:4px; }
 
   /* ---- output ---- */
-  #out { display:none; }
-  #out.show { display:block; }
+  #out-farm, #out-stash { display:none; }
+  #out-farm.show, #out-stash.show { display:block; }
   .grimoire { border-color: var(--edge-lit); box-shadow: 0 30px 90px -40px rgba(62,255,120,.35), inset 0 1px 0 rgba(255,255,255,.04); }
+  .codehead h3 .subttl { font-family: var(--sans); font-size:12.5px; font-weight:400; color:var(--faint); letter-spacing:0; }
   .codehead { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:12px; }
   .codehead h3 { margin:0; font-family: var(--serif); font-weight:500; font-size:24px; letter-spacing:.4px; }
   textarea.code {
@@ -244,16 +245,28 @@
     </div>
   </section>
 
-  <section id="out" class="panel grimoire" aria-label="Generated filter">
+  <section id="out-farm" class="panel grimoire" aria-label="FARM filter">
     <div class="codehead">
-      <h3>Import code</h3>
-      <button id="copy" class="ghost" type="button">Copy</button>
+      <h3>Farm filter <span class="subttl">— active gameplay: keep useful drops, hide junk</span></h3>
+      <button id="copy-farm" class="ghost" type="button">Copy</button>
     </div>
-    <textarea id="code" class="code" readonly spellcheck="false" aria-label="Loot filter import code"></textarea>
+    <textarea id="code-farm" class="code" readonly spellcheck="false" aria-label="FARM filter import code"></textarea>
     <p class="steps">In game: <b>Character menu → Loot Filter → New Filter → Import</b>, then paste.</p>
-    <p id="meta" class="meta"></p>
-    <div id="warn"></div>
-    <ul id="rules" class="scroll-rule"></ul>
+    <p id="meta-farm" class="meta"></p>
+    <div id="warn-farm"></div>
+    <ul id="rules-farm" class="scroll-rule"></ul>
+  </section>
+
+  <section id="out-stash" class="panel grimoire" aria-label="STASH filter">
+    <div class="codehead">
+      <h3>Stash filter <span class="subttl">— triage looted gear by upgrade worth</span></h3>
+      <button id="copy-stash" class="ghost" type="button">Copy</button>
+    </div>
+    <textarea id="code-stash" class="code" readonly spellcheck="false" aria-label="STASH filter import code"></textarea>
+    <p class="steps">Import as a <b>second</b> filter. Stricter: four graded candidate tiers, no pickup catch-alls.</p>
+    <p id="meta-stash" class="meta"></p>
+    <div id="warn-stash"></div>
+    <ul id="rules-stash" class="scroll-rule"></ul>
     <div id="detected" style="margin-top:16px"></div>
   </section>
 
@@ -265,25 +278,28 @@
 </div>
 
 <script type="module">
-import { parsePlannerId, fetchProfile, listVariants, extractVariant, buildFilter, slotLabelFor } from "./d4filter.js";
+import { parsePlannerId, fetchProfile, listVariants, extractVariant,
+         buildFilter, buildStash, dualFilterNames, slotLabelFor } from "./d4filter.js";
 
 // Optional Cloudflare Worker that turns a build-guide URL into a planner id
 // (guide HTML isn't CORS-open; planner + data APIs are, so those need no backend).
 // Empty = guide links unsupported; planner links/ids still work with no backend.
 const WORKER_URL = "https://d4-maxroll-guide.swedishlesbian.workers.dev";
 
-// per-tier colour keys -> default hex (must match the C_* constants in d4filter.js)
+// per-tier colour keys -> default hex (must match the C_* constants in d4filter.js).
+// STASH T1/T2/T4 follow the FARM bis/gear/partial colours; only STASH T3 is new.
 const COLORS = [
   ["unique", "Build Uniques", "#ff5050"], ["mythic", "Mythic Uniques", "#ffc850"],
-  ["set", "Set Charms", "#be82ff"], ["codex", "Codex Upgrade", "#00c800"],
-  ["bis", "BiS (3/3 + GA)", "#ffffff"], ["gear", "Gear (full 3/3)", "#0096ff"],
-  ["partial", "Partial (2/3)", "#00c8aa"], ["ga", "Greater Affix", "#00ffff"],
-  ["seal", "Legendary Seals", "#ff64c8"],
+  ["set", "Set Charms", "#be82ff"], ["codex", "Codex Upgrade (FARM)", "#00c800"],
+  ["bis", "BiS / full+GA", "#ffffff"], ["gear", "Full match", "#0096ff"],
+  ["partial", "2-of-pool", "#00c8aa"], ["ga", "Greater Affix (FARM)", "#00ffff"],
+  ["seal", "Legendary Seals", "#ff64c8"], ["stashT3", "STASH: 2 + desired GA", "#ff3ea5"],
 ];
 // preview rule label -> colour key
 const LABEL_KEY = { "Build Uniques":"unique", "Mythic Uniques":"mythic", "Set Charms":"set",
   "Codex Upgrade":"codex", "BiS":"bis", "Gear":"gear", "Partial":"partial",
-  "Greater Affix":"ga", "Legendary Seals":"seal" };
+  "Greater Affix":"ga", "Legendary Seals":"seal",
+  "T1":"bis", "T2":"gear", "T3":"stashT3", "T4":"partial" };
 const hexToArgb = (hex) => ((0xff000000 | parseInt(hex.slice(1), 16)) >>> 0);
 
 const $ = (id) => document.getElementById(id);
@@ -391,37 +407,57 @@ function generate() {
     ancestralGear: all || $("anc-g").checked,
     colors: getColorsArgb(),
   };
-  const name = ($("name").value || "D4 Filter").slice(0, 30);
+  // Load once, generate both (§8). FARM = active-play; STASH = upgrade triage.
+  const base = ($("name").value || "D4 Filter").slice(0, 30);
+  const names = dualFilterNames(base);
   const ex = extractVariant(profile.data, vi, profile.cls, bundle);
-  const res = buildFilter(ex, name, bundle, opts);
+  const farm = buildFilter(ex, names.farm, bundle, opts);
+  const stash = buildStash(ex, names.stash, bundle, opts);
 
-  $("code").value = res.code;
-  $("meta").textContent =
-    `${res.ruleCount}/25 rules · ${res.slotRules.length} slot rules · ` +
-    `${res.uids.length ? ex.uniques.length + " uniques" : "no uniques"} · ` +
-    `${res.setIds.length} set charm${res.setIds.length === 1 ? "" : "s"}${ex.hasSeal ? " · seal" : ""}`;
-  renderRules(ex, res, opts);
-  renderWarnings(ex, res);
+  $("code-farm").value = farm.code;
+  $("meta-farm").textContent =
+    `${names.farm} · ${farm.ruleCount}/25 rules · ${farm.slotRules.length} slot rules` +
+    `${farm.uids.length ? " · " + ex.uniques.length + " uniques" : ""}${ex.hasSeal ? " · seal" : ""}`;
+  renderFarm(ex, farm, opts);
+  $("warn-farm").innerHTML = warnHtml([
+    farm.dropped.length && `${farm.dropped.length} FARM rule(s) dropped to fit 25: ${farm.dropped.join(", ")}.`,
+    ex.detected.unmappedAffix && `${ex.detected.unmappedAffix} affix value(s) had no mapping and were skipped (rune/aspect powers).`,
+  ]);
+
+  $("code-stash").value = stash.code;
+  $("meta-stash").textContent =
+    `${names.stash} · ${stash.ruleCount}/25 rules · tiers T1–T4`;
+  renderStash(ex, stash, opts);
+  $("warn-stash").innerHTML = warnHtml([
+    stash.dropped.length && `Dropped to fit 25 rules (weakest tiers first): ${stash.dropped.join(", ")}.`,
+  ]);
+
   renderDetected(ex);
-  const out = $("out"); out.classList.add("show"); out.classList.remove("reveal"); void out.offsetWidth; out.classList.add("reveal");
+  for (const id of ["out-farm", "out-stash"]) {
+    const out = $(id); out.classList.add("show"); out.classList.remove("reveal"); void out.offsetWidth; out.classList.add("reveal");
+  }
 }
 
+const warnHtml = (arr) => arr.filter(Boolean).map(t => `<div class="omen">${t}</div>`).join("");
 const gemSpan = (label) => `<span class="gem" style="color:${getColorsHex()[LABEL_KEY[label]] || "var(--muted)"}"></span>`;
 const afx = (row) => row[2] ? `<span class="ga">${row[3]}★</span>` : row[3];
-function renderRules(ex, res, opts) {
-  const li = [];
-  if (res.uids.length) li.push(`<li>${gemSpan("Build Uniques")}<span class="rname">Build Uniques</span><span class="rafx">${ex.uniques.join(", ") || "—"}</span></li>`);
-  if (res.setIds.length) li.push(`<li>${gemSpan("Set Charms")}<span class="rname">Set Charms</span><span class="rafx">${[...ex.detected.sets].join(", ")}</span></li>`);
-  if (opts.alwaysMythic) li.push(`<li>${gemSpan("Mythic Uniques")}<span class="rname">Mythic Uniques</span><span class="rafx">any Mythic Unique — always shown</span></li>`);
-  li.push(`<li>${gemSpan("Codex Upgrade")}<span class="rname">Codex Upgrade</span><span class="rafx">Aspect upgrades</span></li>`);
-  // bucket each affix under its own slot (a stat shared across slots must not
-  // be attributed to whichever slot rule happens to list it first)
+
+function slotAffixMap(ex) {
   const bySlot = new Map();
   for (const r of ex.rows) {
     const label = slotLabelFor(r[0], profile.cls);
     if (!bySlot.has(label)) bySlot.set(label, []);
     const arr = bySlot.get(label); if (!arr.some(x => x[1] === r[1])) arr.push(r);
   }
+  return bySlot;
+}
+function renderFarm(ex, res, opts) {
+  const li = [];
+  if (res.uids.length) li.push(`<li>${gemSpan("Build Uniques")}<span class="rname">Build Uniques</span><span class="rafx">${ex.uniques.join(", ") || "—"}</span></li>`);
+  if (res.setIds.length) li.push(`<li>${gemSpan("Set Charms")}<span class="rname">Set Charms</span><span class="rafx">${[...ex.detected.sets].join(", ")}</span></li>`);
+  if (opts.alwaysMythic) li.push(`<li>${gemSpan("Mythic Uniques")}<span class="rname">Mythic Uniques</span><span class="rafx">any Mythic Unique — always shown</span></li>`);
+  li.push(`<li>${gemSpan("Codex Upgrade")}<span class="rname">Codex Upgrade</span><span class="rafx">Aspect upgrades</span></li>`);
+  const bySlot = slotAffixMap(ex);
   for (const sr of res.slotRules) {
     const rows = (bySlot.get(sr.label) || []).slice(0, 4);
     const hasGA = sr.ga.length > 0;
@@ -431,13 +467,21 @@ function renderRules(ex, res, opts) {
     li.push(`<li>${gemSpan("Partial")}<span class="rname">2 of 3 match</span><span class="rafx">progression tier · ${res.partials.map(s => s.label).join(", ")}</span></li>`);
   li.push(`<li>${gemSpan("Greater Affix")}<span class="rname">${opts.gaThreshold}+ Greater Affix</span><span class="rafx">catch-all for high-GA drops (build items excluded)</span></li>`);
   if (ex.hasSeal) li.push(`<li>${gemSpan("Legendary Seals")}<span class="rname">Legendary Seals</span><span class="rafx">Horadric seals, Legendary+</span></li>`);
-  $("rules").innerHTML = li.join("");
+  $("rules-farm").innerHTML = li.join("");
 }
-function renderWarnings(ex, res) {
-  const w = [];
-  if (res.dropped.length) w.push(`${res.dropped.length} BiS rule(s) dropped to fit the 25-rule limit: ${res.dropped.join(", ")}.`);
-  if (ex.detected.unmappedAffix) w.push(`${ex.detected.unmappedAffix} affix value(s) had no filter mapping and were skipped (usually rune/aspect powers).`);
-  $("warn").innerHTML = w.map(t => `<div class="omen">${t}</div>`).join("");
+function renderStash(ex, res, opts) {
+  const li = [];
+  if (res.uids.length) li.push(`<li>${gemSpan("Build Uniques")}<span class="rname">Build Uniques</span><span class="rafx">${ex.uniques.join(", ") || "—"}</span></li>`);
+  if (res.setIds.length) li.push(`<li>${gemSpan("Set Charms")}<span class="rname">Set Charms</span><span class="rafx">${[...ex.detected.sets].join(", ")}</span></li>`);
+  if (opts.alwaysMythic) li.push(`<li>${gemSpan("Mythic Uniques")}<span class="rname">Mythic Uniques</span><span class="rafx">any Mythic Unique — always shown</span></li>`);
+  const tierLine = (key, name, desc, tier) => tier.length
+    ? `<li>${gemSpan(key)}<span class="rname">${name}</span><span class="rafx">${desc} · ${tier.map(s => s.label).join(", ")}</span></li>` : "";
+  li.push(tierLine("T1", "T1 · Priority GA", "full desired match + a marked Greater Affix", res.tiers.t1));
+  li.push(tierLine("T2", "T2 · Full match", "all desired stats, no GA needed", res.tiers.t2));
+  li.push(tierLine("T3", "T3 · 2 + desired GA", "2 desired stats and one of them is Greater", res.tiers.t3));
+  li.push(tierLine("T4", "T4 · 2-of-pool", "2 desired stats (an enchant may fix the third)", res.tiers.t4));
+  if (ex.hasSeal) li.push(`<li>${gemSpan("Legendary Seals")}<span class="rname">Legendary Seals</span><span class="rafx">Horadric seals, Legendary+</span></li>`);
+  $("rules-stash").innerHTML = li.filter(Boolean).join("");
 }
 function renderDetected(ex) {
   const p = [];
@@ -457,10 +501,14 @@ $("color-reset").addEventListener("click", () => {
   for (const [k, , def] of COLORS) $(`c-${k}`).value = def;
   generate();
 });
-$("copy").addEventListener("click", async () => {
-  try { await navigator.clipboard.writeText($("code").value); $("copy").textContent = "Copied ✓"; setTimeout(() => $("copy").textContent = "Copy", 1500); }
-  catch { $("code").select(); }
-});
+function wireCopy(btnId, codeId) {
+  $(btnId).addEventListener("click", async () => {
+    try { await navigator.clipboard.writeText($(codeId).value); $(btnId).textContent = "Copied ✓"; setTimeout(() => $(btnId).textContent = "Copy", 1500); }
+    catch { $(codeId).select(); }
+  });
+}
+wireCopy("copy-farm", "code-farm");
+wireCopy("copy-stash", "code-stash");
 </script>
 </body>
 </html>

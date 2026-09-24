@@ -39,14 +39,17 @@ def main():
     for i in indices:
         name, rows, uniques, charms, has_seal, _c = d4.extract_maxroll(
             pdata, i, nid2sno, adb, udb, tset, cls)
-        fname = (name or f"variant {i}")[:30]
-        code, rep = d4.build(adb, udb, rows, uniques, fname, args.ga_threshold,
+        base = name or f"variant {i}"     # build() adds the — FARM / — STASH suffix
+        code, rep = d4.build(adb, udb, rows, uniques, base, args.ga_threshold,
                              hide_junk=True, cls=cls, tset_db=tset, itype_db=itype,
                              charm_slugs=charms, has_seal=has_seal)
-        print(f"[{i}] {fname:<30} rows={len(rows):>2} uniques={len(uniques)} "
-              f"charms={len(charms)} seal={int(has_seal)} rules={rep['n_rules']}")
-        print(f"    {code}\n")
-        out.append({"index": i, "name": fname, "code": code})
+        print(f"[{i}] {base[:26]:<26} rows={len(rows):>2} FARM={rep['n_rules']} "
+              f"STASH={rep['stash_n_rules']}"
+              + (f"  drop:{rep['stash_dropped']}" if rep['stash_dropped'] else ""))
+        out.append({"index": i, "base": base,
+                    "farm_code": code, "stash_code": rep["stash_code"],
+                    "farm_rules": rep["n_rules"], "stash_rules": rep["stash_n_rules"],
+                    "stash_dropped": rep["stash_dropped"]})
     if args.dump:
         Path(args.dump).write_text(json.dumps(out, ensure_ascii=False, indent=2),
                                    encoding="utf-8")

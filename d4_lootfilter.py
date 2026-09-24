@@ -38,7 +38,9 @@ VERSION = "1.0"
 BYTES_HIGHEST_FIRST = True
 
 MAX_RULES = 25          # in-game limit per filter
+MAX_NAME = 30           # in-game filter-name length limit
 NATURAL_AFFIXES = 3     # affixes on a dropped legendary; the occultist rerolls one
+STASH_MIN = 2           # STASH 2-of-pool threshold (a single enchant may fix one)
 
 _UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
        "(KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36")
@@ -265,13 +267,39 @@ def _c_rarity(mask):   return _efb(4, _efv(1, 1) + _efv(4, mask))
 def _c_props(mask):    return _efb(4, _efv(1, 2) + _efv(4, mask))
 def _c_codex():        return _efb(4, _efv(1, 3) + _efv(6, 1))
 def _c_greater(n):     return _efb(4, _efv(1, 4) + _efv(4, n) + _efv(6, 1))
-def _c_affixes(ids, n, ga_ids=()):
-    """At least n of `ids`; each id in `ga_ids` must also be a Greater Affix
-    (encoded as a params2 pair of the affix id with itself)."""
-    inner = _efv(1, 6)
+
+
+def _c_affix_cond(ctype, ids, n, ga_ids=()):
+    """Affix condition, shared by type 6 (HAS_REQUIRED_AFFIXES) and type 7
+    (HAS_OPTIONAL_AFFIXES) — the community schema documents type 7 as "Same as
+    Has Required Affixes", so both use this identical wire structure:
+        params1 (field 2) := the affix-id pool
+        params2 (field 3) := one (affix id, affix id) pair per affix that must
+                             itself roll as a Greater Affix
+        value1  (field 4) := how many of the pool must be present
+    A rule may carry at most one condition of each type, so the two types exist
+    precisely to let one rule express two independent affix constraints."""
+    inner = _efv(1, ctype)
     for i in ids: inner += _ef32(2, i)
     for g in ga_ids: inner += _efb(3, _ef32(1, g) + _ef32(2, g))
     return _efb(4, inner + _efv(4, n))
+
+
+def _c_required_affixes(ids, n, ga_ids=()):
+    """Type 6: at least `n` of `ids` are present, and every affix in `ga_ids`
+    must be present as a Greater Affix (each is an independent requirement)."""
+    return _c_affix_cond(6, ids, n, ga_ids)
+
+
+def _c_optional_affixes(ids, n, ga_ids=()):
+    """Type 7: same wire structure as type 6, distinct condition type so it can
+    coexist with a type-6 condition in the same rule."""
+    return _c_affix_cond(7, ids, n, ga_ids)
+
+
+_c_affixes = _c_required_affixes   # back-compat alias (existing FARM call sites)
+
+
 def _c_params(ctype, ids):
     inner = _efv(1, ctype)
     for i in ids: inner += _ef32(2, i)
@@ -299,6 +327,14 @@ C_PARTIAL= _color(0, 200, 170)     # teal: per-slot partial tier (2 of the pool)
 C_SET    = _color(190, 130, 255)   # purple: the build's talisman set charms
 C_SEAL   = _color(255, 100, 200)   # magenta: horadric seals
 C_MYTHIC = _color(255, 200, 80)    # gold: mythic uniques (their own section)
+# STASH tiers reuse the FARM colours for the equivalent tiers (T1 full+GA = white,
+# T2 full = blue, T4 2-of-pool = teal) and add one new colour for T3, which means
+# something stronger than FARM's generic cyan GA catch: "2 desired stats AND at
+# least one desired stat is Greater".
+C_STASH_T1 = C_BIS
+C_STASH_T2 = C_GEAR
+C_STASH_T3 = _color(255, 62, 165)  # hot pink: 2 desired + a desired Greater Affix
+C_STASH_T4 = C_PARTIAL
 
 
 def _rule(name, vis, conds, color=None):
@@ -503,6 +539,105 @@ def build_filter_code(name, unique_ids, slot_rules, fallback_ids=(), ga_n=1,
         rules = assemble(bis, partials)
     if len(rules) > MAX_RULES:
         print(f"[warn] {len(rules)} rules exceed the in-game limit of {MAX_RULES}",
+              file=sys.stderr)
+    return (base64.b64encode(_filter_bytes(name, rules)).decode("ascii"),
+            len(rules), dropped)
+
+
+def stash_filter_code(name, unique_ids, slot_rules, set_ids=(), seal_type=None,
+                      charm_type=None, all_type_ids=(), ancestral_uniques=False,
+                      ancestral_gear=False, always_mythic=True):
+    """STASH policy: classify already-looted gear by how worthwhile it is to
+    inspect as a possible upgrade. Same keep/hide scaffolding as FARM, but the
+    per-slot middle is four graded candidate tiers instead of BiS/Gear/partial,
+    and the pickup-oriented catch-alls (generic Codex, generic Greater Affix) are
+    intentionally absent — a random garbage GA must not make a stash item look
+    interesting. Highest priority first:
+      Build Uniques, Set Charms, Mythic Uniques,
+      T1 priority-GA/BiS, T2 full match, T3 (2 desired + a desired GA), T4 2-of-pool,
+      Legendary Seals, all set charms, keep uniques, hide the rest.
+    Returns (code, rule_count, dropped_labels)."""
+    def base_conds(sr):
+        c = [_c_rarity(RARE | LEGENDARY)]
+        if ancestral_gear:
+            c.append(_c_props(PROP_ANCESTRAL))
+        if sr["type_ids"]:
+            c.append(_c_itemtype(sr["type_ids"]))
+        return c
+
+    # Tier condition builders — the three affix concepts kept explicit:
+    #   count of desired present  -> value1 of a required-affixes condition
+    #   specific desired be GA    -> that condition's ga_ids (params2)
+    #   at least one desired be GA -> a *separate* optional-affixes condition,
+    #                                 min 1 over the pool with the whole pool GA-marked
+    def t1_conds(sr):   # strongest: full match with the Maxroll priority-GA marks
+        return base_conds(sr) + [_c_required_affixes(sr["ids"], sr["n_bis"], sr["ga"])]
+    def t2_conds(sr):   # full desired match, no GA requirement
+        return base_conds(sr) + [_c_required_affixes(sr["ids"], sr["n_fix"])]
+    def t3_conds(sr):   # 2 desired present AND >=1 desired affix is Greater
+        return base_conds(sr) + [
+            _c_required_affixes(sr["ids"], STASH_MIN),          # type 6: >=2 of pool
+            _c_optional_affixes(sr["ids"], 1, sr["ids"])]       # type 7: >=1 of pool, GA
+    def t4_conds(sr):   # plain 2-of-pool, no GA (enchant may fix the third)
+        return base_conds(sr) + [_c_required_affixes(sr["ids"], STASH_MIN)]
+
+    t1 = [sr for sr in slot_rules if sr["ga"]]
+    t2 = list(slot_rules)
+    t3 = [sr for sr in slot_rules if sr["n_fix"] > STASH_MIN]
+    t4 = [sr for sr in slot_rules if sr["n_fix"] > STASH_MIN]
+
+    def assemble(t1r, t2r, t3r, t4r):
+        rules = []
+        if unique_ids:
+            uconds = [_c_uniques(unique_ids)]
+            if ancestral_uniques:
+                uconds.append(_c_props(PROP_ANCESTRAL))
+            rules.append(_rule("Build Uniques", RECOLOR, uconds, C_UNIQUE))
+        if set_ids:
+            rules.append(_rule("Set Charms", RECOLOR, [_c_talisman_set(list(set_ids))], C_SET))
+        if always_mythic:
+            rules.append(_rule("Mythic Uniques", RECOLOR, [_c_rarity(MYTHIC)], C_MYTHIC))
+        for sr in t1r:
+            rules.append(_rule(f"T1: {sr['label']}", RECOLOR, t1_conds(sr), C_STASH_T1))
+        for sr in t2r:
+            rules.append(_rule(f"T2: {sr['label']}", RECOLOR, t2_conds(sr), C_STASH_T2))
+        for sr in t3r:
+            rules.append(_rule(f"T3: {sr['label']}", RECOLOR, t3_conds(sr), C_STASH_T3))
+        for sr in t4r:
+            rules.append(_rule(f"T4: {sr['label']}", RECOLOR, t4_conds(sr), C_STASH_T4))
+        if seal_type is not None:
+            rules.append(_rule("Legendary Seals", RECOLOR,
+                               [_c_rarity(LEGENDARY | UNIQUE | MYTHIC),
+                                _c_itemtype([seal_type])], C_SEAL))
+        if charm_type is not None:
+            rules.append(_rule("Set Charms (all)", SHOW,
+                               [_c_rarity(TALISMAN), _c_itemtype([charm_type])]))
+        if ancestral_uniques:
+            rules.append(_rule("Ancestral Uniques", SHOW,
+                               [_c_rarity(UNIQUE | MYTHIC), _c_props(PROP_ANCESTRAL)]))
+        else:
+            rules.append(_rule("Keep Uniques", SHOW, [_c_rarity(UNIQUE | MYTHIC)]))
+        # Hide the rest so a stash view shows only classified candidates + keeps.
+        mask = COMMON | MAGIC | RARE | LEGENDARY
+        if ancestral_uniques:
+            mask |= UNIQUE
+        conds = [_c_rarity(mask)]
+        if all_type_ids:
+            conds.append(_c_itemtype(list(all_type_ids)))
+        rules.append(_rule("Hide Junk Gear", HIDE, conds))
+        return rules
+
+    # Over budget: shed the weakest tiers first (T4, then T3, then T2, then T1),
+    # last slot in a tier first. Never drop a stronger tier while a weaker one
+    # still has rules to give up.
+    dropped = []
+    rules = assemble(t1, t2, t3, t4)
+    for label, tier in (("T4", t4), ("T3", t3), ("T2", t2), ("T1", t1)):
+        while len(rules) > MAX_RULES and tier:
+            dropped.append(f"{label}: {tier.pop()['label']}")
+            rules = assemble(t1, t2, t3, t4)
+    if len(rules) > MAX_RULES:
+        print(f"[warn] STASH {len(rules)} rules exceed the in-game limit of {MAX_RULES}",
               file=sys.stderr)
     return (base64.b64encode(_filter_bytes(name, rules)).decode("ascii"),
             len(rules), dropped)
@@ -1267,14 +1402,25 @@ def build(adb, udb, gear_rows, unique_slugs, name, ga_n, hide_junk, cls=None,
     charm_type = itype_db.type_id("charm") if itype_db else None
     all_type_ids = [e["_int"] for e in itype_db.entries] if itype_db else []
 
+    # Two filters from the one parsed build: FARM (active gameplay) and STASH
+    # (upgrade triage of already-looted gear). `name` is the base build name.
+    farm_name, stash_name = dual_filter_names(name)
     code, n_rules, dropped_bis = build_filter_code(
-        name, uids, slot_rules, fallback_ids, ga_n, hide_junk,
+        farm_name, uids, slot_rules, fallback_ids, ga_n, hide_junk,
         set_ids=set_ids, seal_type=seal_type, charm_type=charm_type,
         all_type_ids=all_type_ids, ancestral_uniques=ancestral_uniques,
         ancestral_gear=ancestral_gear, partial=partial, always_mythic=always_mythic)
+    stash_code, stash_n_rules, stash_dropped = stash_filter_code(
+        stash_name, uids, slot_rules, set_ids=set_ids, seal_type=seal_type,
+        charm_type=charm_type, all_type_ids=all_type_ids,
+        ancestral_uniques=ancestral_uniques, ancestral_gear=ancestral_gear,
+        always_mythic=always_mythic)
     return code, {"slot_rules": slot_rules, "fallback": fallback_ids,
                   "unmapped": unmapped, "cls": cls,
                   "n_rules": n_rules, "dropped_bis": dropped_bis,
+                  "farm_name": farm_name, "stash_name": stash_name,
+                  "stash_code": stash_code, "stash_n_rules": stash_n_rules,
+                  "stash_dropped": stash_dropped,
                   "uniques": uni_named, "uni_unmapped": uni_unmapped,
                   "sets": [tset_db.name(s) for s in set_ids] if tset_db else [],
                   "build_seal": has_seal, "hide_junk": hide_junk,
@@ -1282,6 +1428,16 @@ def build(adb, udb, gear_rows, unique_slugs, name, ga_n, hide_junk, cls=None,
                   "ancestral_gear": ancestral_gear,
                   "kept": {"uniques": True, "set_charms": charm_type is not None,
                            "seals": seal_type is not None}}
+
+
+def dual_filter_names(base):
+    """(FARM name, STASH name) from a build name, each within MAX_NAME. The build
+    portion is truncated so the longer ' — STASH' suffix still fits, then both
+    share that same truncated portion."""
+    base = (base or "D4 Filter").strip()
+    room = MAX_NAME - len(" — STASH")
+    b = base[:room].rstrip() or "D4 Filter"[:room]
+    return f"{b} — FARM", f"{b} — STASH"
 
 
 def name_from_url(url):
@@ -1350,10 +1506,22 @@ def _report(name, variant_id, rep, code, verbose):
             print(f"    - {slug}" + (f"  ({slot})" if slot else ""))
         for slug in rep["uni_unmapped"]:
             print(f"    - {slug}  (unique)")
-    print("\n" + "═" * 68)
-    print("IMPORT CODE  (D4 -> Loot Filter -> New Filter -> Import):\n")
-    print(code)
-    print("═" * 68)
+    if rep.get("stash_dropped"):
+        print(f"\n  STASH dropped to fit {MAX_RULES} rules: "
+              + ", ".join(rep["stash_dropped"]))
+
+    def _emit(title, subtitle, the_code):
+        print("\n" + "═" * 68)
+        print(f"{title}  (D4 -> Loot Filter -> New Filter -> Import)")
+        print(f"  {subtitle}\n")
+        print(the_code)
+        print("═" * 68)
+
+    _emit("FARM FILTER", f"{rep.get('farm_name', name)}  ·  {rep['n_rules']}/{MAX_RULES} rules",
+          code)
+    _emit("STASH FILTER",
+          f"{rep.get('stash_name', name)}  ·  {rep.get('stash_n_rules', '?')}/{MAX_RULES} rules",
+          rep.get("stash_code", ""))
 
 
 def main():
