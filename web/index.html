@@ -360,11 +360,22 @@ async function load() {
 }
 
 function syncAncestral() {
-  // "Only show Ancestral items" is the master: it forces both sub-rules on.
+  // "Only show Ancestral items (hide the rest)" is the master: it forces the two
+  // ancestral sub-rules on AND turns hiding on, so non-Ancestral gear is actually
+  // hidden (without the hide rule, restricting the recolor rules to Ancestral
+  // just leaves non-Ancestral gear uncoloured but still visible). Prior states
+  // are remembered and restored when the master is switched back off.
   const all = $("anc-all").checked;
-  for (const id of ["anc-u", "anc-g"]) {
-    const el = $(id); el.disabled = all; if (all) el.checked = true; else if (el.dataset.wasAll) el.checked = false;
-    el.dataset.wasAll = all ? "1" : "";
+  for (const id of ["hide", "anc-u", "anc-g"]) {
+    const el = $(id);
+    if (all) {
+      if (!el.disabled) el.dataset.prev = el.checked ? "1" : "";
+      el.checked = true; el.disabled = true;
+    } else {
+      el.disabled = false;
+      el.checked = el.dataset.prev === "1";
+      delete el.dataset.prev;
+    }
   }
 }
 function generate() {
@@ -373,7 +384,7 @@ function generate() {
   const all = $("anc-all").checked;
   const opts = {
     gaThreshold: Math.max(0, parseInt($("ga").value, 10) || 1),
-    hideJunk: $("hide").checked,
+    hideJunk: all || $("hide").checked,   // the master's "(hide the rest)" must hide
     partial: $("partial").checked,
     alwaysMythic: $("mythic-always").checked,
     ancestralUniques: all || $("anc-u").checked,
