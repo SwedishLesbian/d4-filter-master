@@ -42,14 +42,17 @@ def main():
         base = name or f"variant {i}"     # build() adds the — FARM / — STASH suffix
         code, rep = d4.build(adb, udb, rows, uniques, base, args.ga_threshold,
                              hide_junk=True, cls=cls, tset_db=tset, itype_db=itype,
-                             charm_slugs=charms, has_seal=has_seal)
-        print(f"[{i}] {base[:26]:<26} rows={len(rows):>2} FARM={rep['n_rules']} "
-              f"STASH={rep['stash_n_rules']}"
-              + (f"  drop:{rep['stash_dropped']}" if rep['stash_dropped'] else ""))
+                             charm_slugs=charms, has_seal=has_seal, variant_name=base)
+        st = rep["stage"]
+        print(f"[{i}] {base[:24]:<24} FARM={rep['n_rules']} STASH={rep['stash_n_rules']} "
+              f"LEVEL={rep['level_n_rules']}  stage={st['stage']}/{st['confidence']}")
         out.append({"index": i, "base": base,
                     "farm_code": code, "stash_code": rep["stash_code"],
+                    "level_code": rep["level_code"],
                     "farm_rules": rep["n_rules"], "stash_rules": rep["stash_n_rules"],
-                    "stash_dropped": rep["stash_dropped"]})
+                    "level_rules": rep["level_n_rules"],
+                    "stash_dropped": rep["stash_dropped"],
+                    "stage": st})
     if args.dump:
         Path(args.dump).write_text(json.dumps(out, ensure_ascii=False, indent=2),
                                    encoding="utf-8")

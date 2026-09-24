@@ -385,12 +385,80 @@ export function buildStash(extracted, name, bundle, opts = {}) {
            tiers: { t1, t2, t3, t4 }, setIds, uids };
 }
 
-// (FARM name, STASH name) within MAX_NAME; mirrors dual_filter_names in Python.
-export function dualFilterNames(base) {
+// Filter names within MAX_NAME, sharing one truncated build name. Mirrors the
+// Python _stage_name / dual_filter_names / level_filter_name helpers.
+function stageName(base, suffix) {
   base = (base || "D4 Filter").trim();
-  const room = MAX_NAME - " — STASH".length;
-  const b = base.slice(0, room).replace(/\s+$/, "") || "D4 Filter".slice(0, room);
-  return { farm: `${b} — FARM`, stash: `${b} — STASH` };
+  const room = MAX_NAME - ` — ${suffix}`.length;
+  return (base.slice(0, room).replace(/\s+$/, "") || "D4 Filter".slice(0, room)) + ` — ${suffix}`;
+}
+export function dualFilterNames(base) {
+  return { farm: stageName(base, "FARM"), stash: stageName(base, "STASH") };
+}
+export function levelFilterName(base) { return stageName(base, "LEVEL"); }
+
+// ---- build-stage detection (source-independent) --------------------------
+const STAGE_LEVELING_KW = ["leveling", "levelling", "1-60", "1-70", "1-100",
+  "campaign", "starter", "earlygame", "early-game", "lowlevel", "low-level", "levelingguide"];
+const STAGE_ENDGAME_KW = ["endgame", "end-game", "pit", "pushing", "push", "boss",
+  "bossing", "speedfarm", "speedfarming", "torment", "uber", "nightmare", "paragon"];
+
+// { stage:'leveling'|'endgame', confidence:'high'|'medium'|'low', reasons:[...] }
+export function detectStage(variantName, hasGa) {
+  const compact = (variantName || "").toLowerCase().replace(/\s+/g, "");
+  const lev = STAGE_LEVELING_KW.find((k) => compact.includes(k));
+  const end = STAGE_ENDGAME_KW.find((k) => compact.includes(k));
+  const reasons = [];
+  let stage, confidence;
+  if (lev && !end) {
+    stage = "leveling"; reasons.push(`variant name contains "${lev}"`);
+    if (hasGa) { reasons.push("but the build carries Greater Affix priorities"); confidence = "medium"; }
+    else { reasons.push("no Greater Affix priorities are present"); confidence = "high"; }
+  } else if (end && !lev) {
+    stage = "endgame"; reasons.push(`variant name contains "${end}"`);
+    if (hasGa) { reasons.push("build carries Greater Affix priorities"); confidence = "high"; }
+    else { reasons.push("but no Greater Affix priorities are present"); confidence = "medium"; }
+  } else if (lev && end) {
+    stage = "leveling"; confidence = "low";
+    reasons.push(`variant name mixes leveling ("${lev}") and endgame ("${end}") terms`);
+  } else if (hasGa) {
+    stage = "endgame"; confidence = "medium";
+    reasons.push("build carries Greater Affix priorities", "variant name gives no stage hint");
+  } else {
+    stage = "leveling"; confidence = "low";
+    reasons.push("no Greater Affix priorities are present", "variant name gives no stage hint");
+  }
+  return { stage, confidence, reasons };
+}
+
+// ---- LEVELING rule assembly (mirror leveling_filter_code) -----------------
+// Permissive/additive: highlight likely build gear; no Ancestral, no GA
+// requirement, no generic GA catch, and no Hide rule (ordinary gear stays shown).
+export function buildLeveling(extracted, name, bundle, opts = {}) {
+  const { slotRules, setIds, uids, COL, alwaysMythic } = prepare(extracted, bundle, opts);
+  const conds = (sr, n) => {
+    const c = [cRarity(RARE | LEGENDARY)];
+    if (sr.typeIds.length) c.push(cItemType(sr.typeIds));
+    c.push(cRequiredAffixes(sr.ids, n));   // no GA, no props
+    return c;
+  };
+  let full = slotRules.slice();
+  let two = slotRules.filter((sr) => sr.nFix > STASH_MIN);
+  function assemble() {
+    const rules = [];
+    if (uids.length) rules.push(rule("Build Uniques", RECOLOR, [cUniques(uids)], COL.unique));
+    if (setIds.length) rules.push(rule("Set Charms", RECOLOR, [cTalismanSet(setIds)], COL.set));
+    if (alwaysMythic) rules.push(rule("Mythic Uniques", RECOLOR, [cRarity(MYTHIC)], COL.mythic));
+    rules.push(rule("Codex Upgrade", RECOLOR, [cCodex()], COL.codex));
+    for (const sr of full) rules.push(rule(`Full: ${sr.label}`, RECOLOR, conds(sr, sr.nFix), COL.bis));
+    for (const sr of two) rules.push(rule(`2/3: ${sr.label}`, RECOLOR, conds(sr, STASH_MIN), COL.partial));
+    return rules;
+  }
+  const dropped = [];
+  let rules = assemble();
+  while (rules.length > MAX_RULES && two.length) { dropped.push(`2/3: ${two[two.length - 1].label}`); two.pop(); rules = assemble(); }
+  while (rules.length > MAX_RULES && full.length) { dropped.push(`Full: ${full[full.length - 1].label}`); full.pop(); rules = assemble(); }
+  return { code: b64(filterBytes(name, rules)), ruleCount: rules.length, dropped, full, two, slotRules, setIds, uids };
 }
 
 // ---- fetch helpers -------------------------------------------------------

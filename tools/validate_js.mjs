@@ -5,7 +5,7 @@
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
-import { extractVariant, buildFilter, buildStash, dualFilterNames, fetchProfile } from "../web/d4filter.js";
+import { extractVariant, buildFilter, buildStash, buildLeveling, dualFilterNames, levelFilterName, detectStage, fetchProfile } from "../web/d4filter.js";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const root = join(here, "..");
@@ -24,14 +24,21 @@ for (const exp of oracle) {
   const names = dualFilterNames(exp.base);
   const farm = buildFilter(extracted, names.farm, bundle, { gaThreshold: 1 });
   const stash = buildStash(extracted, names.stash, bundle, {});
+  const level = buildLeveling(extracted, levelFilterName(exp.base), bundle, {});
   const farmOk = farm.code === exp.farm_code;
   const stashOk = stash.code === exp.stash_code;
-  farmOk && stashOk ? pass++ : fail++;
-  console.log(`[${exp.index}] ${exp.base.slice(0, 24).padEnd(24)} ` +
-    `FARM ${farmOk ? "MATCH" : "DIFF"}(${farm.ruleCount}) STASH ${stashOk ? "MATCH" : "DIFF"}(${stash.ruleCount})`);
+  const levelOk = level.code === exp.level_code;
+  // stage detector agrees between JS and Python
+  const stageJs = detectStage(exp.base, extracted.rows.some((r) => r[2]));
+  const stageOk = exp.stage && stageJs.stage === exp.stage.stage &&
+    stageJs.confidence === exp.stage.confidence;
+  farmOk && stashOk && levelOk && stageOk ? pass++ : fail++;
+  console.log(`[${exp.index}] ${exp.base.slice(0, 22).padEnd(22)} ` +
+    `FARM ${farmOk ? "ok" : "DIFF"} STASH ${stashOk ? "ok" : "DIFF"} LEVEL ${levelOk ? "ok" : "DIFF"} ` +
+    `stage ${stageOk ? "ok" : "DIFF"}(${stageJs.stage}/${stageJs.confidence})`);
   if (!farmOk) console.log(`     FARM diff@${firstDiff(farm.code, exp.farm_code)}`);
-  if (!stashOk) console.log(`     STASH diff@${firstDiff(stash.code, exp.stash_code)}\n` +
-    `       oracle …${exp.stash_code.slice(0, 40)}…\n       jsport …${stash.code.slice(0, 40)}…`);
+  if (!stashOk) console.log(`     STASH diff@${firstDiff(stash.code, exp.stash_code)}`);
+  if (!levelOk) console.log(`     LEVEL diff@${firstDiff(level.code, exp.level_code)}`);
 }
 console.log(`\n${pass} variants fully match, ${fail} with a diff`);
 process.exit(fail ? 1 : 0);

@@ -639,6 +639,60 @@ def stash_filter_code(name, unique_ids, slot_rules, set_ids=(), seal_type=None,
             len(rules), dropped)
 
 
+def leveling_filter_code(name, unique_ids, slot_rules, set_ids=(), always_mythic=True):
+    """LEVELING policy: permissive and additive. Highlight likely build-relevant
+    gear, but never claim other equipment is junk — while leveling, raw item power,
+    weapon DPS and armour can make a non-ideal-affix item an upgrade, and the
+    native filter cannot compare those against equipped gear. So: NO Ancestral
+    requirement, NO Greater-Affix requirement, NO generic GA catch, and crucially
+    NO Hide rule (ordinary Rare/Legendary gear stays visible). Highest first:
+      Build Uniques, Set Charms, Mythic Uniques, Codex Upgrade,
+      Full desired match (per slot), 2-of-pool (per slot). Everything else shows.
+    Returns (code, rule_count, dropped_labels)."""
+    def full_conds(sr):
+        c = [_c_rarity(RARE | LEGENDARY)]
+        if sr["type_ids"]:
+            c.append(_c_itemtype(sr["type_ids"]))
+        c.append(_c_required_affixes(sr["ids"], sr["n_fix"]))   # full desired, no GA
+        return c
+    def two_conds(sr):
+        c = [_c_rarity(RARE | LEGENDARY)]
+        if sr["type_ids"]:
+            c.append(_c_itemtype(sr["type_ids"]))
+        c.append(_c_required_affixes(sr["ids"], STASH_MIN))     # 2 of pool, no GA
+        return c
+
+    full = list(slot_rules)
+    two = [sr for sr in slot_rules if sr["n_fix"] > STASH_MIN]
+
+    def assemble(full_r, two_r):
+        rules = []
+        if unique_ids:
+            rules.append(_rule("Build Uniques", RECOLOR, [_c_uniques(unique_ids)], C_UNIQUE))
+        if set_ids:
+            rules.append(_rule("Set Charms", RECOLOR, [_c_talisman_set(list(set_ids))], C_SET))
+        if always_mythic:
+            rules.append(_rule("Mythic Uniques", RECOLOR, [_c_rarity(MYTHIC)], C_MYTHIC))
+        rules.append(_rule("Codex Upgrade", RECOLOR, [_c_codex()], C_GREEN))
+        for sr in full_r:
+            rules.append(_rule(f"Full: {sr['label']}", RECOLOR, full_conds(sr), C_BIS))
+        for sr in two_r:
+            rules.append(_rule(f"2/3: {sr['label']}", RECOLOR, two_conds(sr), C_PARTIAL))
+        return rules
+
+    # Unlikely to overflow (no tiers/keeps/hide), but shed 2-of-pool then Full if so.
+    dropped = []
+    rules = assemble(full, two)
+    while len(rules) > MAX_RULES and two:
+        dropped.append(f"2/3: {two.pop()['label']}")
+        rules = assemble(full, two)
+    while len(rules) > MAX_RULES and full:
+        dropped.append(f"Full: {full.pop()['label']}")
+        rules = assemble(full, two)
+    return (base64.b64encode(_filter_bytes(name, rules)).decode("ascii"),
+            len(rules), dropped)
+
+
 # --------------------------------------------------------------------------
 # mobalytics
 # --------------------------------------------------------------------------
@@ -1328,7 +1382,7 @@ def _maxroll_prompt_variant(pdata, nid2sno, adb, udb, tset_db, cls):
 def build(adb, udb, gear_rows, unique_slugs, name, ga_n, hide_junk, cls=None,
           tset_db=None, itype_db=None, charm_slugs=(), has_seal=False,
           ancestral_uniques=False, ancestral_gear=False, partial=True,
-          always_mythic=True):
+          always_mythic=True, variant_name=None):
     # group desired affixes per slot family; rows without a slot
     # (--stats / --paste input) feed one global fallback pool
     groups, order, fallback_ids, unmapped = {}, [], [], []
@@ -1411,12 +1465,22 @@ def build(adb, udb, gear_rows, unique_slugs, name, ga_n, hide_junk, cls=None,
         charm_type=charm_type, all_type_ids=all_type_ids,
         ancestral_uniques=ancestral_uniques, ancestral_gear=ancestral_gear,
         always_mythic=always_mythic)
+    # LEVELING (permissive, additive) is always computed too; the caller/UI shows
+    # FARM+STASH or LEVELING per the effective build stage.
+    lvl_name = level_filter_name(name)
+    level_code, level_n_rules, level_dropped = leveling_filter_code(
+        lvl_name, uids, slot_rules, set_ids=set_ids, always_mythic=always_mythic)
+    has_ga = any(g for _s, _k, g in gear_rows)
+    stage = detect_stage(variant_name, has_ga) if variant_name is not None else None
     return code, {"slot_rules": slot_rules, "fallback": fallback_ids,
                   "unmapped": unmapped, "cls": cls,
                   "n_rules": n_rules, "dropped_bis": dropped_bis,
                   "farm_name": farm_name, "stash_name": stash_name,
                   "stash_code": stash_code, "stash_n_rules": stash_n_rules,
                   "stash_dropped": stash_dropped,
+                  "level_name": lvl_name, "level_code": level_code,
+                  "level_n_rules": level_n_rules, "level_dropped": level_dropped,
+                  "has_ga": has_ga, "stage": stage,
                   "uniques": uni_named, "uni_unmapped": uni_unmapped,
                   "sets": [tset_db.name(s) for s in set_ids] if tset_db else [],
                   "build_seal": has_seal, "hide_junk": hide_junk,
@@ -1426,14 +1490,73 @@ def build(adb, udb, gear_rows, unique_slugs, name, ga_n, hide_junk, cls=None,
                            "seals": seal_type is not None}}
 
 
-def dual_filter_names(base):
-    """(FARM name, STASH name) from a build name, each within MAX_NAME. The build
-    portion is truncated so the longer ' — STASH' suffix still fits, then both
-    share that same truncated portion."""
+def _stage_name(base, suffix):
     base = (base or "D4 Filter").strip()
-    room = MAX_NAME - len(" — STASH")
+    room = MAX_NAME - len(f" — {suffix}")
     b = base[:room].rstrip() or "D4 Filter"[:room]
-    return f"{b} — FARM", f"{b} — STASH"
+    return f"{b} — {suffix}"
+
+
+def dual_filter_names(base):
+    """(FARM name, STASH name) within MAX_NAME, sharing one truncated build name."""
+    return _stage_name(base, "FARM"), _stage_name(base, "STASH")
+
+
+def level_filter_name(base):
+    return _stage_name(base, "LEVEL")
+
+
+# --------------------------------------------------------------------------
+# build-stage detection (source-independent: operates on normalized inputs)
+# --------------------------------------------------------------------------
+# Keywords are matched against the variant name with whitespace removed, so
+# "Leveling 1 - 70" matches "1-70" and "leveling".
+_STAGE_LEVELING_KW = ("leveling", "levelling", "1-60", "1-70", "1-100",
+                      "campaign", "starter", "earlygame", "early-game",
+                      "lowlevel", "low-level", "levelingguide")
+_STAGE_ENDGAME_KW = ("endgame", "end-game", "pit", "pushing", "push", "boss",
+                     "bossing", "speedfarm", "speedfarming", "torment", "uber",
+                     "nightmare", "paragon")
+
+
+def detect_stage(variant_name, has_ga):
+    """Classify a build as 'leveling' or 'endgame' from source-independent signals:
+    the variant/profile name and whether the build carries Greater-Affix
+    priorities. Returns {'stage', 'confidence' (high|medium|low), 'reasons': [...]}.
+    Ambiguous cases bias to the permissive 'leveling' policy: a false Leveling
+    only shows extra gear, while a false Endgame can hide a real leveling upgrade."""
+    compact = re.sub(r"\s+", "", (variant_name or "").lower())
+    lev = next((k for k in _STAGE_LEVELING_KW if k in compact), None)
+    end = next((k for k in _STAGE_ENDGAME_KW if k in compact), None)
+    reasons = []
+    if lev and not end:
+        stage = "leveling"
+        reasons.append(f'variant name contains "{lev}"')
+        if has_ga:
+            reasons.append("but the build carries Greater Affix priorities")
+            conf = "medium"
+        else:
+            reasons.append("no Greater Affix priorities are present")
+            conf = "high"
+    elif end and not lev:
+        stage = "endgame"
+        reasons.append(f'variant name contains "{end}"')
+        if has_ga:
+            reasons.append("build carries Greater Affix priorities")
+            conf = "high"
+        else:
+            reasons.append("but no Greater Affix priorities are present")
+            conf = "medium"
+    elif lev and end:
+        stage, conf = "leveling", "low"
+        reasons.append(f'variant name mixes leveling ("{lev}") and endgame ("{end}") terms')
+    elif has_ga:
+        stage, conf = "endgame", "medium"
+        reasons += ["build carries Greater Affix priorities", "variant name gives no stage hint"]
+    else:
+        stage, conf = "leveling", "low"
+        reasons += ["no Greater Affix priorities are present", "variant name gives no stage hint"]
+    return {"stage": stage, "confidence": conf, "reasons": reasons}
 
 
 def name_from_url(url):
@@ -1445,7 +1568,7 @@ def slugs_from_freetext(text):
     return [(None, _norm(p), False) for p in re.split(r"[,\n]", text) if p.strip()]
 
 
-def _report(name, variant_id, rep, code, verbose):
+def _report(name, variant_id, rep, code, verbose, stage_arg="auto"):
     print(f"\n  Filter: {name}" + (f"   (variant {variant_id})" if variant_id else "")
           + (f"   class: {rep['cls']}" if rep.get("cls") else ""))
     extra = ([f"Sets: {len(rep['sets'])}"] if rep.get("sets") else []) + \
@@ -1502,9 +1625,17 @@ def _report(name, variant_id, rep, code, verbose):
             print(f"    - {slug}" + (f"  ({slot})" if slot else ""))
         for slug in rep["uni_unmapped"]:
             print(f"    - {slug}  (unique)")
-    if rep.get("stash_dropped"):
-        print(f"\n  STASH dropped to fit {MAX_RULES} rules: "
-              + ", ".join(rep["stash_dropped"]))
+    # Effective stage: manual override, else the auto-detected stage.
+    det = rep.get("stage")
+    effective = stage_arg if stage_arg in ("leveling", "endgame") else (
+        det["stage"] if det else "endgame")
+    if det:
+        src = "manual" if stage_arg in ("leveling", "endgame") else \
+              f"auto — detected {det['stage']} ({det['confidence']} confidence)"
+        print(f"\n  Build stage: {effective}   [{src}]")
+        if stage_arg == "auto":
+            for r in det["reasons"]:
+                print(f"    • {r}")
 
     def _emit(title, subtitle, the_code):
         print("\n" + "═" * 68)
@@ -1513,11 +1644,23 @@ def _report(name, variant_id, rep, code, verbose):
         print(the_code)
         print("═" * 68)
 
-    _emit("FARM FILTER", f"{rep.get('farm_name', name)}  ·  {rep['n_rules']}/{MAX_RULES} rules",
-          code)
-    _emit("STASH FILTER",
-          f"{rep.get('stash_name', name)}  ·  {rep.get('stash_n_rules', '?')}/{MAX_RULES} rules",
-          rep.get("stash_code", ""))
+    if effective == "leveling":
+        if rep.get("level_dropped"):
+            print(f"\n  LEVEL dropped to fit {MAX_RULES} rules: "
+                  + ", ".join(rep["level_dropped"]))
+        _emit("LEVELING FILTER",
+              f"{rep.get('level_name', name)}  ·  {rep.get('level_n_rules', '?')}/{MAX_RULES} rules"
+              "   (permissive: highlights build gear, hides nothing)",
+              rep.get("level_code", ""))
+    else:
+        if rep.get("stash_dropped"):
+            print(f"\n  STASH dropped to fit {MAX_RULES} rules: "
+                  + ", ".join(rep["stash_dropped"]))
+        _emit("FARM FILTER", f"{rep.get('farm_name', name)}  ·  {rep['n_rules']}/{MAX_RULES} rules",
+              code)
+        _emit("STASH FILTER",
+              f"{rep.get('stash_name', name)}  ·  {rep.get('stash_n_rules', '?')}/{MAX_RULES} rules",
+              rep.get("stash_code", ""))
 
 
 def main():
@@ -1547,6 +1690,9 @@ def main():
                     help="drop the 2-of-3 progression tier (full 3/3 match only)")
     ap.add_argument("--no-always-mythic", action="store_true",
                     help="drop the dedicated always-visible Mythic Uniques rule")
+    ap.add_argument("--stage", choices=("auto", "leveling", "endgame"), default="auto",
+                    help="build stage: endgame => FARM+STASH, leveling => one "
+                         "permissive LEVEL filter (default: auto-detect)")
     ap.add_argument("--refresh-maxroll-data", action="store_true",
                     help="re-download Maxroll's affix dictionary before building")
     ap.add_argument("--print-detected", action="store_true",
@@ -1574,8 +1720,9 @@ def main():
                           ancestral_uniques=args.ancestral_uniques,
                           ancestral_gear=args.ancestral_gear,
                           partial=not args.no_partial,
-                          always_mythic=not args.no_always_mythic)
-        _report(name, None, rep, code, args.print_detected)
+                          always_mythic=not args.no_always_mythic,
+                          variant_name=args.name)
+        _report(name, None, rep, code, args.print_detected, args.stage)
         return
 
     if not args.url and not args.html:
@@ -1648,8 +1795,9 @@ def main():
                       ancestral_uniques=args.ancestral_uniques,
                       ancestral_gear=args.ancestral_gear,
                       partial=not args.no_partial,
-                      always_mythic=not args.no_always_mythic)
-    _report(name, variant_id, rep, code, args.print_detected)
+                      always_mythic=not args.no_always_mythic,
+                      variant_name=str(variant_id) if variant_id is not None else None)
+    _report(name, variant_id, rep, code, args.print_detected, args.stage)
 
 
 def _read_paste():

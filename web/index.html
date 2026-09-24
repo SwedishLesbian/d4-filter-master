@@ -164,8 +164,16 @@
   .cswatch input[type=color]::-webkit-color-swatch { border:none; border-radius:4px; }
 
   /* ---- output ---- */
-  #out-farm, #out-stash { display:none; }
-  #out-farm.show, #out-stash.show { display:block; }
+  #out-level, #out-farm, #out-stash { display:none; }
+  #out-level.show, #out-farm.show, #out-stash.show { display:block; }
+  .stage { margin:18px 0 4px; padding:14px 0; border-top:1px solid var(--edge); border-bottom:1px solid var(--edge); }
+  .stage-radios { display:flex; gap:20px; flex-wrap:wrap; margin-top:8px; }
+  .stage-radios label { display:flex; align-items:center; gap:7px; font-size:14px; color:var(--text); cursor:pointer; }
+  .stage-radios input { accent-color:var(--green); width:16px; height:16px; }
+  #stage-auto-lbl { font-weight:600; }
+  .stage-reasons { color:var(--faint); font-size:12.5px; margin:10px 0 0; line-height:1.5; white-space:pre-line; }
+  .opts.leveling-off { opacity:.45; }
+  .opts .toggle input:disabled { cursor:not-allowed; }
   .grimoire { border-color: var(--edge-lit); box-shadow: 0 30px 90px -40px rgba(62,255,120,.35), inset 0 1px 0 rgba(255,255,255,.04); }
   .codehead h3 .subttl { font-family: var(--sans); font-size:12.5px; font-weight:400; color:var(--faint); letter-spacing:0; }
   .codehead { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:12px; }
@@ -227,7 +235,18 @@
           <input type="text" id="name" maxlength="30" />
         </div>
       </div>
-      <div class="opts">
+
+      <div class="stage">
+        <span class="lbl" style="margin:0">Build stage</span>
+        <div class="stage-radios">
+          <label><input type="radio" name="stage" value="auto" checked /> <span id="stage-auto-lbl">Auto</span></label>
+          <label><input type="radio" name="stage" value="leveling" /> Leveling</label>
+          <label><input type="radio" name="stage" value="endgame" /> Endgame</label>
+        </div>
+        <p id="stage-reasons" class="stage-reasons"></p>
+      </div>
+
+      <div class="opts" id="endgame-opts">
         <label class="toggle" for="hide"><input type="checkbox" id="hide" />Hide gear that doesn't match the build</label>
         <label class="toggle" for="partial"><input type="checkbox" id="partial" checked />Show partial matches (2 of 3 affixes)</label>
         <label class="toggle" for="mythic-always"><input type="checkbox" id="mythic-always" checked />Always show Mythic Uniques</label>
@@ -243,6 +262,19 @@
       </details>
       <div style="margin-top:20px"><button id="gen">Generate filter code</button></div>
     </div>
+  </section>
+
+  <section id="out-level" class="panel grimoire" aria-label="LEVELING filter">
+    <div class="codehead">
+      <h3>Leveling filter <span class="subttl">— highlight likely build gear, hide nothing</span></h3>
+      <button id="copy-level" class="ghost" type="button">Copy</button>
+    </div>
+    <textarea id="code-level" class="code" readonly spellcheck="false" aria-label="LEVELING filter import code"></textarea>
+    <p class="steps">In game: <b>Character menu → Loot Filter → New Filter → Import</b>, then paste.</p>
+    <p id="meta-level" class="meta"></p>
+    <div id="warn-level"></div>
+    <ul id="rules-level" class="scroll-rule"></ul>
+    <div id="detected-level" style="margin-top:16px"></div>
   </section>
 
   <section id="out-farm" class="panel grimoire" aria-label="FARM filter">
@@ -279,7 +311,8 @@
 
 <script type="module">
 import { parsePlannerId, fetchProfile, listVariants, extractVariant,
-         buildFilter, buildStash, dualFilterNames, slotLabelFor } from "./d4filter.js";
+         buildFilter, buildStash, buildLeveling, dualFilterNames, levelFilterName,
+         detectStage, slotLabelFor } from "./d4filter.js";
 
 // Optional Cloudflare Worker that turns a build-guide URL into a planner id
 // (guide HTML isn't CORS-open; planner + data APIs are, so those need no backend).
@@ -365,6 +398,9 @@ async function load() {
     });
     sel.value = defaultVariant();
     $("name").value = (profile.name || "D4 Filter").slice(0, 30);
+    manualStage = null;   // fresh build -> back to Auto
+    const autoRadio = document.querySelector('input[name="stage"][value="auto"]');
+    if (autoRadio) autoRadio.checked = true;
     const cfg = $("config"); cfg.hidden = false; cfg.classList.remove("reveal"); void cfg.offsetWidth; cfg.classList.add("reveal");
     setStatus(`Loaded “${profile.name}” · ${profile.cls || "?"} · ${vars.length} variants.`, "ok");
     generate();
@@ -394,6 +430,24 @@ function syncAncestral() {
     }
   }
 }
+let manualStage = null;   // null = Auto; else "leveling" | "endgame"
+const show = (id, on) => { const el = $(id); on ? el.classList.add("show") : el.classList.remove("show"); if (on) { el.classList.remove("reveal"); void el.offsetWidth; el.classList.add("reveal"); } };
+
+// Endgame-only controls are meaningless while leveling (permissive, never hides).
+// Only toggles `disabled` — never touches the user's checkbox values, so their
+// prior Endgame settings are restored intact when the stage returns to endgame.
+function setEndgameControlsEnabled(on) {
+  $("endgame-opts").classList.toggle("leveling-off", !on);
+  if (!on) { for (const id of ["anc-all", "anc-u", "anc-g", "hide"]) $(id).disabled = true; }
+  else {
+    // endgame: re-enable; the sub-toggles stay disabled while the master is on
+    // (their forced-checked state was set by syncAncestral on the master's change).
+    const master = $("anc-all").checked;
+    $("anc-all").disabled = false;
+    for (const id of ["anc-u", "anc-g", "hide"]) $(id).disabled = master;
+  }
+}
+
 function generate() {
   if (!profile) return;
   const vi = Number($("variant").value);
@@ -407,34 +461,55 @@ function generate() {
     ancestralGear: all || $("anc-g").checked,
     colors: getColorsArgb(),
   };
-  // Load once, generate both (§8). FARM = active-play; STASH = upgrade triage.
   const base = ($("name").value || "D4 Filter").slice(0, 30);
-  const names = dualFilterNames(base);
   const ex = extractVariant(profile.data, vi, profile.cls, bundle);
-  const farm = buildFilter(ex, names.farm, bundle, opts);
-  const stash = buildStash(ex, names.stash, bundle, opts);
 
-  $("code-farm").value = farm.code;
-  $("meta-farm").textContent =
-    `${names.farm} · ${farm.ruleCount}/25 rules · ${farm.slotRules.length} slot rules` +
-    `${farm.uids.length ? " · " + ex.uniques.length + " uniques" : ""}${ex.hasSeal ? " · seal" : ""}`;
-  renderFarm(ex, farm, opts);
-  $("warn-farm").innerHTML = warnHtml([
-    farm.dropped.length && `${farm.dropped.length} FARM rule(s) dropped to fit 25: ${farm.dropped.join(", ")}.`,
-    ex.detected.unmappedAffix && `${ex.detected.unmappedAffix} affix value(s) had no mapping and were skipped (rune/aspect powers).`,
-  ]);
+  // Stage detection (source-independent): variant name + GA presence.
+  const variantName = (profile.data.profiles[vi] || {}).name || "";
+  const det = detectStage(variantName, ex.rows.some((r) => r[2]));
+  const effective = manualStage || det.stage;
+  $("stage-auto-lbl").textContent = `Auto — ${det.stage}` +
+    (det.confidence !== "high" ? ` (${det.confidence} confidence)` : "");
+  $("stage-reasons").textContent =
+    (manualStage ? `Manually set to ${manualStage}. ` : "") +
+    `Auto detected ${det.stage} (${det.confidence}):\n• ` + det.reasons.join("\n• ");
+  setEndgameControlsEnabled(effective !== "leveling");
 
-  $("code-stash").value = stash.code;
-  $("meta-stash").textContent =
-    `${names.stash} · ${stash.ruleCount}/25 rules · tiers T1–T4`;
-  renderStash(ex, stash, opts);
-  $("warn-stash").innerHTML = warnHtml([
-    stash.dropped.length && `Dropped to fit 25 rules (weakest tiers first): ${stash.dropped.join(", ")}.`,
-  ]);
+  const levelOn = effective === "leveling";
+  show("out-level", levelOn);
+  show("out-farm", !levelOn);
+  show("out-stash", !levelOn);
 
-  renderDetected(ex);
-  for (const id of ["out-farm", "out-stash"]) {
-    const out = $(id); out.classList.add("show"); out.classList.remove("reveal"); void out.offsetWidth; out.classList.add("reveal");
+  if (levelOn) {
+    const level = buildLeveling(ex, levelFilterName(base), bundle, opts);
+    $("code-level").value = level.code;
+    $("meta-level").textContent = `${levelFilterName(base)} · ${level.ruleCount}/25 rules · highlights only, hides nothing`;
+    renderLeveling(ex, level, opts);
+    $("warn-level").innerHTML = warnHtml([
+      level.dropped.length && `Dropped to fit 25 rules: ${level.dropped.join(", ")}.`,
+      ex.detected.unmappedAffix && `${ex.detected.unmappedAffix} affix value(s) had no mapping and were skipped (rune/aspect powers).`,
+    ]);
+    renderDetectedInto("detected-level", ex);
+  } else {
+    const names = dualFilterNames(base);
+    const farm = buildFilter(ex, names.farm, bundle, opts);
+    const stash = buildStash(ex, names.stash, bundle, opts);
+    $("code-farm").value = farm.code;
+    $("meta-farm").textContent =
+      `${names.farm} · ${farm.ruleCount}/25 rules · ${farm.slotRules.length} slot rules` +
+      `${farm.uids.length ? " · " + ex.uniques.length + " uniques" : ""}${ex.hasSeal ? " · seal" : ""}`;
+    renderFarm(ex, farm, opts);
+    $("warn-farm").innerHTML = warnHtml([
+      farm.dropped.length && `${farm.dropped.length} FARM rule(s) dropped to fit 25: ${farm.dropped.join(", ")}.`,
+      ex.detected.unmappedAffix && `${ex.detected.unmappedAffix} affix value(s) had no mapping and were skipped (rune/aspect powers).`,
+    ]);
+    $("code-stash").value = stash.code;
+    $("meta-stash").textContent = `${names.stash} · ${stash.ruleCount}/25 rules · tiers T1–T4`;
+    renderStash(ex, stash, opts);
+    $("warn-stash").innerHTML = warnHtml([
+      stash.dropped.length && `Dropped to fit 25 rules (weakest tiers first): ${stash.dropped.join(", ")}.`,
+    ]);
+    renderDetectedInto("detected", ex);
   }
 }
 
@@ -483,16 +558,34 @@ function renderStash(ex, res, opts) {
   if (ex.hasSeal) li.push(`<li>${gemSpan("Legendary Seals")}<span class="rname">Legendary Seals</span><span class="rafx">Horadric seals, Legendary+</span></li>`);
   $("rules-stash").innerHTML = li.filter(Boolean).join("");
 }
-function renderDetected(ex) {
+function renderLeveling(ex, res, opts) {
+  const li = [];
+  if (res.uids.length) li.push(`<li>${gemSpan("Build Uniques")}<span class="rname">Build Uniques</span><span class="rafx">${ex.uniques.join(", ") || "—"}</span></li>`);
+  if (res.setIds.length) li.push(`<li>${gemSpan("Set Charms")}<span class="rname">Set Charms</span><span class="rafx">${[...ex.detected.sets].join(", ")}</span></li>`);
+  if (opts.alwaysMythic) li.push(`<li>${gemSpan("Mythic Uniques")}<span class="rname">Mythic Uniques</span><span class="rafx">any Mythic Unique</span></li>`);
+  li.push(`<li>${gemSpan("Codex Upgrade")}<span class="rname">Codex Upgrade</span><span class="rafx">Aspect upgrades</span></li>`);
+  const bySlot = slotAffixMap(ex);
+  for (const sr of res.full) {
+    const rows = (bySlot.get(sr.label) || []).slice(0, 4);
+    li.push(`<li>${gemSpan("BiS")}<span class="rname">Full · ${sr.label}</span><span class="rafx">${rows.map(r => r[3]).join(", ")}</span></li>`);
+  }
+  if (res.two && res.two.length)
+    li.push(`<li>${gemSpan("Partial")}<span class="rname">2 of pool</span><span class="rafx">secondary highlight · ${res.two.map(s => s.label).join(", ")}</span></li>`);
+  li.push(`<li><span class="gem" style="color:var(--faint)"></span><span class="rname">Everything else</span><span class="rafx">stays visible — no hide rule while leveling</span></li>`);
+  $("rules-level").innerHTML = li.join("");
+}
+function renderDetectedInto(id, ex) {
   const p = [];
   if (ex.uniques.length) p.push(`<p class="dethead">Uniques</p><div>${ex.uniques.map(u => `<span class="pill">${u}</span>`).join("")}</div>`);
   if (ex.detected.sets.size) p.push(`<p class="dethead" style="margin-top:12px">Set charms</p><div>${[...ex.detected.sets].map(s => `<span class="pill">${s}</span>`).join("")}</div>`);
-  $("detected").innerHTML = p.join("");
+  $(id).innerHTML = p.join("");
 }
 
 $("load").addEventListener("click", load);
 $("gen").addEventListener("click", generate);
 $("link").addEventListener("keydown", (e) => { if (e.key === "Enter") load(); });
+for (const el of document.querySelectorAll('input[name="stage"]'))
+  el.addEventListener("change", (e) => { manualStage = e.target.value === "auto" ? null : e.target.value; generate(); });
 for (const id of ["variant", "name", "hide", "partial", "mythic-always", "anc-u", "anc-g", "ga"])
   $(id).addEventListener("change", generate);
 $("anc-all").addEventListener("change", () => { syncAncestral(); generate(); });
@@ -507,6 +600,7 @@ function wireCopy(btnId, codeId) {
     catch { $(codeId).select(); }
   });
 }
+wireCopy("copy-level", "code-level");
 wireCopy("copy-farm", "code-farm");
 wireCopy("copy-stash", "code-stash");
 </script>

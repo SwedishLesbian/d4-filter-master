@@ -45,9 +45,30 @@ IMPORT CODE (D4 -> Loot Filter -> New Filter -> Import):
 CiEKDUJ1aWxkIFVuaXF1ZXMQAh1QUP...
 ```
 
-## Two filters from one build: FARM and STASH
+## Build stage: Leveling vs Endgame
 
-Every run produces **two** import codes from the same parsed build — `<name> — FARM`
+Each build is classified as **leveling** or **endgame** (auto-detected, with a
+manual override), and the stage picks the output policy:
+
+- **Endgame** → the FARM + STASH pair described below.
+- **Leveling** → a single permissive `<name> — LEVEL` filter. While leveling, raw
+  item power / weapon DPS / armour can make a non-ideal-affix item an upgrade, and
+  the native filter can't compare against equipped gear — so LEVEL *highlights*
+  likely build gear (Build Uniques, Set Charms, Mythics, Codex, full desired
+  match, 2-of-pool) but adds **no** Ancestral requirement, **no** Greater-Affix
+  requirement, and **no** Hide rule; ordinary Rare/Legendary gear stays visible.
+
+Detection is source-independent (`detect_stage` / `detectStage`): variant/profile
+name keywords (leveling, 1-60, campaign, starter → leveling; endgame, pit,
+pushing, boss, torment → endgame) plus whether the build carries Greater-Affix
+priorities. It returns `{stage, confidence (high|medium|low), reasons}`, and
+ambiguous cases bias to the permissive **leveling** policy (a false Leveling only
+shows extra gear; a false Endgame can hide a real upgrade). CLI: `--stage
+auto|leveling|endgame`.
+
+## Two filters from one build: FARM and STASH (endgame)
+
+Endgame produces **two** import codes from the same parsed build — `<name> — FARM`
 and `<name> — STASH` — for two different jobs:
 
 - **FARM** (active gameplay): keep useful drops visible, hide ordinary junk. This
