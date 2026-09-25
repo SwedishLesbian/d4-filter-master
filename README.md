@@ -108,7 +108,7 @@ Rules are evaluated top to bottom in game, first match wins.
 | 5 | white | per-slot BiS: right item type, all desired affixes, and the marked stats rolled as Greater Affix |
 | 6 | blue | per-slot full match: right item type, Rare/Legendary, all affix slots from the wanted pool |
 | 7 | teal | per-slot **partial match**: right item type, **2 of the wanted pool** — a progression tier, since a full 3/3 roll is rare (disable with `--no-partial`) |
-| 8 | cyan | `--ga-threshold`+ Greater Affixes but not a build match (default 1) |
+| 8 | cyan | `--ga-threshold`+ Greater Affixes but not a build match (default 1); ungated by default, but gated on Ancestral when the Ancestral-gear option is on, so "Only show Ancestral" doesn't leak non-Ancestral GA legendaries |
 | 9 | magenta | Legendary/Unique seals (lower seal rarities are hidden) |
 | 10 | shown | set charms of any set (magic/rare charms are hidden) |
 | 11 | shown | all Uniques and Mythics |
@@ -357,6 +357,11 @@ so the white/T1 tier's marked affixes are each individually required to be
 Greater — matching real game exports. The two condition types exist because the
 in-game UI forbids two conditions of the same type in one rule; type 7 lets a
 single rule (STASH T3) carry a second affix constraint.
+
+The top-level Filter trailer is `name` (field 2) + `count` (field 3 = number of
+rules) + `version` (field 4 = 1), per the community format spec. Emitting the
+wrong `count`/`version` (the old upstream hardcoded `3`/`3`) makes the game keep
+the rules but discard the embedded name and auto-label the filter "#Loot Filter N".
 
 ## Credits
 

@@ -69,9 +69,11 @@ for (let vi = 0; vi < prof.data.profiles.length; vi++) {
   check("FARM retains generic 1+ Greater Affix catch (type 4)", hasCondType(farmOff, T_GREATER));
   check("FARM retains a Codex Upgrade rule (type 3)", hasCondType(farmOff, T_CODEX));
   const farmCodex = farmOn.find(r => r.conds.some(c => c.type === T_CODEX));
-  check("FARM Codex Upgrade is NOT Ancestral-gated", !farmCodex.conds.some(c => c.type === T_PROPS));
-  const farmGA = farmOn.find(r => r.conds.some(c => c.type === T_GREATER));
-  check("FARM generic GA catch is NOT Ancestral-gated", !farmGA.conds.some(c => c.type === T_PROPS));
+  check("FARM Codex Upgrade is NOT Ancestral-gated (even when Ancestral on)", !farmCodex.conds.some(c => c.type === T_PROPS));
+  const gaOff = farmOff.find(r => r.conds.some(c => c.type === T_GREATER));
+  const gaOn = farmOn.find(r => r.conds.some(c => c.type === T_GREATER));
+  check("FARM GA catch is NOT Ancestral-gated by default", !gaOff.conds.some(c => c.type === T_PROPS));
+  check("FARM GA catch IS Ancestral-gated when Ancestral-gear on", gaOn.conds.some(c => c.type === T_PROPS));
 
   // ---- STASH: strict classifier ----
   const stashRes = buildStash(ex, names.stash, bundle, { ancestralGear: false });

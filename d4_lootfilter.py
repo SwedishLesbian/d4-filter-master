@@ -348,8 +348,11 @@ def _rule(name, vis, conds, color=None):
 
 def _filter_bytes(name, rules):
     seq = rules if BYTES_HIGHEST_FIRST else list(reversed(rules))
-    # trailing fields 3/4 are always 3 in real game exports
-    return b"".join(seq) + _efs(2, name) + _efv(3, 3) + _efv(4, 3)
+    # Top-level Filter trailer (community format spec): field 3 = rule count,
+    # field 4 = format version (1). The upstream hardcoded 3/3 here, which the
+    # game treats as bad metadata: it keeps the rules but discards the embedded
+    # name and auto-labels the filter "#Loot Filter N".
+    return b"".join(seq) + _efs(2, name) + _efv(3, len(rules)) + _efv(4, 1)
 
 
 # --------------------------------------------------------------------------
@@ -501,7 +504,14 @@ def build_filter_code(name, unique_ids, slot_rules, fallback_ids=(), ga_n=1,
                 fconds.append(_c_props(PROP_ANCESTRAL))
             fconds.append(_c_affixes(fallback_ids, n))
             rules.append(_rule("Build Affix", RECOLOR, fconds, C_GEAR))
-        rules.append(_rule(f"{ga_n}+ Greater Affix", RECOLOR, [_c_greater(ga_n)], C_CYAN))
+        # The generic GA catch is ungated by default (an easy-to-miss GA drop is
+        # worth surfacing during active play). But when the build is restricted to
+        # Ancestral gear, gate it too, so "Only show Ancestral items" doesn't leak
+        # a flood of non-Ancestral legendaries that merely happen to roll a GA.
+        ga_conds = [_c_greater(ga_n)]
+        if ancestral_gear:
+            ga_conds.append(_c_props(PROP_ANCESTRAL))
+        rules.append(_rule(f"{ga_n}+ Greater Affix", RECOLOR, ga_conds, C_CYAN))
         if seal_type is not None:
             rules.append(_rule("Legendary Seals", RECOLOR,
                                [_c_rarity(LEGENDARY | UNIQUE | MYTHIC),

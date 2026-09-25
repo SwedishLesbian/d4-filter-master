@@ -80,7 +80,9 @@ function filterBytes(name, rules) {
   const seq = BYTES_HIGHEST_FIRST ? rules : [...rules].reverse();
   let out = [];
   for (const r of seq) out = out.concat(r);
-  return out.concat(efs(2, name)).concat(efv(3, 3)).concat(efv(4, 3));
+  // Filter trailer: field 3 = rule count, field 4 = format version (1). Wrong
+  // values here make the game drop the embedded name and auto-label the filter.
+  return out.concat(efs(2, name)).concat(efv(3, rules.length)).concat(efv(4, 1));
 }
 function b64(bytes) {
   let bin = "";
@@ -294,7 +296,11 @@ export function buildFilter(extracted, name, bundle, opts = {}) {
     for (const sr of slotRules) rules.push(rule(`Gear: ${sr.label}`, RECOLOR, slotConds(sr, sr.nFix, []), COL.gear));
     // 2-of-pool progression tier, below full-match tiers, above the GA catch.
     for (const sr of partialRules) rules.push(rule(`2/3: ${sr.label}`, RECOLOR, slotConds(sr, partialMin, []), COL.partial));
-    rules.push(rule(`${gaN}+ Greater Affix`, RECOLOR, [cGreater(gaN)], COL.ga));
+    // Ungated by default, but gated on Ancestral when the build is Ancestral-only,
+    // so "Only show Ancestral items" doesn't leak non-Ancestral GA legendaries.
+    const gaConds = [cGreater(gaN)];
+    if (ancestralGear) gaConds.push(cProps(PROP_ANCESTRAL));
+    rules.push(rule(`${gaN}+ Greater Affix`, RECOLOR, gaConds, COL.ga));
     if (sealType != null) rules.push(rule("Legendary Seals", RECOLOR, [cRarity(LEGENDARY | UNIQUE | MYTHIC), cItemType([sealType])], COL.seal));
     if (charmType != null) rules.push(rule("Set Charms (all)", SHOW, [cRarity(TALISMAN), cItemType([charmType])]));
     if (ancestralUniques) rules.push(rule("Ancestral Uniques", SHOW, [cRarity(UNIQUE | MYTHIC), cProps(PROP_ANCESTRAL)]));
