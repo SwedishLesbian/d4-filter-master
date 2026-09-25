@@ -386,11 +386,16 @@ export function buildStash(extracted, name, bundle, opts = {}) {
 }
 
 // Filter names within MAX_NAME, sharing one truncated build name. Mirrors the
-// Python _stage_name / dual_filter_names / level_filter_name helpers.
+// Python _ascii_name / _stage_name helpers. Diablo drops names with any
+// non-ASCII character (e.g. an em-dash) and shows "#Loot Filter N" instead, so
+// the name is folded to printable ASCII and joined with a plain hyphen.
+function asciiName(s) {
+  return (s || "").replace(/[^\x20-\x7e]+/g, " ").replace(/\s+/g, " ").trim();
+}
 function stageName(base, suffix) {
-  base = (base || "D4 Filter").trim();
-  const room = MAX_NAME - ` — ${suffix}`.length;
-  return (base.slice(0, room).replace(/\s+$/, "") || "D4 Filter".slice(0, room)) + ` — ${suffix}`;
+  base = asciiName(base) || "D4 Filter";
+  const room = MAX_NAME - ` - ${suffix}`.length;
+  return (base.slice(0, room).replace(/\s+$/, "") || "D4 Filter".slice(0, room)) + ` - ${suffix}`;
 }
 export function dualFilterNames(base) {
   return { farm: stageName(base, "FARM"), stash: stageName(base, "STASH") };

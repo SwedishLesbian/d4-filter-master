@@ -51,7 +51,7 @@ Each build is classified as **leveling** or **endgame** (auto-detected, with a
 manual override), and the stage picks the output policy:
 
 - **Endgame** → the FARM + STASH pair described below.
-- **Leveling** → a single permissive `<name> — LEVEL` filter. While leveling, raw
+- **Leveling** → a single permissive `<name> - LEVEL` filter. While leveling, raw
   item power / weapon DPS / armour can make a non-ideal-affix item an upgrade, and
   the native filter can't compare against equipped gear — so LEVEL *highlights*
   likely build gear (Build Uniques, Set Charms, Mythics, Codex, full desired
@@ -68,8 +68,9 @@ auto|leveling|endgame`.
 
 ## Two filters from one build: FARM and STASH (endgame)
 
-Endgame produces **two** import codes from the same parsed build — `<name> — FARM`
-and `<name> — STASH` — for two different jobs:
+Endgame produces **two** import codes from the same parsed build — `<name> - FARM`
+and `<name> - STASH` — for two different jobs (names are ASCII-only, since Diablo
+drops a filter name containing any non-ASCII character and shows "#Loot Filter N"):
 
 - **FARM** (active gameplay): keep useful drops visible, hide ordinary junk. This
   is the rule set described below.

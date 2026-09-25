@@ -1490,11 +1490,19 @@ def build(adb, udb, gear_rows, unique_slugs, name, ga_n, hide_junk, cls=None,
                            "seals": seal_type is not None}}
 
 
+def _ascii_name(s):
+    """Diablo's in-game filter name only keeps ASCII; a non-ASCII character (e.g.
+    an em-dash) makes the game drop the name and fall back to '#Loot Filter N'.
+    Fold anything outside printable ASCII to a space and collapse runs."""
+    s = re.sub(r"[^\x20-\x7e]+", " ", s or "")
+    return re.sub(r"\s+", " ", s).strip()
+
+
 def _stage_name(base, suffix):
-    base = (base or "D4 Filter").strip()
-    room = MAX_NAME - len(f" — {suffix}")
+    base = _ascii_name(base) or "D4 Filter"
+    room = MAX_NAME - len(f" - {suffix}")     # ASCII, so 1 byte per char
     b = base[:room].rstrip() or "D4 Filter"[:room]
-    return f"{b} — {suffix}"
+    return f"{b} - {suffix}"
 
 
 def dual_filter_names(base):
